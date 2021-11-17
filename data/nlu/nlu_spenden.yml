@@ -1,0 +1,21 @@
+version: "2.0"
+
+nlu:
+  - intent: spenden_erhalten
+    examples: |
+      - Ich möchte Spenden erhalten
+      - Ich brauche Spenden
+      - ich brauch was
+
+  - intent: selbst_spenden
+    examples: |
+      - Ich möchte selbst spenden
+      - Ich hab was abzugeben
+      - abgeben
+
+  - intent: geld_benoetigen
+    examples: |
+      - Ich brauch Geld
+      - Ich brauch Kohle
+      - bin pleite
+      - brauch geld

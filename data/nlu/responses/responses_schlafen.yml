@@ -1,0 +1,35 @@
+version: "2.0"
+
+responses:
+  utter_ask_unterkunft_form_notunterkunft:
+    - text: "Brauchst du eine Notunterkunft?"
+
+  utter_answer_laengerfristige_unterkunft:
+    - condition:
+        - type: slot
+          name: volljaehrig
+          value: True
+      text: "Diese Stellen helfen dir, eine langfristige Unterkunft für Erwachsene zu finden."
+
+    - text: "Diese Stellen können dir helfen, eine langfristige Unterkunft für Minderjährige zu finden."
+
+  utter_answer_notunterkunft_hunde:
+    - text: "Hier kannst du eine Notunterkunft für Menschen mit Haustier finden."
+
+  utter_answer_notunterkunft_drogen:
+    - text: "Hier findest du eine Notunterkunft für Menschen mit Drogenproblemen."
+
+  utter_answer_notunterkunft_jugendlich:
+    - text: "Hier kannst du eine Notunterkunft für junge Menschen finden."
+
+  utter_information_divers:
+    - text: "Nürnberg verfügt derzeit noch über keine gesonderten Schlafplatzangebote für nicht-binäre Menschen.\n\nWir zeigen dir deshalb alle Einrichtungen für Männer und Frauen an, damit du selbst entscheiden kannst, welche Option für dich am besten passt."
+
+  utter_answer_notunterkunft_divers:
+    - text: "Hier findest du alle Notunterkünfte für Erwachsene aufgelistet."
+
+  utter_answer_notunterkunft_weiblich:
+    - text: "Hier findest du die Notunterkünfte für Frauen."
+
+  utter_answer_notunterkunft_maennlich:
+    - text: "Hier findest du die Notunterkünfte für Männer."

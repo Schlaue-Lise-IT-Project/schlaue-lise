@@ -1,0 +1,138 @@
+version: "2.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - medicine
+  - medicine_requested
+  - inform_insurancestatus
+  - spenden_erhalten
+  - selbst_spenden
+  - geld_benoetigen
+  - hygiene_suche
+  - hygiene_specific
+  - suche_unterkunft
+  - inform
+
+entities:
+  - alter
+  - drogen
+  - drogenabhaengig
+  - geschlecht
+  - go_alone
+  - haustier
+  - haustierhalter
+  - hygieneartikel
+  - insurancestatus
+  - volljaehrig
+  - jugendlich
+  - notunterkunft
+  - unterkunft
+
+slots:
+  unterkunft:
+    type: text
+    influence_conversation: true
+  notunterkunft:
+    type: bool
+    influence_conversation: true
+  insurancestatus:
+    type: text
+    influence_conversation: true
+  go_alone:
+    type: bool
+    influence_conversation: true
+  geschlecht:
+    type: categorical
+    values:
+      - männlich
+      - weiblich
+      - divers
+    influence_conversation: true
+  alter:
+    type: text
+    influence_conversation: true
+  volljaehrig:
+    type: bool
+    influence_conversation: true
+  jugendlich:
+    type: bool
+    influence_conversation: true
+  haustierhalter:
+    type: bool
+    influence_conversation: true
+  haustier:
+    type: text
+    influence_conversation: false
+  hygieneartikel:
+    type: list
+    influence_conversation: false
+  drogen:
+    type: text
+    influence_conversation: false
+  drogenabhaengig:
+    type: bool
+    influence_conversation: true
+
+actions:
+  - validate_informationen_form
+  - validate_unterkunft_form
+  - validate_hygieneliste_form
+  - action_answer_hygiene
+
+forms:
+  informationen_form:
+    required_slots:
+      alter:
+        - type: from_entity
+          entity: alter
+          intent: inform
+      geschlecht:
+        - type: from_entity
+          entity: geschlecht
+          intent: inform
+      haustierhalter:
+        - type: from_intent
+          value: true
+          intent: affirm
+        - type: from_intent
+          value: false
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: inform
+      drogenabhaengig:
+        - type: from_intent
+          value: true
+          intent: affirm
+        - type: from_intent
+          value: false
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: inform
+  unterkunft_form:
+    required_slots:
+      notunterkunft:
+        - type: from_intent
+          value: true
+          intent: affirm
+        - type: from_intent
+          value: false
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: suche_unterkunft
+  hygieneliste_form:
+    required_slots:
+      hygieneartikel:
+        - type: from_entity
+          entity: hygieneartikel
+          intent: hygiene_specific

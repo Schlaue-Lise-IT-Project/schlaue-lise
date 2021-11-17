@@ -1,0 +1,19 @@
+version: "2.0"
+
+responses: 
+  utter_open_spenden:
+    - text: "...gehe zu Spenden-Übersicht"
+
+  utter_open_selbst_spenden:
+    - text: "...gehe zu Selbst Spenden"
+
+  utter_request_what_kind_of_spenden_do_you_need:
+    - text: "Was für Spenden benötigst du?"
+
+  utter_request_what_do_you_want_to_spenden:
+    - text: Worum handelt es sich bei deiner Spende?"
+
+  utter_open_geldspende:
+    - text: "...gehe zu Geldspende-Übersicht"
+    - text: "...hier ist der Ansprechpartner im Sozialamt. Und hier verschiedene Stiftungen"
+

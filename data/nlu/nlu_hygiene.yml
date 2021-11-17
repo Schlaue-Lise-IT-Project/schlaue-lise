@@ -1,0 +1,43 @@
+version: "2.0"
+
+nlu:
+  - lookup: hygieneartikel
+    examples: |
+      - Seife
+      - Binden
+      - Tampons
+      - OB
+      - Watte
+      - Shampoo
+      - Duschgel
+      - Klopapier
+      - Windeln
+      - Küchenrollen
+      - Zewa
+      - Tempos
+      - Taschentücher
+      - Reinigungstücher
+      - Feuchttücher
+
+  - intent: hygiene_suche
+    examples: |
+      - Ich brauche Hygieneartikel
+      - Wo bekomme ich Hygieneartikel her?
+
+  - intent: hygiene_specific
+    examples: |
+      - Ich brauche [Binden](hygieneartikel)
+      - Ich will [Kondome](hygieneartikel)
+      - Ich brauche dringend ein [OB](hygieneartikel)
+      - Brauch eine Packung [Watte](hygieneartikel)
+      - Ein Stück [Seife](hygieneartikel)
+      - Ich benötige [Tampons](hygieneartikel)
+      - Ich brauche [Shampoo](hygieneartikel)
+      - Ich möchte [Duschgel](hygieneartikel)
+      - Brauche dringend [Klopapier](hygieneartikel)
+      - Ich brauche [Windeln](hygieneartikel)
+      - Ich benötige [Küchenrollen](hygieneartikel) oder [Zewa](hygieneartikel)
+      - Ich brauche [Tempos](hygieneartikel)
+      - Brauche [Taschentücher](hygieneartikel)
+      - Ich brauche dringend [Reinigungstücher](hygieneartikel)
+      - Ich brauche unbedingt [Feuchttücher](hygieneartikel)

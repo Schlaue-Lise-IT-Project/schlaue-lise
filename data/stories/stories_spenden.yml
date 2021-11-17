@@ -1,0 +1,20 @@
+version: "2.0"
+
+stories:
+  - story: braucht Spenden
+    steps:
+      - intent: spenden_erhalten
+      - action: utter_open_spenden
+      - action: utter_request_what_kind_of_spenden_do_you_need
+
+  - story: braucht geld
+    steps:
+      - intent: geld_benoetigen
+      - action: utter_open_spenden
+      - action: utter_open_geldspende
+
+  - story: gibt Spenden
+    steps:
+      - intent: selbst_spenden
+      - action: utter_open_selbst_spenden
+      - action: utter_request_what_do_you_want_to_spenden

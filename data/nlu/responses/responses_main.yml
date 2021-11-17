@@ -1,0 +1,49 @@
+version: "2.0"
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_default:
+    - text: "Bitte antworte auf die vorherige Frage."
+
+  utter_ask_informationen_form_geschlecht:
+    - text: "Welchem Geschlecht fühlst du dich zugehörig?"
+
+  utter_ask_informationen_form_alter:
+    - text: "Wie alt bist du?"
+
+  utter_ask_informationen_form_haustierhalter:
+    - text: "Hast du ein Haustier?"
+
+  utter_ask_informationen_form_drogenabhaengig:
+    - text: "Nimmst du Drogen?"
+
+  utter_informationen:
+    - text: "Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert."
+
+  utter_informationen_slots_values:
+    - text: |+
+        Folgende Informationen wurden erfasst (werden nicht abgespeichert):
+        - Alter: {alter}
+        - Geschlecht: {geschlecht}
+        - Haustier: {haustierhalter}
+        - Drogen: {drogenabhaengig}
+        - Volljährig: {volljaehrig}
+        - Unter 22 (jugendlich): {jugendlich}

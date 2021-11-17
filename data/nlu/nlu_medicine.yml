@@ -1,0 +1,11 @@
+version: "2.0"
+
+nlu:
+- intent: medicine
+  examples: |
+   - Ich fühle mich nicht gut und brauche einen Arzt
+   - Wo finde ich Medizin
+   - Ich bin krankenversichert und brauche einen Arzt
+   - Ich bin nicht krankenversichert brauche aber einen Arzt
+
+

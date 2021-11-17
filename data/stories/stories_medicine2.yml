@@ -1,0 +1,31 @@
+version: "2.0"
+
+stories:
+
+- story: medicine path insured and able to go alone 
+  steps: 
+  # input: "ich habe mich am fuß geschnitten" 
+  - intent: medicine_requested
+  - action: utter_open_medicine
+  - action: utter_request_able_to_go_alone
+  # able to go alone? - affirm 
+  - intent: affirm 
+  - action: utter_save_able_to_go_alone # TODO
+  - action: utter_request_insured
+  # insured? - affirm 
+  - intent: affirm 
+  - action: utter_save_insured #TODO
+  - action: utter_medicine_adresses_insured_go_alone
+
+- story: medicine_requested_and_inform_insurancestatus #TO-DO: für andere stories > bedingung: medicine requested!
+  steps: 
+    - intent: inform_insurancestatus
+    - action: utter_insurancestatus_back 
+    - action: utter_request_able_to_go_alone
+    - intent: affirm 
+    - action: utter_medicine_adresses_insured_go_alone
+    
+# - story: tell_insurancestatus 
+#   steps: 
+#     - intent: inform_insurancestatus
+#     - action: utter_insurancestatus_back 
