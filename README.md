@@ -4,7 +4,7 @@
 
 Eine benutzerfreundliche Python-Distribution ist Anaconda.
 Hier die Anleitung dazu von Herrn Prof. Dr.
-Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_
+Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_.
 
 ## Lokale Installation
 
@@ -62,9 +62,6 @@ conda config --set env_prompt '({name}) '
 conda activate ./env
 
 # SpaCy Dateien nachladen
-python -m spacy download en_core_web_sm
-python -m spacy download en_core_web_md
-python -m spacy download de_core_news_sm
 python -m spacy download de_core_news_md
 ```
 
