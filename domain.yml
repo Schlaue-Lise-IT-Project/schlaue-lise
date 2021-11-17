@@ -1,44 +1,65 @@
 version: "2.0"
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
+  - greet:
+      use_entities: true
+  - goodbye:
+      use_entities: true
+  - affirm:
+      use_entities: true
+  - deny:
+      use_entities: true
   # Bot Challenge
-  - bot_challenge
-  - bot_challenge_yes
-  - bot_challenge_no
+  - bot_challenge:
+      use_entities: true
+  - bot_challenge_yes:
+      use_entities: true
+  - bot_challenge_no:
+      use_entities: true
   # Medizin
-  - medicine
-  - medicine_requested
-  - medicine_specific_insurancestatus
-  - medicine_specific_emergency
-  - medicine_all_information
+  - medicine:
+      use_entities: true
+  - medicine_requested:
+      use_entities: true
+  - medicine_specific_insurancestatus:
+      use_entities: true
+  - medicine_specific_emergency:
+      use_entities: true
+  - medicine_all_information:
+      use_entities: true
   # spenden
-  - spenden
-  - spenden_specific
-  - geld_benoetigen
+  - spenden:
+      use_entities: true
+  - spenden_specific:
+      use_entities: true
+  - geld_benoetigen:
+      use_entities: true
   # Hygiene
-  - hygiene_suche
-  - hygiene_specific
-  - suche_unterkunft
-  - inform
+  - hygiene_suche:
+      use_entities: true
+  - hygiene_specific:
+      use_entities: true
+  - suche_unterkunft:
+      use_entities: true
+  - inform:
+      use_entities: true
   # Default / Fallback
-  - out_of_scope
-
+  - out_of_scope:
+      use_entities: true
 entities:
   - alter
   - drogen
   - drogenabhaengig
-  - geschlecht
+  - bgeschlecht
   - medicine
   - emergency
   - insurancestatus
   - haustier
-  - haustierhalter
+  - chaustierhalter
   # Hygiene
   - hygieneartikel
   - volljaehrig
@@ -49,51 +70,76 @@ entities:
   - spendenartikel
   - spendeErhalten
   - geld
-
 slots:
   unterkunft:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   notunterkunft:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   medicine:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   insurancestatus:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   emergency:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   geschlecht:
-    type: categorical
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
     values:
       - männlich
       - weiblich
       - divers
-    influence_conversation: true
   alter:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   volljaehrig:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   jugendlich:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   haustierhalter:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   haustier:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   # Hygiene
   hygieneartikel:
-    type: list
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   drogen:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   # spenden:
   spendenartikel:
@@ -105,9 +151,16 @@ slots:
   geld:
     type: text
   drogenabhaengig:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
-
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses: {}
 actions:
   - validate_informationen_form
   - validate_unterkunft_form
@@ -125,36 +178,36 @@ forms:
   informationen_form:
     required_slots:
       alter:
-        - type: from_entity
-          entity: alter
+        - entity: alter
           intent: inform
-      geschlecht:
+          type: from_entity
+      gbeschlecht:
         - type: from_entity
           entity: geschlecht
           intent: inform
         - type: from_intent
           intent: deny
           value: divers
-      haustierhalter:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
+      chaustierhalter:
+        - intent: affirm
+          type: from_intent
+          value: true
+        - intent: deny
+          type: from_intent
+          value: false
+        - intent: inform
+          type: from_intent
           value: None
-          intent: inform
       drogenabhaengig:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
+        - intent: affirm
+          type: from_intent
+          value: true
+        - intent: deny
+          type: from_intent
+          value: false
+        - intent: inform
+          type: from_intent
           value: None
-          intent: inform
   unterkunft_form:
     required_slots:
       notunterkunft:
@@ -214,3 +267,4 @@ forms:
         - type: from_intent
           value: None
           intent: medicine_requested
+e2e_actions: []
