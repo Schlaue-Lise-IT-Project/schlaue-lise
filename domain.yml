@@ -1,138 +1,186 @@
-version: "2.0"
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - medicine
-  - medicine_requested
-  - inform_insurancestatus
-  - spenden_erhalten
-  - selbst_spenden
-  - geld_benoetigen
-  - hygiene_suche
-  - hygiene_specific
-  - suche_unterkunft
-  - inform
-
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- medicine:
+    use_entities: true
+- medicine_requested:
+    use_entities: true
+- inform_insurancestatus:
+    use_entities: true
+- spenden_erhalten:
+    use_entities: true
+- selbst_spenden:
+    use_entities: true
+- geld_benoetigen:
+    use_entities: true
+- hygiene_suche:
+    use_entities: true
+- hygiene_specific:
+    use_entities: true
+- suche_unterkunft:
+    use_entities: true
+- inform:
+    use_entities: true
 entities:
-  - alter
-  - drogen
-  - drogenabhaengig
-  - geschlecht
-  - go_alone
-  - haustier
-  - haustierhalter
-  - hygieneartikel
-  - insurancestatus
-  - volljaehrig
-  - jugendlich
-  - notunterkunft
-  - unterkunft
-
+- alter
+- drogen
+- drogenabhaengig
+- geschlecht
+- go_alone
+- haustier
+- haustierhalter
+- hygieneartikel
+- insurancestatus
+- volljaehrig
+- jugendlich
+- notunterkunft
+- unterkunft
 slots:
   unterkunft:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   notunterkunft:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   insurancestatus:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   go_alone:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   geschlecht:
-    type: categorical
-    values:
-      - männlich
-      - weiblich
-      - divers
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
+    values:
+    - männlich
+    - weiblich
+    - divers
   alter:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   volljaehrig:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   jugendlich:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   haustierhalter:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   haustier:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   hygieneartikel:
-    type: list
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   drogen:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   drogenabhaengig:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
-
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses: {}
 actions:
-  - validate_informationen_form
-  - validate_unterkunft_form
-  - validate_hygieneliste_form
-  - action_answer_hygiene
-
+- validate_informationen_form
+- validate_unterkunft_form
+- validate_hygieneliste_form
+- action_answer_hygiene
 forms:
   informationen_form:
     required_slots:
       alter:
-        - type: from_entity
-          entity: alter
-          intent: inform
-      geschlecht:
-        - type: from_entity
-          entity: geschlecht
-          intent: inform
-      haustierhalter:
-        - type: from_intent
-          value: true
-          intent: affirm
-        - type: from_intent
-          value: false
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: inform
+      - entity: alter
+        intent: inform
+        type: from_entity
       drogenabhaengig:
-        - type: from_intent
-          value: true
-          intent: affirm
-        - type: from_intent
-          value: false
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: inform
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: inform
+        type: from_intent
+        value: None
+      geschlecht:
+      - entity: geschlecht
+        intent: inform
+        type: from_entity
+      haustierhalter:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: inform
+        type: from_intent
+        value: None
   unterkunft_form:
     required_slots:
       notunterkunft:
-        - type: from_intent
-          value: true
-          intent: affirm
-        - type: from_intent
-          value: false
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: suche_unterkunft
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: suche_unterkunft
+        type: from_intent
+        value: None
   hygieneliste_form:
     required_slots:
       hygieneartikel:
-        - type: from_entity
-          entity: hygieneartikel
-          intent: hygiene_specific
+      - entity: hygieneartikel
+        intent: hygiene_specific
+        type: from_entity
+e2e_actions: []
