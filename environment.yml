@@ -4,6 +4,7 @@ channels:
 # conda-managed dependencies
 dependencies:
   - python=3.8.12
+  - numpy=1.19.5
   - ujson=4.2.0
   - tensorflow=2.6.0
   - pip=21.3.1
