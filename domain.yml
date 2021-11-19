@@ -13,9 +13,13 @@ intents:
   - medicine
   - medicine_requested
   - inform_insurancestatus
+  # spenden
   - spenden_erhalten
-  - selbst_spenden
+  - spenden_specific
   - geld_benoetigen
+  #- inform_can_not_go_alone
+  - hygiene
+  - unterkunft_suche
   - hygiene_suche
   - hygiene_specific
   - suche_unterkunft
@@ -35,6 +39,10 @@ entities:
   - jugendlich
   - notunterkunft
   - unterkunft
+  #spenden
+  - spendenartikel
+  - spendeErhalten
+  - geld
 
 slots:
   unterkunft:
@@ -66,17 +74,26 @@ slots:
     type: bool
     influence_conversation: true
   haustierhalter:
-    type: bool
-    influence_conversation: true
-  haustier:
     type: text
     influence_conversation: false
+  haustier:
+    type: bool
+    influence_conversation: true
   hygieneartikel:
     type: list
     influence_conversation: false
   drogen:
     type: text
     influence_conversation: false
+  # spenden:
+  spendenartikel:
+    type: list
+    influence_conversation: false
+  spendeErhalten:
+    type: bool
+    influence_conversation: true
+  geld: 
+    type: text
   drogenabhaengig:
     type: bool
     influence_conversation: true
@@ -86,6 +103,10 @@ actions:
   - validate_unterkunft_form
   - validate_hygieneliste_form
   - action_answer_hygiene
+  # Spende
+  - validate_spendenartikel_form
+  - action_answer_spende
+  - validate_spendeErhalten_form
 
 forms:
   informationen_form:
@@ -100,20 +121,20 @@ forms:
           intent: inform
       haustierhalter:
         - type: from_intent
-          value: true
+          value: True
           intent: affirm
         - type: from_intent
-          value: false
+          value: False
           intent: deny
         - type: from_intent
           value: None
           intent: inform
       drogenabhaengig:
         - type: from_intent
-          value: true
+          value: True
           intent: affirm
         - type: from_intent
-          value: false
+          value: False
           intent: deny
         - type: from_intent
           value: None
@@ -122,10 +143,10 @@ forms:
     required_slots:
       notunterkunft:
         - type: from_intent
-          value: true
+          value: True
           intent: affirm
         - type: from_intent
-          value: false
+          value: False
           intent: deny
         - type: from_intent
           value: None
@@ -136,3 +157,22 @@ forms:
         - type: from_entity
           entity: hygieneartikel
           intent: hygiene_specific
+  # spenden
+  spendenartikel_form:
+    required_slots:
+      spendenartikel:
+        - type: from_entity
+          entity: spendenartikel
+          intent: spende_specific
+  spendeErhalten_form:
+    required_slots:
+      spendeErhalten:
+        - type: from_intent
+          value: True
+          intent: affirm
+        - type: from_intent
+          value: False
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: spenden_erhalten

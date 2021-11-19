@@ -4,7 +4,7 @@
 
 Eine benutzerfreundliche Python-Distribution ist Anaconda.
 Hier die Anleitung dazu von Herrn Prof. Dr.
-Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_.
+Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_
 
 ## Lokale Installation
 
@@ -43,52 +43,37 @@ Nach der Anaconda-Installation könnt ihr das "Anaconda Prompt" (z.B. in Windows
 
 Führt dann folgende Kommandos auf der Kommandozeile aus:
 
-**Optional**, wenn schon mal gemacht:
-
 ```sh
-> conda config --append channels conda-forge
-> conda update -n base conda
-```
+conda config --append channels conda-forge
+conda update -n base conda
 
-Dieser Schritt ist **IMMER AUSZUFÜHREN**:
-
-```sh
 # Wechsel in das Projektverzeichnis
-> cd /Path/To/Project
+cd /Path/To/Project
 
 # Erstellen des Environments hier im Projekt
-> conda env create --prefix ./env -f environment.yml
-```
+conda env create --prefix ./env -f environment.yml
 
-Dieser Schritt ist **optional**, wenn es schon einmal konfiguriert wurde:
-
-```sh
 # Da ein lokales Environment etwas hässlich in der Kommandozeile
 # angezeigt wird, bietet sich noch folgender Befehl an, der den
 # Root-Folder (hier: env) des Environments als Namen anzeigt:
-> conda config --set env_prompt '({name}) '
-```
+conda config --set env_prompt '({name}) '
 
-Dieser Schritt ist **IMMER AUSZUFÜHREN**:
-
-```sh
 # Aktivieren des Environments
-> conda activate ./env
-
-# SpaCy installieren
-(env)> pip install -U spacy==3.2.0
+conda activate ./env
 
 # SpaCy Dateien nachladen
-(env)> python -m spacy download de_core_news_md
+python -m spacy download en_core_web_sm
+python -m spacy download en_core_web_md
+python -m spacy download de_core_news_sm
+python -m spacy download de_core_news_md
 ```
 
 Ihr habt jetzt ein Python-Environment mit Rasa und allen Dependencies, SpaCy-Dateien, etc. Damit können alle mit demselben Background arbeiten.
 
 ## Rasa Befehle
-
 ```sh
 conda info --env
-conda activate
+conda activate 
 rasa train
 rasa shell
 conda deactivate

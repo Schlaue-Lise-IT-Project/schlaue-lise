@@ -1,19 +1,37 @@
 version: "2.0"
 
 responses: 
-  utter_open_spenden:
-    - text: "...gehe zu Spenden-Übersicht"
+  # utter_open_spenden:
+  #   - text: "...gehe zu Spenden-Übersicht"
 
-  utter_open_selbst_spenden:
-    - text: "...gehe zu Selbst Spenden"
+  utter_ask_spendenartikel:
+    - text: "Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?"
 
-  utter_request_what_kind_of_spenden_do_you_need:
-    - text: "Was für Spenden benötigst du?"
+  utter_ask_spendeErhalten:
+    - text: "Möchtest du diese Dinge: {spendenartikel} erhalten?"
 
-  utter_request_what_do_you_want_to_spenden:
-    - text: Worum handelt es sich bei deiner Spende?"
+  utter_spende:
+    - text: "Okay."
 
-  utter_open_geldspende:
-    - text: "...gehe zu Geldspende-Übersicht"
-    - text: "...hier ist der Ansprechpartner im Sozialamt. Und hier verschiedene Stiftungen"
+  # utter_spendenartikel:
+  #   - text: "Du benötigst: {spendenartikel}"
 
+  # utter_open_selbst_spenden:
+  #   - text: "...gehe zu Selbst Spenden"
+
+  # utter_ask_spende:
+  #   - text: "Worum handelt es sich bei deiner Spende?"
+
+  # utter_spende:
+  #   - text: "Du kannst {spende} abgeben."
+
+  # utter_ask_gebrauchsgegenstand:
+  #   - text: "Worum handelt es sich bei deiner Spende?"
+
+  # utter_gebrauchsgegenstand:
+  #   - text: "Du kannst {gebrauchsgegenstand} abgeben. Sachspenden zum Schlafen kannst du hier abgeben: Obdachlosenhilfe Nürnberg."
+
+  utter_geldspende:
+    - text: "Hier ist der Ansprechpartner im Sozialamt: Ralph Wägner (0911 231 -29 03) Und hier verschiedene Stiftungen: Eberhard und 
+    Fanny Ermann'sche Stiftung, Heinrich und Amalie Lang-Stiftung, Heilig-Geist-Spital-Stiftung, Klein'sche Brennmaterialienstiftung, Otto Lauterbach Stiftung
+    Rudolf Volland Stiftung, Sigmund-Schuckert-Stiftung, Wallner'sche Blinden- und Stipendienstiftung, Rudolf und Berta Mathes, Auxiliar-Stiftung, Margarete-Weigel-Stiftung"

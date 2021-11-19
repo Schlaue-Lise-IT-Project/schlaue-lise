@@ -1,42 +1,43 @@
 version: "2.0"
+
 nlu:
-- intent: suche_unterkunft
-  examples: |
-    - Ich suche einen [Schlafplatz](unterkunft) für heute Nacht
-    - Ich benötige einen [Schlafplatz](unterkunft) für heute
-    - Ich will heute Nacht einen [Schlafplatz](unterkunft)
-    - Ich möchte einen [Schlafplatz](unterkunft) für heute Nacht
-    - Ich brauche heute ein [Dach über dem Kopf](unterkunft)
-    - Ich brauche heute was zum [pennen](unterkunft)
-    - Ich brauche für heute Nacht was zum [pennen](unterkunft)
-    - [Notunterkunft](unterkunft)
-    - Ich suche eine [Notunterkunft](unterkunft)
-    - Ich suche eine [Wohnung](unterkunft)
-    - Ich brauche eine [Wohnung](unterkunft)
-    - Ich will eine [Wohnung](unterkunft)
-    - Ich suche nach einem [Heimplatz](unterkunft)
-    - Ich möchte ins [Obdachlosenheim](unterkunft)
-    - Ich suche längerfistig einen [Schlafplatz](unterkunft)
-    - Ich möchte [weg von der Straße](unterkunft)
-    - [Wohnung](unterkunft)
-    - [schlafen](unterkunft)
-    - [Dach über dem Kopf](unterkunft)
-    - [ratzen](unterkunft)
-    - [knacken](unterkunft)
-    - [schlummern](unterkunft)
-    - [pennen](unterkunft)
-    - Ich brauche einen Ort zum Pennen
-- synonym: unterkunft
-  examples: |
-    - Schlafplatz
-    - Dach über dem Kopf
-    - pennen
-    - Notunterkunft
-    - Wohnung
-    - Heimplatz
-    - Obdachlosenheim
-    - weg von der Straße
-    - schlafen
-    - ratzen
-    - knacken
-    - schlummern
+  - synonym: unterkunft
+    examples: |
+      - Schlafplatz
+      - Dach über dem Kopf
+      - pennen
+      - Notunterkunft
+      - Wohnung
+      - Heimplatz
+      - Obdachlosenheim
+      - weg von der Straße
+      - schlafen
+      - ratzen
+      - knacken
+      - schlummern
+
+  - intent: suche_unterkunft
+    examples: |
+      - Ich suche einen [Schlafplatz](unterkunft) für heute Nacht
+      - Ich benötige einen [Schlafplatz](unterkunft) für heute
+      - Ich will heute Nacht einen [Schlafplatz](unterkunft) 
+      - Ich möchte einen [Schlafplatz](unterkunft) für heute Nacht
+      - Ich brauche heute ein [Dach über dem Kopf](unterkunft)
+      - Ich brauche heute was zum [pennen](unterkunft)
+      - Ich brauche für heute Nacht was zum [pennen](unterkunft)
+      - [Notunterkunft](unterkunft) 
+      - Ich suche eine [Notunterkunft](unterkunft)
+      - Ich suche eine [Wohnung](unterkunft)
+      - Ich brauche eine [Wohnung](unterkunft)
+      - Ich will eine [Wohnung](unterkunft)
+      - Ich suche nach einem [Heimplatz](unterkunft)
+      - Ich möchte ins [Obdachlosenheim](unterkunft)
+      - Ich suche längerfistig einen [Schlafplatz](unterkunft)
+      - Ich möchte [weg von der Straße](unterkunft)
+      - [Wohnung](unterkunft)
+      - [schlafen](unterkunft)
+      - [Dach über dem Kopf](unterkunft) 
+      - [ratzen](unterkunft)
+      - [knacken](unterkunft)
+      - [schlummern](unterkunft)
+      - [pennen](unterkunft)

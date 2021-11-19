@@ -1,20 +1,67 @@
 version: "2.0"
 
 stories:
-  - story: braucht Spenden
+  - story: spenden
     steps:
-      - intent: spenden_erhalten
-      - action: utter_open_spenden
-      - action: utter_request_what_kind_of_spenden_do_you_need
+      - or:
+        - intent: spenden_erhalten
+        - intent: spenden_specific
+          entities: 
+            - spendenartikel: spendenartikel
+      - action: spendenartikel_form
+      - active_loop: spendenartikel_form
+      - slot_was_set:
+        - requested_slot: spendenartikel
+      - slot_was_set:
+        - spendenartikel: [Essen, Hose, Pullover, Handy]
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: utter_spende
+      - action: spendeErhalten_form
+      - active_loop: spendeErhalten_form
+      - slot_was_set:
+        - requested_slot: spendeErhalten
+      - slot_was_set:
+        - spendeErhalten: True
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_answer_spende
+
+
+
+  # - story: braucht Spenden
+  #   steps:
+  #     - intent: spenden_erhalten
+  #     - action: utter_open_spenden
+  #     - action: spendenartikel_form
+  #     - active_loop: spendenartikel_form
+  #     - active_loop: null
+  #     - action: utter_spendenartikel
+
+  # - story: gibt Spenden
+  #   steps:
+  #     - intent: selbst_spenden
+  #     - action: utter_open_selbst_spenden
+  #     - action: spende_form
+  #     - active_loop: spende_form
+  #     - active_loop: null
+  #     - action: utter_spende
+
+  # - story: gibt Gebrauchsgegenstand
+  #   steps:
+  #     - intent: gebrauchsgegenstand_spenden
+  #     - action: utter_open_selbst_spenden
+  #     - action: gebrauchsgegenstand_form
+  #     - active_loop: gebrauchsgegenstand_form
+  #     - active_loop: null
+  #     - action: utter_gebrauchsgegenstand
 
   - story: braucht geld
     steps:
       - intent: geld_benoetigen
-      - action: utter_open_spenden
-      - action: utter_open_geldspende
+      - action: utter_geldspende
+      
 
-  - story: gibt Spenden
-    steps:
-      - intent: selbst_spenden
-      - action: utter_open_selbst_spenden
-      - action: utter_request_what_do_you_want_to_spenden
+ 
