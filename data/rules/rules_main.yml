@@ -10,3 +10,10 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Nutzer begruessen
+  conversation_start: True
+  steps:
+    - action: utter_hallo
+    - intent: greet
+    - action: utter_hallo

@@ -66,11 +66,11 @@ slots:
     type: bool
     influence_conversation: true
   haustierhalter:
-    type: bool
-    influence_conversation: true
-  haustier:
     type: text
     influence_conversation: false
+  haustier:
+    type: bool
+    influence_conversation: true
   hygieneartikel:
     type: list
     influence_conversation: false
@@ -86,6 +86,8 @@ actions:
   - validate_unterkunft_form
   - validate_hygieneliste_form
   - action_answer_hygiene
+  - action_answer_url
+  - action_session_start
 
 forms:
   informationen_form:
@@ -100,20 +102,20 @@ forms:
           intent: inform
       haustierhalter:
         - type: from_intent
-          value: true
+          value: True
           intent: affirm
         - type: from_intent
-          value: false
+          value: False
           intent: deny
         - type: from_intent
           value: None
           intent: inform
       drogenabhaengig:
         - type: from_intent
-          value: true
+          value: True
           intent: affirm
         - type: from_intent
-          value: false
+          value: False
           intent: deny
         - type: from_intent
           value: None
@@ -122,10 +124,10 @@ forms:
     required_slots:
       notunterkunft:
         - type: from_intent
-          value: true
+          value: True
           intent: affirm
         - type: from_intent
-          value: false
+          value: False
           intent: deny
         - type: from_intent
           value: None
