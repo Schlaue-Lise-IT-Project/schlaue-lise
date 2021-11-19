@@ -1,25 +1,54 @@
 version: "2.0"
 
 rules:
+  - rule: Versicherung vorhanden
+    condition:
+      - slot_was_set:
+          - insurancestatus: True
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emergency
+      - active_loop: null
+      - action: utter_answer_medical_assistance
 
-#TODO: bei rules "- name: RulePolicy" hinzufügen
+  - rule: Keine Versicherung vorhanden
+    condition:
+      - slot_was_set:
+          - insurancestatus: False
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emergency
+      - active_loop: null
+      - action: utter_answer_medical_assistance
 
-# - rule: activate_form
-#   steps:
-#   - intent: medicine_detected #everytime this intent is in story ...
-#   - action: medicine_form # ... trigger medicine_form action ...
-#   - active_loop: medicine_form # ... and loop this
+  - rule: Notfall erkannt
+    condition:
+      - slot_was_set:
+          - emergency: True
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - active_loop: null
+      - action: utter_answer_medical_assistance
 
-# - rule: submit_form
-#   condition: 
-#     - active_loop: medicine_form
-#   steps:
-#   - action: medicine_form
-#   - active_loop: null # loop no longer active
-#   - slot_was_set:
-#     - requested_slot: null #no longer a slot requested to fill
-#   #actions once the form is done: 
-#   - action: utter_submit
-#   - action: utter_slots_values
-
-
+  - rule: Kein Notfall
+    condition:
+      - slot_was_set:
+          - emergency: False
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - active_loop: null
+      - action: utter_answer_medical_assistance
