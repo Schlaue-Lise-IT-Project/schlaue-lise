@@ -78,7 +78,11 @@ Anwender: Ich will 'Taschentücher' .
 Chatbot: 'Taschentücher' bekommst du bei dieser Einrichtung (Deeplink)
 ```
 ## Schlafen
-In der Funktion "Schlafen" gibt es eine Vielzahl an Möglichkeiten, die der Anwender wählen kann. Diese Vielzahl ergibt sich aus den gültigen Gesetzten und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da der Anwender diese i.d.R. nicht kennt, wurde diese Funktion so gestaltet, dass der Anwender eine Unterkunft angeboten bekommt und nicht selbst entscheiden muss, wo er schlafen möchte. Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönliche Daten von der Anwendung abgefragt. Die persönlichen Daten sind das Alter, das Geschlecht, Haustierbesitzer und Drogenabhängigkeit. Danach wird nach der Art der Unterkunft gefragt. Diese teilen sich in zwei Kategorien, der Notunterkunft und eine längerfristige Unterkunft. Nach erfolgreicher Eingabe dieser Informationen werden dem Anwender eine oder mehrere Unterkünfte angezeigt. Auf Grund der Vielzahl an möglichen Nutzereingaben werden alle acht Endpunkte nachfolgend in Beispielen aufgelistet.
+Im Use Case `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzten und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
+
+ Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönliche Daten von der Anwendung abgefragt. Die persönlichen Daten sind das Alter, das Geschlecht, die Frage nach einem Haustier und Drogenabhängigkeit. Danach wird nach der Art der Unterkunft gefragt. Diese teilen sich grundsätzlich in zwei Kategorien ein, nämlich in (kurzfristige) Notunterkunft und längerfristige Unterkunft. 
+ 
+Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterkunftsmöglichkeiten angezeigt. Aufgrund der Vielzahl an möglichen Eingaben werden alle acht Endpunkte nachfolgend in Beispielen aufgelistet.
 ### Beispieleingaben (Intents) des Anwenders:
 #### Unterkunft benötigt:
 ```
