@@ -1,5 +1,7 @@
 # Nutzerhandbuch
-Die "SCHLAUE-LISE" ist eine in Rasa entwickelte Anwendung. Mit Rasa kann jeder personalisierte, automatisierte Interaktionen mit Anwendern in einem beliebig großen Umfang erstellen. Rasa stellt die Infrastruktur und die Werkzeuge bereit, die für die Entwicklung eines Assistenten erforderlich sind, die die Kommunikation zwischen Anwender und Unternehmen grundlegend verbessert.
+Die "SCHLAUE-LISE" ist eine mit dem Rasa Framework entwickelte Chatbot-Anwendung. Mit Rasa ist es möglich personalisierte, automatisierte Interaktionen mit Anwender:innen in einem beliebig großen Umfang zu erstellen. Rasa stellt die Infrastruktur und die Werkzeuge bereit, die für die Entwicklung eines Machine-Learning-basierten Assistenten erforderlich sind.
+
+
 Diese Anwendung kann lokal auf einem Desktop-PC ausgeführt werden. Die Migration auf einem mobilen Endgerät wurde während diesem Projekt nicht getestet. Im Kern wurden die Funktionen "Schlafen", "Spenden", "Hygiene" und "Medizin" implementiert. Diese vier Funktionen sind nur ein Teil der künftig nutzbaren Anwendung und wurden zur Erstellung dieses Prototyps zufällig ausgewählt.
 Die Pfade für die oben genannten Use-Cases werden im Anschluss aufgelistet und erklärt. Am Ende jedes Pfades wird ein sogenannter `Deep Link`, der in der finalen Version der Mobile App dazu genutzt werden kann, direkt zu der entsprechenden View zu springen. 
 
