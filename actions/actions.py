@@ -93,7 +93,7 @@ class ValidateNotunterkunft(FormValidationAction):
 
 class ValidateHygieneartikel(FormValidationAction):
     def name(self):
-        return "validate_hygieneliste_form"
+        return "validate_hygiene_form"
     
     def validate_hygieneartikel(
         self,
@@ -127,6 +127,10 @@ class ActionAnswerHygiene(Action):
             answer += f"  - {item}\n"
 
         answer += f"\nFindest du bei diesen Stellen:"
+        answer += f"\n - mudra"
+        answer += f"\n - Obdachlosenhilfe Nürnberg"
+        answer += f"\n - Heinzelmännchen"
+        answer += f"\n - Nürnberger Engel"
 
         dispatcher.utter_message(text=answer)
 
