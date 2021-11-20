@@ -43,10 +43,10 @@ entities:
 - alter
 - drogen
 - drogenabhaengig
-- geschlecht
+- bgeschlecht
 - go_alone
 - haustier
-- haustierhalter
+- chaustierhalter
 - hygieneartikel
 - insurancestatus
 - volljaehrig
@@ -74,7 +74,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  geschlecht:
+  bgeschlecht:
     type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
@@ -98,7 +98,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  haustierhalter:
+  chaustierhalter:
     type: rasa.shared.core.slots.BooleanSlot
     initial_value: null
     auto_fill: true
@@ -141,7 +141,14 @@ forms:
       - entity: alter
         intent: inform
         type: from_entity
-      drogenabhaengig:
+      bgeschlecht:
+      - entity: bgeschlecht
+        intent: inform
+        type: from_entity
+      - intent: deny
+        type: from_intent
+        value: divers
+      chaustierhalter:
       - intent: affirm
         type: from_intent
         value: true
@@ -151,11 +158,7 @@ forms:
       - intent: inform
         type: from_intent
         value: None
-      geschlecht:
-      - entity: geschlecht
-        intent: inform
-        type: from_entity
-      haustierhalter:
+      drogenabhaengig:
       - intent: affirm
         type: from_intent
         value: true

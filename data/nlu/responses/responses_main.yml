@@ -23,13 +23,13 @@ responses:
   utter_default:
     - text: "Bitte antworte auf die vorherige Frage."
 
-  utter_ask_informationen_form_geschlecht:
+  utter_ask_informationen_form_bgeschlecht:
     - text: "Welchem Geschlecht fühlst du dich zugehörig?"
 
   utter_ask_informationen_form_alter:
     - text: "Wie alt bist du?"
 
-  utter_ask_informationen_form_haustierhalter:
+  utter_ask_informationen_form_c  haustierhalter:
     - text: "Hast du ein Haustier?"
 
   utter_ask_informationen_form_drogenabhaengig:
@@ -42,8 +42,8 @@ responses:
     - text: |+
         Folgende Informationen wurden erfasst (werden nicht abgespeichert):
         - Alter: {alter}
-        - Geschlecht: {geschlecht}
-        - Haustier: {haustierhalter}
+        - Geschlecht: {bgeschlecht}
+        - Haustier: {chaustierhalter}
         - Drogen: {drogenabhaengig}
         - Volljährig: {volljaehrig}
         - Unter 22 (jugendlich): {jugendlich}

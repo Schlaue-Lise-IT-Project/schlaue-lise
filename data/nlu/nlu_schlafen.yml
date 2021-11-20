@@ -26,11 +26,14 @@ nlu:
     - [schlummern](unterkunft)
     - [pennen](unterkunft)
     - Ich brauche einen Ort zum Pennen
+    - will noch irgendwo [pennen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich brauch doch was zum [pennen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich brauch was zum [pennen]{"entity": "unterkunft", "value": "unterkunft"}
 - synonym: unterkunft
   examples: |
+    - pennen
     - Schlafplatz
     - Dach über dem Kopf
-    - pennen
     - Notunterkunft
     - Wohnung
     - Heimplatz
