@@ -16,13 +16,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -58,13 +58,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: weiblich
+          - bgeschlecht: weiblich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -100,13 +100,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -146,13 +146,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -188,13 +188,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: divers
+          - bgeschlecht: divers
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -234,13 +234,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: divers
+          - bgeschlecht: divers
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -276,13 +276,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: weiblich
+          - bgeschlecht: weiblich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -322,13 +322,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: weiblich
+          - bgeschlecht: weiblich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -364,13 +364,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: divers
+          - bgeschlecht: divers
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -406,13 +406,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -448,13 +448,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: weiblich
+          - bgeschlecht: weiblich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -490,13 +490,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: divers
+          - bgeschlecht: divers
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -532,13 +532,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -574,13 +574,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: weiblich
+          - bgeschlecht: weiblich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -616,13 +616,13 @@ stories:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: divers
+          - bgeschlecht: divers
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -658,13 +658,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: divers
+          - bgeschlecht: divers
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -701,13 +701,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: weiblich
+          - bgeschlecht: weiblich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -743,13 +743,13 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: geschlecht
+          - requested_slot: bgeschlecht
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
@@ -776,17 +776,17 @@ stories:
           - intent: inform
             entities:
               - alter: "32"
-              - geschlecht: männlich
+              - bgeschlecht: männlich
               - unterkunft: unterkunft
           - intent: suche_unterkunft
             entities:
               - alter: "32"
-              - geschlecht: männlich
+              - bgeschlecht: männlich
               - unterkunft: unterkunft
       - slot_was_set:
           - unterkunft: unterkunft
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
           - alter: "32"
       - action: utter_informationen
@@ -797,9 +797,9 @@ stories:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - requested_slot: haustierhalter
+          - requested_slot: chaustierhalter
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:

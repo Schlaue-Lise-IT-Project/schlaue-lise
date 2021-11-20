@@ -96,7 +96,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  geschlecht:
+  bgeschlecht:
     type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
@@ -120,7 +120,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  haustierhalter:
+  chaustierhalter:
     type: rasa.shared.core.slots.BooleanSlot
     initial_value: null
     auto_fill: true
@@ -181,12 +181,12 @@ forms:
         - entity: alter
           intent: inform
           type: from_entity
-      gbeschlecht:
-        - type: from_entity
-          entity: geschlecht
+      bgeschlecht:
+        - entity: bgeschlecht
           intent: inform
-        - type: from_intent
-          intent: deny
+          type: from_entity
+        - intent: deny
+          type: from_intent
           value: divers
       chaustierhalter:
         - intent: affirm

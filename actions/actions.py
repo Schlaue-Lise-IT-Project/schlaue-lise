@@ -86,8 +86,8 @@ class ValidateInformation(FormValidationAction):
             dispatcher.utter_message(
                 text="Die Eingabe zu >>Alter<< wurde nicht erkannt. Bitte gib eine Zahl an, die dein >>Alter<< darstellt.")
             return {"alter": None}
-
-    def validate_geschlecht(
+    
+    def validate_bgeschlecht(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
@@ -95,13 +95,12 @@ class ValidateInformation(FormValidationAction):
         domain: DomainDict
     ) -> Dict[Text, Any]:
         if slot_value.lower() in ["männlich", "weiblich", "divers"]:
-            return {"geschlecht": slot_value}
+            return {"bgeschlecht": slot_value}
         else:
-            dispatcher.utter_message(
-                text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
-            return {"geschlecht": None}
+            dispatcher.utter_message(text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
+            return {"bgeschlecht": None}
 
-    def validate_haustierhalter(
+    def validate_chaustierhalter(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
@@ -109,11 +108,10 @@ class ValidateInformation(FormValidationAction):
         domain: DomainDict
     ) -> Dict[Text, Any]:
         if type(slot_value) is bool:
-            return {"haustierhalter": slot_value}
+            return {"chaustierhalter": slot_value}
         else:
-            dispatcher.utter_message(
-                text="Entschuldigung, die Eingabe zu >>Haustieren<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
-            return {"haustierhalter": None}
+            dispatcher.utter_message(text="Entschuldigung, die Eingabe zu >>Haustieren<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
+            return {"chaustierhalter": None}
 
     def validate_drogenabhaengig(
         self,

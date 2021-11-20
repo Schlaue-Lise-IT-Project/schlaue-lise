@@ -1,33 +1,13 @@
 version: "2.0"
-
 nlu:
-  - lookup: hygieneartikel
-    examples: |
-      - Seife
-      - Binden
-      - Tampons
-      - OB
-      - Watte
-      - Shampoo
-      - Duschgel
-      - Klopapier
-      - Windeln
-      - Küchenrollen
-      - Zewa
-      - Tempos
-      - Taschentücher
-      - Reinigungstücher
-      - Feuchttücher
-
   - intent: hygiene_suche
     examples: |
       - Ich brauche Hygieneartikel
       - Wo bekomme ich Hygieneartikel her?
-      - Barauche ein Hygieneprodukt.
-      - Wo gibt es Körperpflegeartikel?
-      - Ich benötige ein Körperpflegeprodukt.
-      - Welche Einrichtung verteilt Hygienebedarf?
-
+        - Barauche ein Hygieneprodukt.
+        - Wo gibt es Körperpflegeartikel?
+        - Ich benötige ein Körperpflegeprodukt.
+        - Welche Einrichtung verteilt Hygienebedarf?
   - intent: hygiene_specific
     examples: |
       - Ich brauche [Binden](hygieneartikel)
@@ -45,3 +25,27 @@ nlu:
       - Brauche [Taschentücher](hygieneartikel)
       - Ich brauche dringend [Reinigungstücher](hygieneartikel)
       - Ich brauche unbedingt [Feuchttücher](hygieneartikel)
+      - Ich brauche [Kondome](hygieneartikel), [Tampons](hygieneartikel) und [Seife](hygieneartikel)
+      - ich brauch [kondome](hygieneartikel) [tampons](hygieneartikel) [seife](hygieneartikel)
+      - [tampons](hygieneartikel) [seife](hygieneartikel) [kondome](hygieneartikel) und [duschgel](hygieneartikel)
+      - ich brauch [seife](hygieneartikel) [kondome](hygieneartikel) und [duschgel](hygieneartikel)
+      - brauche außerdem noch [tampons](hygieneartikel)
+      - ok nochmal von vorn. ich brauch dringend [kondome](hygieneartikel) [seife](hygieneartikel) [tampons](hygieneartikel) und ne menge [duschgel](hygieneartikel)
+      - ich brauche [kondome](hygieneartikel)
+  - lookup: hygieneartikel
+    examples: |
+      - Seife
+      - Binden
+      - Tampons
+      - OB
+      - Watte
+      - Shampoo
+      - Duschgel
+      - Klopapier
+      - Windeln
+      - Küchenrollen
+      - Zewa
+      - Tempos
+      - Taschentücher
+      - Reinigungstücher
+      - Feuchttücher
