@@ -63,7 +63,8 @@ Die Funktion "Hygieneartikel" ist total großartig. Hier kann der Anwender belie
 ### Beispieleingaben (Intents) des Anwenders:
 #### Hygieneartikel benötigt:
 ```
-
+Ich brauche Hygieneartikel.
+Wo bekomme ich Hygieneartikel her?
 ```
 #### Beispiel 1 "Seife benötigt"
 ```
@@ -96,6 +97,9 @@ Schlafen.
 ```
 #### Beispiel 1 "Langfristig Erwachsener":
 ```
+Chatbot: Hallo.
+Anwender: Ich suche eine Unterkunft.
+Chatbot: Wie 
 ```
 #### Beispiel 2 "Langfristig Jugendlicher":
 ```
