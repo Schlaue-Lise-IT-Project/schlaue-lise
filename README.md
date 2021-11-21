@@ -93,3 +93,9 @@ rasa train
 rasa shell
 conda deactivate
 ```
+
+## Um Rasa Custom actions zum laufen zu bringen
+1. in endpoints.yml müssen Zeile 13 und 14 entkommentiert werden
+2. in einem extra Terminal muss "rasa run actions" eingegeben werden 
+
+am besten mit rasa interactive die Funktionalität der slots überprüfen.
