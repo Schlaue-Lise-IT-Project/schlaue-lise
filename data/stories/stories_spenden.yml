@@ -17,7 +17,6 @@ stories:
       - slot_was_set:
         - requested_slot: null
       - active_loop: null
-      - action: utter_spende
       - action: spendeErhalten_form
       - active_loop: spendeErhalten_form
       - slot_was_set:
