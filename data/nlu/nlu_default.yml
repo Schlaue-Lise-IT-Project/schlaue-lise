@@ -1,0 +1,20 @@
+version: "2.0"
+
+nlu:
+- intent: out_of_scope
+  examples: |
+    - Was ist 2 + 2?
+    - Warum sind Bananen gelb?
+    - Wer ist aktuell unser Bundeskanzler?
+    - Wie viel wiegt ein Elefant?
+    - Ich find dich doof.
+    - Ich möchte eine Pizza bestellen.
+    - Ich möchte etwas bestellen.
+
+- intent: nlu_fallback
+  examples: |
+    - sldifiliao
+    - pwkfjoaödfj
+    - jwolifjejo
+    - jowei
+    - owla

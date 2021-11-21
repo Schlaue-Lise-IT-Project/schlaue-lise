@@ -1,0 +1,12 @@
+version: "2.0"
+
+responses:
+  utter_out_of_scope:
+    - text: "Entschuldige, mit dieser Anfrage kann ich nichts anfangen."
+    # Brauchst du vielleicht einen Schlafplatz?
+
+  utter_please_rephrase:
+    - text: Es tut mir Leid, ich habe dich nicht verstanden. Kannst du deine Anfrage bitte wiederholen?
+
+  utter_default:
+    - text: Entschuldigung, das habe ich nicht verstanden. Kannst du es bitte wiederholen?
