@@ -3,7 +3,7 @@ version: "2.0"
 nlu:
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - bist du ein Bot?
+    - bist du ein Mensch?
+    - spreche ich mit einem Bot?
+    - spreche ich mit einem Menschen?
