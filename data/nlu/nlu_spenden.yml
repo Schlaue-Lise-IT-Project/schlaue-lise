@@ -53,7 +53,7 @@ nlu:
       - ich brauch [Freizeitartikel](spendenartikel)
       - ich brauch was zur [Bildung](spendenartikel)
 
-  - intent: spenden_erhalten
+  - intent: spenden
     examples: |
       - Ich möchte Spenden erhalten
       - Ich brauche Spenden

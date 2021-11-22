@@ -14,7 +14,7 @@ intents:
   - medicine_requested
   - inform_insurancestatus
   # spenden
-  - spenden_erhalten
+  - spenden
   - spenden_specific
   - geld_benoetigen
   #- inform_can_not_go_alone
@@ -175,4 +175,4 @@ forms:
           intent: deny
         - type: from_intent
           value: None
-          intent: spenden_erhalten
+          intent: spenden

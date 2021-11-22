@@ -4,7 +4,7 @@ stories:
   - story: spenden
     steps:
       - or:
-        - intent: spenden_erhalten
+        - intent: spenden
         - intent: spenden_specific
           entities: 
             - spendenartikel: spendenartikel
@@ -32,7 +32,7 @@ stories:
 
   # - story: braucht Spenden
   #   steps:
-  #     - intent: spenden_erhalten
+  #     - intent: spenden
   #     - action: utter_open_spenden
   #     - action: spendenartikel_form
   #     - active_loop: spendenartikel_form
