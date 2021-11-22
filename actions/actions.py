@@ -1,4 +1,4 @@
-
+import collections
 import logging
 from typing import Any, Optional, Text, Dict, List
 from rasa_sdk.executor import CollectingDispatcher
@@ -151,14 +151,13 @@ class ValidateSpendenartikel(FormValidationAction):
 class ActionAnswerSpende(Action):
     def name(self):
         return "action_answer_spende"
-    
+
     def run(
         self, 
         dispatcher: "CollectingDispatcher", 
         tracker: Tracker, 
         domain: "DomainDict"
     ) -> List[Dict[Text, Any]]:
-        
         answer = "";
 
         slot_value = tracker.get_slot("spendenartikel")
@@ -199,7 +198,51 @@ class ActionAnswerSpende(Action):
         dispatcher.utter_message(text=answer)
 
         return []
+    
+class ActionAnswerURL(Action):
+    def name(self):
+        return "action_answer_url"
 
+    def run(
+        self, 
+        dispatcher: "CollectingDispatcher", 
+        tracker: Tracker, 
+        domain: "DomainDict"
+    ) -> List[Dict[Text, Any]]:
+        url = "Bitte hier klicken, um direkt zur Antwort zu springen:\n"
+
+        slots = tracker.current_slot_values()
+
+        url += f"\nwww.schlaue-lise.de/"
+
+        count = 0
+        valueCount = 0
+
+        for slot in slots:
+            slotValue = tracker.get_slot(slot)
+            if slotValue != None:
+                if count > 0:
+                    url+= f"&{slot}="
+                else: 
+                    url += f"?{slot}="
+                if isinstance(slotValue, collections.Iterable) & isinstance(slotValue, list):
+                    for value in slotValue:
+                        if valueCount > 0:
+                            url += f"+{value}"
+                            valueCount += 1
+                        else:
+                            url += f"{value}"
+                            valueCount += 1
+                    valueCount = 0
+                else:
+                    url += f"{slotValue}"
+                count += 1
+
+        dispatcher.utter_message(text=url)
+
+        return []
+
+        
 class ValidateSpendeErhalten(FormValidationAction):
     def name(self):
         return "validate_spendeErhalten_form"
@@ -216,4 +259,3 @@ class ValidateSpendeErhalten(FormValidationAction):
         else:
             dispatcher.utter_message(text="Entschuldigung, die Eingabe für >>spendeErhalten<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
             return {"spendeErhalten": None}
-    
