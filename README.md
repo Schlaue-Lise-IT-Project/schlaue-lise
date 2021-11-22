@@ -69,7 +69,7 @@ Dieser Schritt ist **optional**, wenn es schon einmal konfiguriert wurde:
 > conda config --set env_prompt '({name}) '
 ```
 
-DIeser Schritt ist **IMMER AUSZUFÜHREN**:
+Dieser Schritt ist **IMMER AUSZUFÜHREN**:
 
 ```sh
 # Aktivieren des Environments
