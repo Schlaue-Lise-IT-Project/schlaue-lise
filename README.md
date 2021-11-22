@@ -82,6 +82,12 @@ Dieser Schritt ist **IMMER AUSZUFÜHREN**:
 (env)> python -m spacy download de_core_news_md
 ```
 
+**Optional**, wenn ihr mit Rasa X arbeitet:
+
+```sh
+(env)> pip install -U sanic-jwt==1.6.0
+```
+
 Ihr habt jetzt ein Python-Environment mit Rasa und allen Dependencies, SpaCy-Dateien, etc. Damit können alle mit demselben Background arbeiten.
 
 ## Probleme mit Timeout-Error
