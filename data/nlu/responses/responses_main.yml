@@ -40,3 +40,6 @@ responses:
 
   utter_informationen_slots_values:
     - text: "Folgende Informationen wurden erfasst (werden nicht abgespeichert):\n  - Alter: {alter}\n  - Geschlecht: {geschlecht}\n  - Haustier: {haustierhalter}\n  - Drogen: {drogenabhaengig}\n  - Volljährig: {volljaehrig}\n  - Unter 22 (jugendlich): {jugendlich}\n\n"
+  
+  utter_hallo:
+    - text: "Hallo, ich bin Lise. Wie kann ich dir weiterhelfen?"
