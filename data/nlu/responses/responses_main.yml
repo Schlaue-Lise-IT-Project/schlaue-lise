@@ -29,7 +29,7 @@ responses:
   utter_ask_informationen_form_alter:
     - text: "Wie alt bist du?"
 
-  utter_ask_informationen_form_c  haustierhalter:
+  utter_ask_informationen_form_chaustierhalter:
     - text: "Hast du ein Haustier?"
 
   utter_ask_informationen_form_drogenabhaengig:
