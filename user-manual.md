@@ -227,7 +227,7 @@ Chatbot: Nürnberg verfügt derzeit noch über keine gesonderten Schlafplatzange
 Chatbot: Hier findest du alle Notunterkünfte (Deep Link) für Erwachsene aufgelistet.
 ```
 ##### Zusammenfassung Beispiel 5:
-In diesem Beispiel sucht eine erwachener Non-Binärer Mensch eine Notunterkunft. Dieser nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von allen Notunterkünften die Frauen und Männer ohne Haustier und ohne Drogenprobleme aufnehmen. Da es zum Zeitpunkt der Entwicklung des Prototyps keine Unterkunft für Non-Binäre Menschen gab, wird auf beide Unterkunftarten verwiesen.
+In diesem Beispiel sucht eine erwachsener non-binärer Mensch eine Notunterkunft. Dieser nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von allen Notunterkünften die Frauen und Männer ohne Haustier und ohne Drogenprobleme aufnehmen. Da es zum Zeitpunkt der Entwicklung des Prototyps keine Unterkunft für non-binäre Menschen gab, wird auf beide Unterkunftarten verwiesen.
 #### Beispiel 6 "Notunterkunft für Jugendliche":
 ```
 Chatbot: Hallo.
