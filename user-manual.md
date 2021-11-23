@@ -122,7 +122,7 @@ Anwender: Nein.
 Chatbot: Diese Stellen (Deep Link) helfen dir, eine langfristige Unterkunft für Erwachsene zu finden.
 ```
 ##### Zusammenfassung Beispiel 1:
-In diesem Beispiel sucht ein Erwachsener Mensch eine längerfristige Unterkunft. Er nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Unterkünften die Erwachsene aufnehmen.
+In diesem Beispiel sucht ein Erwachsener eine längerfristige Unterkunft. Er nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Einrichtungen, die Unterstützung bei der Suche nach einer längerfristigen Unterkunft für Erwachsene anbieten.
 #### Beispiel 2 "Langfristig für Jugendliche":
 ```
 Chatbot: Hallo.
