@@ -279,7 +279,7 @@ Anwender: ja.
 Chatbot: Hier kannst du eine Notunterkunft (Deep Link) für Menschen mit Haustier finden.
 ```
 ##### Zusammenfassung Beispiel 7:
-In diesem Beispiel sucht ein erwachener Mann eine Notunterkunft. Er nimmt keine Drogen und hat jedoch ein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die Menschen mit Haustier und ohne Drogenprobleme aufnehmen. Hat ein Erwachsener ein Haustier und ein Drogenproblem wird bei der Auswahl der Notunterkünfte das Haustier priorisiert. 
+In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. Er nimmt keine Drogen, hat jedoch ein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die Menschen mit Haustier und ohne Drogenprobleme aufnehmen. Hat ein Hilfesuchender ein Haustier und ein Drogenproblem wird bei der Auswahl der Notunterkünfte das Haustier priorisiert. Auch das Alter spielt keine Rolle. 
 #### Beispiel 8 "Notunterkunft mit Drogenabhängigkeit":
 ```
 Chatbot: Hallo.
