@@ -80,7 +80,7 @@ Chatbot: Hallo.
 Anwender: Ich will 'Taschentücher' .
 Chatbot: 'Taschentücher' bekommst du bei dieser Einrichtung (Deep Link)
 ```
-##### Zusammenfassug Beispiel 2:
+##### Zusammenfassung Beispiel 2:
 In diesem Beispiel sucht eine Person direkt nach einem Hygieneartikel, dem Taschentuch. Es wird eine Liste mit Ausgabestellen angezeit. Es besteht die Möglichkeit über einen Deep Link die Ausgabestellen aufzurufen.
 ## Schlafen
 Im Use Case `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzten und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
