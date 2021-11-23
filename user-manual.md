@@ -200,7 +200,7 @@ Anwender: ja.
 Chatbot: Hier findest du die Notunterkünfte (Deep Link) für Frauen.
 ```
 ##### Zusammenfassung Beispiel 4:
-In diesem Beispiel sucht eine erwachene Frau eine Notunterkunft. Sie nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Frauen ohne Haustier und ohne Drogenprobleme aufnehmen.
+In diesem Beispiel sucht eine erwachsene Frau eine Notunterkunft. Sie nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Frauen ohne Haustier und ohne Drogenprobleme aufnehmen.
 #### Beispiel 5 "Notunterkunft für Diverse":
 ```
 Chatbot: Hallo.
