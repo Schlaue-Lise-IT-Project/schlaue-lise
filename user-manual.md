@@ -253,7 +253,7 @@ Anwender: Ja.
 Chatbot: Hier kannst du eine Notunterkunft (Deep Link) für junge Menschen finden.
 ```
 ##### Zusammenfassung Beispiel 6:
-In diesem Beispiel sucht eine Jugendlicher eine Notunterkunft. Er nimmt keine Drogen und hat kein Haustier. Das Geschlecht spielt keine Rolle für die selektion der Unterkünfte. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Jugendliche ohne Haustier und ohne Drogenprobleme aufnehmen.
+In diesem Beispiel sucht ein non-binärer Jugendlicher eine Notunterkunft. Er nimmt keine Drogen und hat kein Haustier. Das Geschlecht spielt keine Rolle für die Auswahl der Unterkünfte, da es in Nürnberg nur danach geht, ob der Mensch jugendlich ist oder nicht. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Jugendliche ohne Haustier und ohne Drogenprobleme aufnehmen.
 #### Beispiel 7 "Notunterkunft mit Tieren":
 ```
 Chatbot: Hallo.
