@@ -1,0 +1,16 @@
+version: "2.0"
+  
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say 'Yes, I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge_yes
+  - action: utter_yesiamabot
+
+- rule: Say 'No, I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge_no
+  - action: utter_noiamabot

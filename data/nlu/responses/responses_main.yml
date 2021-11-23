@@ -17,9 +17,6 @@ responses:
   utter_goodbye:
     - text: "Bye"
 
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-
   utter_default:
     - text: "Bitte antworte auf die vorherige Frage."
 
