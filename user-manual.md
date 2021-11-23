@@ -174,7 +174,7 @@ Anwender: ja.
 Chatbot: Hier findest du die Notunterkünfte (Deep Link) für Männer.
 ```
 ##### Zusammenfassung Beispiel 3:
-In diesem Beispiel sucht ein erwachener Mann eine Notunterkunft. Er nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Männer ohne Haustier und ohne Drogenprobleme aufnehmen.
+In diesem Beispiel sucht ein junger Erwachsener eine Notunterkunft. Er nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Männer ohne Haustier und ohne Drogenprobleme aufnehmen.
 #### Beispiel 4 "Notunterkunft für Frauen":
 ```
 Chatbot: Hallo.
