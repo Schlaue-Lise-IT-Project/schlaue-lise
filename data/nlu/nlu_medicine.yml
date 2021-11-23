@@ -15,6 +15,7 @@ nlu:
       - Sanni 
       - Sanka
       - Krankenwagen
+      - Notfall
 
   - intent: medicine_requested
     examples: |
@@ -42,4 +43,14 @@ nlu:
       - ich brauche einen [Notarzt]{"entity":"emergency", "value":"True"}
       - es ist ein [Notfall]{"entity":"emergency", "value":"True"}
       - [Notarzt]{"entity":"emergency", "value":"True"}
-      - [Notfall]{"entity":"emergency", "value":"True"}
+
+  - intent: medicine_all_information
+    examples: |
+      - ich brauche einen [Notarzt]{"entity":"emergency", "value":"True"} und ich bin [nicht versichert]{"entity":"insurancestatus", "value":"False"}
+      - ich brauche einen [Notarzt]{"entity":"emergency", "value":"True"} und ich bin [versichert]{"entity":"insurancestatus", "value":"True"}
+      - ich bin [nicht versichert]{"entity":"insurancestatus", "value":"False"} und ich brauche einen [Notarzt]{"entity":"emergency", "value":"True"}
+      - ich bin [versichert]{"entity":"insurancestatus", "value":"True"} und ich brauche einen [Notarzt]{"entity":"emergency", "value":"True"}
+      - es ist ein [Notfall]{"entity":"emergency", "value":"True"} und ich bin [nicht versichert]{"entity":"insurancestatus", "value":"False"}
+      - es ist ein [Notfall]{"entity":"emergency", "value":"True"} und ich ich bin [versichert]{"entity":"insurancestatus", "value":"True"}
+      - ich bin [nicht versichert]{"entity":"insurancestatus", "value":"False"} und es ist ein [Notfall]{"entity":"emergency", "value":"True"}
+      - ich ich bin [versichert]{"entity":"insurancestatus", "value":"True"} und es ist ein [Notfall]{"entity":"emergency", "value":"True"}

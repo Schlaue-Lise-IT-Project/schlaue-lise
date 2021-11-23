@@ -14,6 +14,7 @@ intents:
   - medicine_requested
   - medicine_specific_insurancestatus
   - medicine_specific_emergency
+  - medicine_all_information
   - spenden_erhalten
   - selbst_spenden
   - geld_benoetigen

@@ -35,7 +35,7 @@ class ValidateMedicineForm(FormValidationAction):
             return{"emergency": True}
         elif(intent == 'deny'):
             return{"emergency": False}
-        elif(intent == 'medicine_specific_emergency'):
+        elif(intent == 'medicine_specific_emergency' or intent == 'medicine_all_information'):
             return {"emergency": slot_value}
         else:
             dispatcher.utter_message(
@@ -55,7 +55,7 @@ class ValidateMedicineForm(FormValidationAction):
             return{"insurancestatus": True}
         elif(intent == 'deny'):
             return{"insurancestatus": False}
-        elif(intent == 'medicine_specific_insurancestatus'):
+        elif(intent == 'medicine_specific_insurancestatus' or intent == 'medicine_all_information'):
             return {"insurancestatus": slot_value}
         else:
             dispatcher.utter_message(
