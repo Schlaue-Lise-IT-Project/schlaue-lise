@@ -18,6 +18,8 @@ intents:
   - hygiene_specific
   - suche_unterkunft
   - inform
+  # Default / Fallback
+  - out_of_scope
 
 entities:
   - alter

@@ -2,11 +2,10 @@ version: "2.0"
 
 responses:
   utter_out_of_scope:
-    - text: "Entschuldige, mit dieser Anfrage kann ich nichts anfangen."
-    # Brauchst du vielleicht einen Schlafplatz?
+    - text: "Out_of_scope: Es tut mir Leid, da kann ich dir nicht helfen. Ich kann dir aber zum Beispiel helfen einen Schlafplatz, Arzt, Hygieneartikel oder anderweitige Hilfsgüter zu finden, wenn du dazu eine Anfrage hast."
 
   utter_please_rephrase:
-    - text: Es tut mir Leid, ich habe dich nicht verstanden. Kannst du deine Anfrage bitte wiederholen?
+    - text: "Please_rephrase: Es tut mir Leid, ich hab dich nicht verstanden, bitte formuliere deine Anfrage neu. Ich kann dir helfen einen Schlafplatz, Arzt, Hygieneartikel oder anderweitige Hilfsgüter zu finden."
 
   utter_default:
-    - text: Entschuldigung, das habe ich nicht verstanden. Kannst du es bitte wiederholen?
+    - text: "Default: Es tut mir Leid, ich hab dich nicht verstanden, bitte formuliere deine Anfrage neu. Ich kann dir helfen einen Schlafplatz, Arzt, Hygieneartikel oder anderweitige Hilfsgüter zu finden."

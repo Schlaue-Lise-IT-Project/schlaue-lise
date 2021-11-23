@@ -11,10 +11,10 @@ nlu:
     - Ich möchte eine Pizza bestellen.
     - Ich möchte etwas bestellen.
 
-- intent: nlu_fallback
-  examples: |
-    - sldifiliao
-    - pwkfjoaödfj
-    - jwolifjejo
-    - jowei
-    - owla
+# - intent: nlu_fallback
+#   examples: |
+#     - sldifiliao
+#     - pwkfjoaödfj
+#     - jwolifjejo
+#     - jowei
+#     - owla
