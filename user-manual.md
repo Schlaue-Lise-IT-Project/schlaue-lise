@@ -148,7 +148,7 @@ Anwender: Nein.
 Chatbot: Diese Stellen (Deep Link) helfen dir, eine langfristige Unterkunft für Jugendliche zu finden.
 ```
 ##### Zusammenfassung Beispiel 2:
-In diesem Beispiel sucht ein Jugendlicher eine längerfristige Unterkunft. Er nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Unterkünften die Jugendliche aufnehmen.
+In diesem Beispiel sucht eine Jugendliche eine längerfristige Unterkunft. Sie nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Einrichtungen, die Unterstützung bei der Suche nach einer längerfristigen Unterkunft für Jugendliche anbieten.
 #### Beispiel 3 "Notunterkunft für Männer":
 ```
 Chatbot: Hallo.
