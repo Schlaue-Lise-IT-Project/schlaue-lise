@@ -24,3 +24,8 @@ responses:
 
         Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
            - ...
+
+  utter_answer_emergeny:
+    - text: |
+        > Notfall registriert! 
+          Öffne Notrufinformationen ...

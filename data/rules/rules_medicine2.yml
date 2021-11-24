@@ -1,7 +1,7 @@
 version: "2.0"
 
 rules:
-  - rule: Versicherung vorhanden
+  - rule: Versicherung vorhanden (emergency false)
     condition:
       - slot_was_set:
           - insurancestatus: True
@@ -12,9 +12,26 @@ rules:
       - slot_was_set:
           - requested_slot: emergency
       - active_loop: null
+      - slot_was_set:
+          - emergency: False
       - action: utter_answer_medical_assistance
 
-  - rule: Keine Versicherung vorhanden
+  - rule: Versicherung vorhanden (emergency true)
+    condition:
+      - slot_was_set:
+          - insurancestatus: True
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emergency
+      - active_loop: null
+      - slot_was_set:
+          - emergency: True
+      - action: utter_answer_emergeny
+
+  - rule: Keine Versicherung vorhanden (emergency false)
     condition:
       - slot_was_set:
           - insurancestatus: False
@@ -25,7 +42,24 @@ rules:
       - slot_was_set:
           - requested_slot: emergency
       - active_loop: null
+      - slot_was_set:
+          - emergency: False
       - action: utter_answer_medical_assistance
+
+  - rule: Keine Versicherung vorhanden (emergency true)
+    condition:
+      - slot_was_set:
+          - insurancestatus: False
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emergency
+      - active_loop: null
+      - slot_was_set:
+          - emergency: True
+      - action: utter_answer_emergeny
 
   - rule: Notfall erkannt
     condition:
@@ -38,7 +72,7 @@ rules:
       - slot_was_set:
           - requested_slot: insurancestatus
       - active_loop: null
-      - action: utter_answer_medical_assistance
+      - action: utter_answer_emergeny
 
   - rule: Kein Notfall
     condition:

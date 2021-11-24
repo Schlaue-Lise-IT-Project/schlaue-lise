@@ -71,7 +71,7 @@ stories:
       - slot_was_set:
           - insurancestatus: true
       - active_loop: null
-      - action: utter_answer_medical_assistance
+      - action: utter_answer_emergeny
 
   - story: nicht versichert und notfall
     steps:
@@ -95,4 +95,4 @@ stories:
       - slot_was_set:
           - insurancestatus: false
       - active_loop: null
-      - action: utter_answer_medical_assistance
+      - action: utter_answer_emergeny
