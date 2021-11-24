@@ -27,10 +27,11 @@ jobs:
         with:
           rasa_version: '2.8.0'
           rasa_image: 'noopliez/rasa-spacy-de-md:2.8.0'
+          train_args: '--fixed-model-name my_model'
           rasa_test: false
           github_token: ${{ secrets.RASA_GHA_TOKEN }}
       - name: Upload model
         if: github.ref == 'refs/heads/rasax'
         uses: wei/curl@v1
         with:
-          args: curl -k -F "model=@my_model.tar.gz" "https://34.159.228.55/projects/default/models?api_token={secrets.RASA_TOKEN}"
+          args: curl -k -F "model=@models/my_model.tar.gz" "https://34.159.228.55/projects/default/models?api_token={secrets.RASA_TOKEN}"
