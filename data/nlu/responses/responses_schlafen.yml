@@ -9,8 +9,7 @@ responses:
         - type: slot
           name: volljaehrig
           value: True
-      text: "Diese Stellen helfen dir, eine langfristige Unterkunft für Erwachsene zu finden: \n - Amt für Existenzsicherung und soziale Integration - Sozialamt
-      \n - Unterbringung in Pensionen \n - Unterbringung in stadteigenen Wohnungen \n - Vermittlung von Wohnungen in Sozialimmobilien \n - Hilfen für Wohnungslose, Nichtsesshafte und Durchreisende"
+      text: "Diese Stellen helfen dir, eine langfristige Unterkunft für Erwachsene zu finden: \n - Amt für Existenzsicherung und soziale Integration - Sozialamt \n - Unterbringung in Pensionen \n - Unterbringung in stadteigenen Wohnungen \n - Vermittlung von Wohnungen in Sozialimmobilien \n - Hilfen für Wohnungslose, Nichtsesshafte und Durchreisende"
 
     - text: "Diese Stellen können dir helfen, eine langfristige Unterkunft für Minderjährige zu finden. \n - Zentrale des Jugendamts im Sozialrathaus\n - Kinder- und Jugendhilfezentrum \n - SleepIn"
 
