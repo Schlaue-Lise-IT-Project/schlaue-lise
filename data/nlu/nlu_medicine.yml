@@ -5,7 +5,6 @@ nlu:
     examples: |
       - verletzt 
       - geschnitten
-      - gebrocken
       - verbrannt
 
   - synonym: emergency
