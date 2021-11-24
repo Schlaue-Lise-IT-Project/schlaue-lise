@@ -7,8 +7,6 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   # Bot Challenge
   - bot_challenge
   - bot_challenge_yes
@@ -25,6 +23,8 @@ intents:
   - hygiene_specific
   - suche_unterkunft
   - inform
+  # Default / Fallback
+  - out_of_scope
 
 entities:
   - alter
