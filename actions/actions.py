@@ -108,7 +108,6 @@ class ValidateHygieneartikel(FormValidationAction):
             dispatcher.utter_message(text="Es tut mir Leid, aber es scheint nicht geklappt zu haben. Du kannst hier einfach alle gewünschten >>Hygieneartikel<< auflisten.")
             return {"hygieneartikel": None}
 
-
 class ActionAnswerHygiene(Action):
     def name(self):
         return "action_answer_hygiene"
@@ -136,6 +135,74 @@ class ActionAnswerHygiene(Action):
 
         return []
 
+class ValidateSpendenartikel(FormValidationAction):
+    def name(self):
+        return "validate_spendenartikel_form"
+    
+    def validate_spendenartikel(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict
+    ) -> Dict[Text, Any]:
+        if type(slot_value) is list:
+            return {"spendenartikel": slot_value}
+        else:
+            dispatcher.utter_message(text="Es tut mir Leid, aber es scheint nicht geklappt zu haben. Du kannst hier einfach alle gewünschten >>Spendenartikel<< auflisten.")
+            return {"spendenartikel": None}
+
+class ActionAnswerSpende(Action):
+    def name(self):
+        return "action_answer_spende"
+
+    def run(
+        self, 
+        dispatcher: "CollectingDispatcher", 
+        tracker: Tracker, 
+        domain: "DomainDict"
+    ) -> List[Dict[Text, Any]]:
+        answer = "";
+
+        slot_value = tracker.get_slot("spendenartikel")
+        spendeErhalten = tracker.get_slot("spendeErhalten")
+
+        contains = False
+
+        output = False
+
+        for item in slot_value:
+            temp = item.lower()
+            if temp == "decke" or temp == "schlafsack" or temp == "isomatte" or temp == "kissen" :
+                if not(output):
+                    answer += "Alles klar. Diese Artikel:\n"
+                    output = True
+                answer += f"  - {item}\n"
+            else:
+                contains = True
+        
+        if output: 
+            if spendeErhalten:
+                answer += f"\nFindest du bei diesen Stellen: Obdachlosenhilfe"
+            else: 
+                answer += f"\nKannst du bei diesen Stellen abgeben: Obdachlosenhilfe"
+
+        if contains:
+            answer += "\nDiese Artikel:\n"
+            for item in slot_value:
+                temp = item.lower()
+                if temp != "decke" and temp != "schlafsack" and temp != "isomatte" and temp != "kissen" :
+                    answer += f"  - {item}\n"
+
+            if spendeErhalten:
+                answer += f"\nFindest du bei diesen Stellen: (noch nicht im Prototyp hinterlegt)"
+            else: 
+                answer += f"\nKannst du bei diesen Stellen abgeben: (noch nicht im Prototyp hinterlegt)"
+
+        dispatcher.utter_message(text=answer)
+
+        return []
+    
 class ActionAnswerURL(Action):
     def name(self):
         return "action_answer_url"
@@ -178,3 +245,21 @@ class ActionAnswerURL(Action):
         dispatcher.utter_message(text=url)
 
         return []
+
+        
+class ValidateSpendeErhalten(FormValidationAction):
+    def name(self):
+        return "validate_spendeErhalten_form"
+
+    def validate_spendeErhalten(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict
+    ) -> Dict[Text, Any]:
+        if slot_value is not None and type(slot_value) is bool:
+            return {"spendeErhalten": slot_value}
+        else:
+            dispatcher.utter_message(text="Entschuldigung, die Eingabe für >>spendeErhalten<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
+            return {"spendeErhalten": None}
