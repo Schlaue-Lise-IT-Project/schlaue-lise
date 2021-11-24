@@ -1,4 +1,4 @@
-
+import collections
 import logging
 from typing import Any, Optional, Text, Dict, List
 from rasa_sdk.executor import CollectingDispatcher
@@ -93,7 +93,7 @@ class ValidateNotunterkunft(FormValidationAction):
 
 class ValidateHygieneartikel(FormValidationAction):
     def name(self):
-        return "validate_hygieneliste_form"
+        return "validate_hygiene_form"
     
     def validate_hygieneartikel(
         self,
@@ -127,7 +127,54 @@ class ActionAnswerHygiene(Action):
             answer += f"  - {item}\n"
 
         answer += f"\nFindest du bei diesen Stellen:"
+        answer += f"\n - mudra"
+        answer += f"\n - Obdachlosenhilfe Nürnberg"
+        answer += f"\n - Heinzelmännchen"
+        answer += f"\n - Nürnberger Engel"
 
         dispatcher.utter_message(text=answer)
+
+        return []
+
+class ActionAnswerURL(Action):
+    def name(self):
+        return "action_answer_url"
+
+    def run(
+        self, 
+        dispatcher: "CollectingDispatcher", 
+        tracker: Tracker, 
+        domain: "DomainDict"
+    ) -> List[Dict[Text, Any]]:
+        url = "Bitte hier klicken, um direkt zur Antwort zu springen:\n"
+
+        slots = tracker.current_slot_values()
+
+        url += f"\nwww.schlaue-lise.de/"
+
+        count = 0
+        valueCount = 0
+
+        for slot in slots:
+            slotValue = tracker.get_slot(slot)
+            if slotValue != None:
+                if count > 0:
+                    url+= f"&{slot}="
+                else: 
+                    url += f"?{slot}="
+                if isinstance(slotValue, collections.Iterable) & isinstance(slotValue, list):
+                    for value in slotValue:
+                        if valueCount > 0:
+                            url += f"+{value}"
+                            valueCount += 1
+                        else:
+                            url += f"{value}"
+                            valueCount += 1
+                    valueCount = 0
+                else:
+                    url += f"{slotValue}"
+                count += 1
+
+        dispatcher.utter_message(text=url)
 
         return []

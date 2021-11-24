@@ -1,58 +1,61 @@
-version: '2.0'
+version: "2.0"
 config:
   store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- medicine:
-    use_entities: true
-- medicine_requested:
-    use_entities: true
-- inform_insurancestatus:
-    use_entities: true
-- spenden_erhalten:
-    use_entities: true
-- selbst_spenden:
-    use_entities: true
-- geld_benoetigen:
-    use_entities: true
-- hygiene_suche:
-    use_entities: true
-- hygiene_specific:
-    use_entities: true
-- suche_unterkunft:
-    use_entities: true
-- inform:
-    use_entities: true
+  - greet:
+      use_entities: true
+  - goodbye:
+      use_entities: true
+  - affirm:
+      use_entities: true
+  - deny:
+      use_entities: true
+  - mood_great:
+      use_entities: true
+  - mood_unhappy:
+      use_entities: true
+  - bot_challenge:
+      use_entities: true
+  - medicine:
+      use_entities: true
+  - medicine_requested:
+      use_entities: true
+  - inform_insurancestatus:
+      use_entities: true
+  - spenden_erhalten:
+      use_entities: true
+  - selbst_spenden:
+      use_entities: true
+  - geld_benoetigen:
+      use_entities: true
+  # Hygiene
+  - hygiene_suche:
+      use_entities: true
+  - hygiene_specific:
+      use_entities: true
+  - suche_unterkunft:
+      use_entities: true
+  - inform:
+      use_entities: true
 entities:
-- alter
-- drogen
-- drogenabhaengig
-- bgeschlecht
-- go_alone
-- haustier
-- chaustierhalter
-- hygieneartikel
-- insurancestatus
-- volljaehrig
-- jugendlich
-- notunterkunft
-- unterkunft
+  - alter
+  - drogen
+  - drogenabhaengig
+  - bgeschlecht
+  - go_alone
+  - haustier
+  - chaustierhalter
+  # Hygiene
+  - hygieneartikel
+  - insurancestatus
+  - volljaehrig
+  - jugendlich
+  - notunterkunft
+  - unterkunft
+
 slots:
   unterkunft:
     type: rasa.shared.core.slots.TextSlot
@@ -80,9 +83,9 @@ slots:
     auto_fill: true
     influence_conversation: true
     values:
-    - männlich
-    - weiblich
-    - divers
+      - männlich
+      - weiblich
+      - divers
   alter:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -108,6 +111,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  # Hygiene
   hygieneartikel:
     type: rasa.shared.core.slots.ListSlot
     initial_value: null
@@ -130,60 +134,61 @@ slots:
     influence_conversation: false
 responses: {}
 actions:
-- validate_informationen_form
-- validate_unterkunft_form
-- validate_hygieneliste_form
-- action_answer_hygiene
+  - validate_informationen_form
+  - validate_unterkunft_form
+  - validate_hygiene_form
+  - action_answer_hygiene
+
 forms:
   informationen_form:
     required_slots:
       alter:
-      - entity: alter
-        intent: inform
-        type: from_entity
+        - entity: alter
+          intent: inform
+          type: from_entity
       bgeschlecht:
-      - entity: bgeschlecht
-        intent: inform
-        type: from_entity
-      - intent: deny
-        type: from_intent
-        value: divers
+        - entity: bgeschlecht
+          intent: inform
+          type: from_entity
+        - intent: deny
+          type: from_intent
+          value: divers
       chaustierhalter:
-      - intent: affirm
-        type: from_intent
-        value: true
-      - intent: deny
-        type: from_intent
-        value: false
-      - intent: inform
-        type: from_intent
-        value: None
+        - intent: affirm
+          type: from_intent
+          value: true
+        - intent: deny
+          type: from_intent
+          value: false
+        - intent: inform
+          type: from_intent
+          value: None
       drogenabhaengig:
-      - intent: affirm
-        type: from_intent
-        value: true
-      - intent: deny
-        type: from_intent
-        value: false
-      - intent: inform
-        type: from_intent
-        value: None
+        - intent: affirm
+          type: from_intent
+          value: true
+        - intent: deny
+          type: from_intent
+          value: false
+        - intent: inform
+          type: from_intent
+          value: None
   unterkunft_form:
     required_slots:
       notunterkunft:
-      - intent: affirm
-        type: from_intent
-        value: true
-      - intent: deny
-        type: from_intent
-        value: false
-      - intent: suche_unterkunft
-        type: from_intent
-        value: None
-  hygieneliste_form:
+        - type: from_intent
+          value: true
+          intent: affirm
+        - type: from_intent
+          value: false
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: suche_unterkunft
+  hygiene_form:
     required_slots:
       hygieneartikel:
-      - entity: hygieneartikel
-        intent: hygiene_specific
-        type: from_entity
+        - entity: hygieneartikel
+          intent: hygiene_specific
+          type: from_entity
 e2e_actions: []
