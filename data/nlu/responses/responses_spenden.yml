@@ -1,6 +1,6 @@
 version: "2.0"
 
-responses: 
+responses:
   utter_ask_spendenartikel:
     - text: "Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?"
 
@@ -8,6 +8,4 @@ responses:
     - text: "Möchtest du diese Dinge: {spendenartikel} erhalten?"
 
   utter_geldspende:
-    - text: "Hier ist der Ansprechpartner im Sozialamt: Ralph Wägner (0911 231 -29 03) \nUnd hier verschiedene Stiftungen: \n - Eberhard und 
-    Fanny Ermann'sche Stiftung,\n - Heinrich und Amalie Lang-Stiftung,\n - Heilig-Geist-Spital-Stiftung,\n - Klein'sche Brennmaterialienstiftung,\n - Otto Lauterbach Stiftung
-    \n - Rudolf Volland Stiftung,\n - Sigmund-Schuckert-Stiftung,\n - Wallner'sche Blinden- und Stipendienstiftung,\n - Rudolf und Berta Mathes,\n - Auxiliar-Stiftung,\n - Margarete-Weigel-Stiftung"
+    - text: "Hier ist der Ansprechpartner im Sozialamt: Ralph Wägner (0911 231 -29 03) \nUnd hier verschiedene Stiftungen: \n - Eberhard und Fanny Ermann'sche Stiftung,\n - Heinrich und Amalie Lang-Stiftung,\n - Heilig-Geist-Spital-Stiftung,\n - Klein'sche Brennmaterialienstiftung,\n - Otto Lauterbach Stiftung  \n - Rudolf Volland Stiftung,\n - Sigmund-Schuckert-Stiftung,\n - Wallner'sche Blinden- und Stipendienstiftung,\n - Rudolf und Berta Mathes,\n - Auxiliar-Stiftung,\n - Margarete-Weigel-Stiftung"
