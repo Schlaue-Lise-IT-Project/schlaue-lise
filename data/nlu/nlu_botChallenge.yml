@@ -3,7 +3,28 @@ version: "2.0"
 nlu:
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - mit wem rede ich?
+    - mit wem rede ich
+    - Mit wem rede ich?
+    - Mit wem rede ich
+    - Wer bist du?
+    - wer bist du
+
+- intent: bot_challenge_yes
+  examples: |
+    - Bist du ein Bot?
+    - bist du ein bot
+    - Spreche ich mit einem Bot?
+    - spreche ich mit einem bot
+    - Bist du eine Maschine?
+    - bist du eine maschine
+
+- intent: bot_challenge_no
+  examples: |
+    - Bist du ein Mensch?
+    - bist du ein mensch
+    - Spreche ich mit einem Menschen?
+    - spreche ich mit einem menschen
+    - Bist du menschlich?
+    - bist du menschlich
+
