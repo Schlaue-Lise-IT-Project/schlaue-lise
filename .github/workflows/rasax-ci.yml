@@ -30,8 +30,13 @@ jobs:
           train_args: '--fixed-model-name my_model'
           rasa_test: false
           github_token: ${{ secrets.RASA_GHA_TOKEN }}
+      - name: Set Model Name
+        if: github.ref == 'refs/heads/rasax'
+        run: |
+          model_path=`ls models/*.tar.gz | head -n 1`
       - name: Upload model
         if: github.ref == 'refs/heads/rasax'
         uses: wei/curl@v1
         with:
-          args: curl -k -F "model=@models/my_model.tar.gz" "http://34.159.228.55/projects/default/models?api_token={secrets.RASA_TOKEN}"
+          args: curl -k -F curl -k -F "model=@{model_path}" "http://{secrets.RASA_SERVER_IP}/api/projects/{secrets.RASA_GCLOUD_ID}/models?api_token={secrets.RASA_TOKEN}"
+  
