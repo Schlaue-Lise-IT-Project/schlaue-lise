@@ -17,9 +17,7 @@ intents:
   - spenden
   - spenden_specific
   - geld_benoetigen
-  #- inform_can_not_go_alone
-  - hygiene
-  - unterkunft_suche
+  # Hygiene
   - hygiene_suche
   - hygiene_specific
   - suche_unterkunft
@@ -33,6 +31,7 @@ entities:
   - go_alone
   - haustier
   - haustierhalter
+  # Hygiene
   - hygieneartikel
   - insurancestatus
   - volljaehrig
@@ -74,11 +73,12 @@ slots:
     type: bool
     influence_conversation: true
   haustierhalter:
-    type: text
-    influence_conversation: false
-  haustier:
     type: bool
     influence_conversation: true
+  haustier:
+    type: text
+    influence_conversation: false
+  # Hygiene
   hygieneartikel:
     type: list
     influence_conversation: false
@@ -101,7 +101,7 @@ slots:
 actions:
   - validate_informationen_form
   - validate_unterkunft_form
-  - validate_hygieneliste_form
+  - validate_hygiene_form
   - action_answer_hygiene
   # Spende
   - validate_spendenartikel_form
@@ -151,7 +151,7 @@ forms:
         - type: from_intent
           value: None
           intent: suche_unterkunft
-  hygieneliste_form:
+  hygiene_form:
     required_slots:
       hygieneartikel:
         - type: from_entity

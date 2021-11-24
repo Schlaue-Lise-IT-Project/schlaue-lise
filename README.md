@@ -70,6 +70,18 @@ python -m spacy download de_core_news_md
 
 Ihr habt jetzt ein Python-Environment mit Rasa und allen Dependencies, SpaCy-Dateien, etc. Damit können alle mit demselben Background arbeiten.
 
+## Probleme mit Timeout-Error
+
+Es kann sein, dass manche Computer zu langsam sind, um die entsprechend auf Eingaben zu reagieren. Es kommt dann zu einem `TimeoutError`. Dieser kann folgendermaßen umgangen werden:
+
+```python
+# <Projektverzeichnis>/env\Lib\site-packages\rasa\core\channels\console.py
+
+DEFAULT_STREAM_READING_TIMEOUT_IN_SECONDS = 20 # default: 10
+```
+
+Das ist ein Workaround und keine richtige Lösung. Damit können aber langsame Maschinen die Anfragen bearbeiten.
+
 ## Rasa Befehle
 ```sh
 conda info --env
