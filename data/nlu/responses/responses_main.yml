@@ -44,3 +44,6 @@ responses:
         - Drogen: {drogenabhaengig}
         - Volljährig: {volljaehrig}
         - Unter 22 (jugendlich): {jugendlich}
+  
+  utter_hallo: 
+    - text: "Hallo, ich bin Lise. Wie kann ich dir weiterhelfen?"
