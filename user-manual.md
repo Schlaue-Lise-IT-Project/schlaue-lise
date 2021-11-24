@@ -12,7 +12,7 @@ Die gesamte Kommunikation findet in deutscher Sprache statt. Während der Entwic
   
 
 ## Spenden
-Im Use-Case "Spenden" hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der Einrichtungen ausgegeben.
+Im Anwendungsfall "Spenden" hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der Einrichtungen ausgegeben.
 ### Beispieleingaben:
 #### Um zum Thema Spenden zu kommen:
 ```
@@ -91,7 +91,7 @@ Chatbot: ...hier ist der Ansprechpartner im Sozialamt (Deep Link). Und hier vers
 ##### Zusammenfassung Beispiel 4:
 Die Person benötigt Geld.
 ## Hygieneartikel
-Hier kann der Anwender beliebige Hygieneartikel anfragen und bekommt die entsprechenden Ausgabestellen angezeigt. Diese sind wieder mit einem `Deep Link` verbunden.
+Hier können Anwender:innen beliebige Hygieneartikel anfragen und bekommt die entsprechenden Ausgabestellen angezeigt. Diese sind wieder mit einem `Deep Link` verbunden.
 ### Beispieleingaben:
 #### Allgemein Hygieneartikel benötigt:
 ```
