@@ -3,6 +3,3 @@ version: "2.0"
 responses:
   utter_ask_hygieneartikel:
     - text: "Welche Hygieneartikel benötigst du?"
-
-  utter_greet:
-    - text: "Hallo. Was kann ich für dich tun?"
