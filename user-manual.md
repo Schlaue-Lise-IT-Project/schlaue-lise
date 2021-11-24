@@ -12,8 +12,8 @@ Die gesamte Kommunikation findet in deutscher Sprache statt. Während der Entwic
   
 
 ## Spenden
-In der Funktion "Spenden" besteht die Möglichkeit zu wählen, welche Art von Spende getätigt werden möchte. Der Anwender hat die Wahl, ob er eine Spende benötigt oder eine Spende geben möchte. Dazu fordert der Chatbot den Anwender auf eine entsprechende Eingabe zu tätigen. Nach der Auswahl kann nun ein Artikel eingegeben werden. Nach der Eingabe wird eine Liste mit Einrichtungen angezeigt, die entsprechend Spenden annehmen oder Spenden verteilen. Wenn eine benötigte Spende ein Hygieneartikel ist, wird der Anwender in die Funktion "Hygieneartikel" weitergeleitet.
-### Beispieleingaben (Intents) des Anwenders:
+Im Use-Case "Spenden" hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der Einrichtungen ausgegeben.
+### Beispieleingaben:
 #### Um zum Thema Spenden zu kommen:
 ```
 Ich möchte Spenden erhalten
@@ -54,34 +54,42 @@ brauch geld.
 ```
 #### Beispiel 1 "Spende Hygieneartikel benötigt":
 ```
-Anwender: Ich brauch was.
+Eingabe: Ich brauch was.
 Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
-Anwender: Tampons.
-Chatbot: Tampons und andere Hygieneartikel findest du bei dieser Einrichtung (Deeplink).
+Eingabe: Tampons.
+Chatbot: Tampons und andere Hygieneartikel findest du bei dieser Einrichtung (Deep Link).
 ```
+##### Zusammenfassung Beispiel 1:
+Die Person benötigt Tampons.
 #### Beispiel 2 "Eine Spende benötigen":
 ```
-Anwender: Ich brauch was
+Eingabe: Ich brauch was
 Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
-Anwender: Schlafsack.
+Eingabe: Schlafsack.
 Chatbot: Möchtest du diese Dinge: Schlafsack erhalten?
-Anwender: Ja.
+Eingabe: Ja.
 Chatbot: Alles klar. Diese Artikel: Schlafsack findest du bei diesen Stellen: Obdachlosenhilfe.
 ```
+##### Zusammenfassung Beispiel 2: 
+In diesem Beispiel sucht die Person nach einem Schlafsack.
 #### Beispiel 3 "Eine Spende tätigen":
 ```
-Anwender: Ich hab was abzugeben
+Eingabe: Ich hab was abzugeben
 Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
-Anwender: Schlafsack.
+Eingabe: Schlafsack.
 Chatbot: Möchtest du diese Dinge: Schlafsack erhalten?
-Anwender: Nein
+Eingabe: Nein
 Chatbot: Alles klar. Diese Artikel: Schlafsack kannst du bei diesen Stellen abgeben: Obdachlosenhilfe.
 ```
-#### Beispiel 1 "Geldspende erhalten"
+##### Zusammenfassung Beispiel 3:
+Die Person möchte einen Schlafsack spenden.
+#### Beispiel 4 "Geldspende erhalten"
 ```
-Anwender: Ich brauch Geld.
-Chatbot: ...hier ist der Ansprechpartner im Sozialamt (Deeplink). Und hier verschiedene Stiftungen (Deeplink)
+Eingabe: Ich brauch Geld.
+Chatbot: ...hier ist der Ansprechpartner im Sozialamt (Deep Link). Und hier verschiedene Stiftungen (Deep Link)
 ```
+##### Zusammenfassung Beispiel 4:
+Die Person benötigt Geld.
 ## Hygieneartikel
 Die Funktion "Hygieneartikel" ist total großartig. Hier kann der Anwender beliebige Hygieneartikel anfragen und bekommt die entsprechenden Ausgabestellen angezeigt. Diese sind wieder mit einem `Deep Link` verbunden.
 ### Beispieleingaben (Intents) des Anwenders:
