@@ -83,49 +83,101 @@ Anwender: Ich brauch Geld.
 Chatbot: ...hier ist der Ansprechpartner im Sozialamt (Deeplink). Und hier verschiedene Stiftungen (Deeplink)
 ```
 ## Hygieneartikel
-Die Funktion "Hygieneartikel" ist total großartig. Hier kann der Anwender beliebige Hygieneartikel anfragen und bekommt die entsprechenden Ausgabestellen angezeigt. Diese sind wieder mit einem `Deep Link` verbunden.
-### Beispieleingaben (Intents) des Anwenders:
-#### Hygieneartikel benötigt:
+Hier kann der Anwender beliebige Hygieneartikel anfragen und bekommt die entsprechenden Ausgabestellen angezeigt. Diese sind wieder mit einem `Deep Link` verbunden.
+### Beispieleingaben:
+#### Allgemein Hygieneartikel benötigt:
 ```
 Ich brauche Hygieneartikel.
 Wo bekomme ich Hygieneartikel her?
 ```
+#### Spezifische Suche:
+```
+Ich brauche Binden
+Ich will Kondome
+Ich brauche dringend ein OB
+Brauch eine Packung Watte
+Ein Stück Seife
+Ich benötige Tampons
+Ich brauche Shampoo
+Ich möchte Duschgel
+Brauche dringend Klopapier
+Ich brauche Windeln
+Ich benötige Küchenrollen oder Zewa
+Ich brauche Tempos
+Brauche Taschentücher
+Ich brauche dringend Reinigungstücher
+Ich brauche unbedingt Feuchttücher]
+```
+#### Mögliche Hygieneartikel:
+```
+Seife
+Binden
+Tampons
+OB
+Watte
+Shampoo
+Duschgel
+Klopapier
+Windeln
+Küchenrollen
+Zewa
+Tempos
+Taschentücher
+Reinigungstücher
+Feuchttücher
+```
 #### Beispiel 1 "Seife benötigt"
 ```
-Chatbot: Hallo.
-Anwender: Ich brauch 'Hygieneartikel'.
-Chatbot: Welchen 'Hygieneartikel' benötigst du?
-Anwender: Ich benötige 'Seife'.
-Chatbot: 'Seife' bekommst du bei dieser Einrichtung (Deep Link)
+Anwender: Ich brauch Hygieneartikel.
+Chatbot: Welchen Hygieneartikel benötigst du?
+Anwender: Ich benötige Seife.
+Chatbot: Seife bekommst du bei dieser Einrichtung (Deep Link)
 ```
 ##### Zusammenfassug Beispiel 1:
 In diesem Beispiel sucht eine Person zunächst allgemein nach Hygieneartikel. Nach der Aufforderung den gesuchten Artikel einzugeben, wird eine Liste mit Ausgabestellen angezeit. Es besteht die Möglichkeit über einen Deep Link die Ausgabestellen aufzurufen.
 #### Beispiel 2 "Brauche Taschentücher":
 ```
-Chatbot: Hallo.
-Anwender: Ich will 'Taschentücher' .
-Chatbot: 'Taschentücher' bekommst du bei dieser Einrichtung (Deep Link)
+Anwender: Ich will Taschentücher .
+Chatbot: Taschentücher bekommst du bei dieser Einrichtung (Deep Link)
 ```
 ##### Zusammenfassung Beispiel 2:
 In diesem Beispiel sucht eine Person direkt nach einem Hygieneartikel, dem Taschentuch. Es wird eine Liste mit Ausgabestellen angezeit. Es besteht die Möglichkeit über einen Deep Link die Ausgabestellen aufzurufen.
 ## Schlafen
-Im Use Case `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzten und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
+Im Anwendungfall `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzten und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
 
- Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönliche Daten von der Anwendung abgefragt. Die persönlichen Daten sind das Alter, das Geschlecht, die Frage nach einem Haustier und Drogenabhängigkeit. Danach wird nach der Art der Unterkunft gefragt. Diese teilen sich grundsätzlich in zwei Kategorien ein, nämlich in (kurzfristige) Notunterkunft und längerfristige Unterkunft. 
+Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönliche Daten von der Anwendung abgefragt. Die persönlichen Daten sind das Alter, das Geschlecht, die Frage nach einem Haustier und Drogenabhängigkeit. Danach wird nach der Art der Unterkunft gefragt. Diese teilen sich grundsätzlich in zwei Kategorien ein, nämlich in (kurzfristige) Notunterkunft und längerfristige Unterkunft. 
  
 Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterkunftsmöglichkeiten angezeigt. Aufgrund der Vielzahl an möglichen Eingaben werden alle acht Endpunkte nachfolgend in Beispielen aufgelistet.
-### Beispieleingaben (Intents) des Anwenders:
+### Beispieleingaben:
 #### Unterkunft benötigt:
 ```
-Ich suche einen Schlafplatz für heute Nacht.
-Ich suche eine Wohnung.
-Ich möchte weg von der Straße.
-Bleibe.
-Schlafen.
+Ich suche einen Schlafplatz für heute Nacht
+Ich benötige einen Schlafplatz für heute
+Ich will heute Nacht einen Schlafplatz
+Ich möchte einen Schlafplatz für heute Nacht
+Ich brauche heute ein Dach über dem Kopf
+Ich brauche heute was zum pennen
+Ich brauche für heute Nacht was zum pennen
+Notunterkunft
+Ich suche eine Notunterkunft
+Ich suche eine Wohnung
+Ich brauche eine Wohnung
+Ich will eine Wohnung
+Ich suche nach einem Heimplatz
+Ich möchte ins Obdachlosenheim
+Ich suche längerfistig einen Schlafplatz
+Ich möchte weg von der Straße
+Wohnung
+schlafen
+Dach über dem Kopf
+ratzen
+knacken
+schlummern
+pennen
+Ich brauche einen Ort zum Pennen
 ```
 #### Beispiel 1 "Langfristig Erwachsener":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche eine Unterkunft.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
@@ -151,7 +203,6 @@ Chatbot: Diese Stellen (Deep Link) helfen dir, eine langfristige Unterkunft für
 In diesem Beispiel sucht ein Erwachsener eine längerfristige Unterkunft. Er nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Einrichtungen, die Unterstützung bei der Suche nach einer längerfristigen Unterkunft für Erwachsene anbieten.
 #### Beispiel 2 "Langfristig für Jugendliche":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche was zum Pennen.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
@@ -177,7 +228,6 @@ Chatbot: Diese Stellen (Deep Link) helfen dir, eine langfristige Unterkunft für
 In diesem Beispiel sucht eine Jugendliche eine längerfristige Unterkunft. Sie nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Einrichtungen, die Unterstützung bei der Suche nach einer längerfristigen Unterkunft für Jugendliche anbieten.
 #### Beispiel 3 "Notunterkunft für Männer":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche eine Unterkunft.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
@@ -203,7 +253,6 @@ Chatbot: Hier findest du die Notunterkünfte (Deep Link) für Männer.
 In diesem Beispiel sucht ein junger Erwachsener eine Notunterkunft. Er nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Männer ohne Haustier und ohne Drogenprobleme aufnehmen.
 #### Beispiel 4 "Notunterkunft für Frauen":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche eine Unterkunft.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
@@ -229,7 +278,6 @@ Chatbot: Hier findest du die Notunterkünfte (Deep Link) für Frauen.
 In diesem Beispiel sucht eine erwachsene Frau eine Notunterkunft. Sie nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Frauen ohne Haustier und ohne Drogenprobleme aufnehmen.
 #### Beispiel 5 "Notunterkunft für Diverse":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche eine Unterkunft.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
@@ -256,7 +304,6 @@ Chatbot: Hier findest du alle Notunterkünfte (Deep Link) für Erwachsene aufgel
 In diesem Beispiel sucht eine erwachsener non-binärer Mensch eine Notunterkunft. Dieser nimmt keine Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von allen Notunterkünften die Frauen und Männer ohne Haustier und ohne Drogenprobleme aufnehmen. Da es zum Zeitpunkt der Entwicklung des Prototyps keine Unterkunft für non-binäre Menschen gab, wird auf beide Unterkunftarten verwiesen.
 #### Beispiel 6 "Notunterkunft für Jugendliche":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche was zum Pennen.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
@@ -282,7 +329,6 @@ Chatbot: Hier kannst du eine Notunterkunft (Deep Link) für junge Menschen finde
 In diesem Beispiel sucht ein non-binärer Jugendlicher eine Notunterkunft. Er nimmt keine Drogen und hat kein Haustier. Das Geschlecht spielt keine Rolle für die Auswahl der Unterkünfte, da es in Nürnberg nur danach geht, ob der Mensch jugendlich ist oder nicht. Der Endpunkt ist eine Auflistung von Notunterkünften die nur Jugendliche ohne Haustier und ohne Drogenprobleme aufnehmen.
 #### Beispiel 7 "Notunterkunft mit Tieren":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche eine Unterkunft.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
@@ -308,7 +354,6 @@ Chatbot: Hier kannst du eine Notunterkunft (Deep Link) für Menschen mit Haustie
 In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. Er nimmt keine Drogen, hat jedoch ein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die Menschen mit Haustier und ohne Drogenprobleme aufnehmen. Hat ein Hilfesuchender ein Haustier und ein Drogenproblem wird bei der Auswahl der Notunterkünfte das Haustier priorisiert. Auch das Alter spielt keine Rolle. 
 #### Beispiel 8 "Notunterkunft mit Drogenabhängigkeit":
 ```
-Chatbot: Hallo.
 Anwender: Ich suche eine Unterkunft.
 Chatbot: Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Chatbot: Wie alt bist du?
