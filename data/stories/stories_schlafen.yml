@@ -1,6 +1,7 @@
 version: "2.0"
 
 stories:
+  # Langristige Stories
   - story: M, 32 sucht langfristig Unterkunft
     steps:
       - intent: suche_unterkunft
@@ -83,47 +84,48 @@ stories:
       - active_loop: null
       - action: utter_answer_laengerfristige_unterkunft
 
-  - story: D, 19 sucht langfristig Unterkunft
-    steps:
-      - intent: suche_unterkunft
-      - action: utter_informationen
-      - action: informationen_form
-      - active_loop: informationen_form
-      - slot_was_set:
-          - requested_slot: alter
-      - slot_was_set:
-          - alter: "19"
-      - slot_was_set:
-          - volljaehrig: true
-      - slot_was_set:
-          - jugendlich: true
-      - slot_was_set:
-          - requested_slot: geschlecht
-      - slot_was_set:
-          - geschlecht: divers
-      - slot_was_set:
-          - requested_slot: haustierhalter
-      - slot_was_set:
-          - haustierhalter: false
-      - slot_was_set:
-          - requested_slot: drogenabhaengig
-      - slot_was_set:
-          - drogenabhaengig: false
-      - slot_was_set:
-          - requested_slot: null
-      - active_loop: null
-      - action: utter_informationen_slots_values
-      - action: unterkunft_form
-      - active_loop: unterkunft_form
-      - slot_was_set:
-          - requested_slot: notunterkunft
-      - slot_was_set:
-          - notunterkunft: false
-      - slot_was_set:
-          - requested_slot: null
-      - active_loop: null
-      - action: utter_answer_laengerfristige_unterkunft
+  # - story: D, 19 sucht langfristig Unterkunft
+  #   steps:
+  #     - intent: suche_unterkunft
+  #     - action: utter_informationen
+  #     - action: informationen_form
+  #     - active_loop: informationen_form
+  #     - slot_was_set:
+  #         - requested_slot: alter
+  #     - slot_was_set:
+  #         - alter: "19"
+  #     - slot_was_set:
+  #         - volljaehrig: true
+  #     - slot_was_set:
+  #         - jugendlich: true
+  #     - slot_was_set:
+  #         - requested_slot: geschlecht
+  #     - slot_was_set:
+  #         - geschlecht: divers
+  #     - slot_was_set:
+  #         - requested_slot: haustierhalter
+  #     - slot_was_set:
+  #         - haustierhalter: false
+  #     - slot_was_set:
+  #         - requested_slot: drogenabhaengig
+  #     - slot_was_set:
+  #         - drogenabhaengig: false
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: utter_informationen_slots_values
+  #     - action: unterkunft_form
+  #     - active_loop: unterkunft_form
+  #     - slot_was_set:
+  #         - requested_slot: notunterkunft
+  #     - slot_was_set:
+  #         - notunterkunft: false
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: utter_answer_laengerfristige_unterkunft
 
+  # Notunterkunft mit Drogen & Hund -> Notunterkunft für Menschen mit Hunden
   - story: M, 32, Drogen & Hund sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
@@ -134,6 +136,51 @@ stories:
           - requested_slot: alter
       - slot_was_set:
           - alter: "32"
+      - slot_was_set:
+          - volljaehrig: true
+      - slot_was_set:
+          - jugendlich: false
+      - slot_was_set:
+          - requested_slot: geschlecht
+      - slot_was_set:
+          - geschlecht: männlich
+      - slot_was_set:
+          - requested_slot: haustierhalter
+      - slot_was_set:
+          - haustierhalter: true
+      - slot_was_set:
+          - requested_slot: drogenabhaengig
+      - slot_was_set:
+          - drogenabhaengig: true
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_informationen_slots_values
+      - action: unterkunft_form
+      - active_loop: unterkunft_form
+      - slot_was_set:
+          - requested_slot: notunterkunft
+      - slot_was_set:
+          - notunterkunft: true
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_answer_notunterkunft_hunde
+
+  - story: M, 20 Drogen & Hund sucht Notunterkunft
+    steps:
+      - intent: suche_unterkunft
+        entities:
+          - unterkunft: unterkunft
+      - slot_was_set:
+          - unterkunft: unterkunft
+      - action: utter_informationen
+      - action: informationen_form
+      - active_loop: informationen_form
+      - slot_was_set:
+          - requested_slot: alter
+      - slot_was_set:
+          - alter: "20"
       - slot_was_set:
           - volljaehrig: true
       - slot_was_set:
@@ -206,6 +253,51 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_hunde
 
+  - story: D, 23 Drogen & Hund sucht Notunterkunft
+    steps:
+      - intent: suche_unterkunft
+        entities:
+          - unterkunft: unterkunft
+      - slot_was_set:
+          - unterkunft: unterkunft
+      - action: utter_informationen
+      - action: informationen_form
+      - active_loop: informationen_form
+      - slot_was_set:
+          - requested_slot: alter
+      - slot_was_set:
+          - alter: "23"
+      - slot_was_set:
+          - volljaehrig: true
+      - slot_was_set:
+          - jugendlich: false
+      - slot_was_set:
+          - requested_slot: geschlecht
+      - slot_was_set:
+          - geschlecht: divers
+      - slot_was_set:
+          - requested_slot: haustierhalter
+      - slot_was_set:
+          - haustierhalter: true
+      - slot_was_set:
+          - requested_slot: drogenabhaengig
+      - slot_was_set:
+          - drogenabhaengig: true
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_informationen_slots_values
+      - action: unterkunft_form
+      - active_loop: unterkunft_form
+      - slot_was_set:
+          - requested_slot: notunterkunft
+      - slot_was_set:
+          - notunterkunft: true
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_answer_notunterkunft_hunde
+
   - story: W, 20, Drogen & Hund sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
@@ -247,16 +339,20 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_hunde
 
-  - story: M, 32 & Hund sucht Notunterkunft
+  - story: W, 23 Drogen & Hund sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
+        entities:
+          - unterkunft: unterkunft
+      - slot_was_set:
+          - unterkunft: unterkunft
       - action: utter_informationen
       - action: informationen_form
       - active_loop: informationen_form
       - slot_was_set:
           - requested_slot: alter
       - slot_was_set:
-          - alter: "32"
+          - alter: "23"
       - slot_was_set:
           - volljaehrig: true
       - slot_was_set:
@@ -264,7 +360,7 @@ stories:
       - slot_was_set:
           - requested_slot: geschlecht
       - slot_was_set:
-          - geschlecht: männlich
+          - geschlecht: weiblich
       - slot_was_set:
           - requested_slot: haustierhalter
       - slot_was_set:
@@ -272,7 +368,7 @@ stories:
       - slot_was_set:
           - requested_slot: drogenabhaengig
       - slot_was_set:
-          - drogenabhaengig: false
+          - drogenabhaengig: true
       - slot_was_set:
           - requested_slot: null
       - active_loop: null
@@ -288,46 +384,88 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_hunde
 
-  - story: W, 20 & Hund sucht Notunterkunft
-    steps:
-      - intent: suche_unterkunft
-      - action: utter_informationen
-      - action: informationen_form
-      - active_loop: informationen_form
-      - slot_was_set:
-          - requested_slot: alter
-      - slot_was_set:
-          - alter: "20"
-      - slot_was_set:
-          - volljaehrig: true
-      - slot_was_set:
-          - jugendlich: true
-      - slot_was_set:
-          - requested_slot: geschlecht
-      - slot_was_set:
-          - geschlecht: weiblich
-      - slot_was_set:
-          - requested_slot: haustierhalter
-      - slot_was_set:
-          - haustierhalter: true
-      - slot_was_set:
-          - requested_slot: drogenabhaengig
-      - slot_was_set:
-          - drogenabhaengig: false
-      - slot_was_set:
-          - requested_slot: null
-      - active_loop: null
-      - action: utter_informationen_slots_values
-      - action: unterkunft_form
-      - active_loop: unterkunft_form
-      - slot_was_set:
-          - requested_slot: notunterkunft
-      - slot_was_set:
-          - notunterkunft: true
-      - slot_was_set:
-          - requested_slot: null
-      - active_loop: null
-      - action: utter_answer_notunterkunft_hunde
+  # Notunterkunft mit Hund -> Notunterkunft für Menschen mit Hunden
+  # - story: M, 32 & Hund sucht Notunterkunft
+  #   steps:
+  #     - intent: suche_unterkunft
+  #     - action: utter_informationen
+  #     - action: informationen_form
+  #     - active_loop: informationen_form
+  #     - slot_was_set:
+  #         - requested_slot: alter
+  #     - slot_was_set:
+  #         - alter: "32"
+  #     - slot_was_set:
+  #         - volljaehrig: true
+  #     - slot_was_set:
+  #         - jugendlich: false
+  #     - slot_was_set:
+  #         - requested_slot: geschlecht
+  #     - slot_was_set:
+  #         - geschlecht: männlich
+  #     - slot_was_set:
+  #         - requested_slot: haustierhalter
+  #     - slot_was_set:
+  #         - haustierhalter: true
+  #     - slot_was_set:
+  #         - requested_slot: drogenabhaengig
+  #     - slot_was_set:
+  #         - drogenabhaengig: false
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: utter_informationen_slots_values
+  #     - action: unterkunft_form
+  #     - active_loop: unterkunft_form
+  #     - slot_was_set:
+  #         - requested_slot: notunterkunft
+  #     - slot_was_set:
+  #         - notunterkunft: true
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: utter_answer_notunterkunft_hunde
+
+  # - story: W, 20 & Hund sucht Notunterkunft
+  #   steps:
+  #     - intent: suche_unterkunft
+  #     - action: utter_informationen
+  #     - action: informationen_form
+  #     - active_loop: informationen_form
+  #     - slot_was_set:
+  #         - requested_slot: alter
+  #     - slot_was_set:
+  #         - alter: "20"
+  #     - slot_was_set:
+  #         - volljaehrig: true
+  #     - slot_was_set:
+  #         - jugendlich: true
+  #     - slot_was_set:
+  #         - requested_slot: geschlecht
+  #     - slot_was_set:
+  #         - geschlecht: weiblich
+  #     - slot_was_set:
+  #         - requested_slot: haustierhalter
+  #     - slot_was_set:
+  #         - haustierhalter: true
+  #     - slot_was_set:
+  #         - requested_slot: drogenabhaengig
+  #     - slot_was_set:
+  #         - drogenabhaengig: false
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: utter_informationen_slots_values
+  #     - action: unterkunft_form
+  #     - active_loop: unterkunft_form
+  #     - slot_was_set:
+  #         - requested_slot: notunterkunft
+  #     - slot_was_set:
+  #         - notunterkunft: true
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: utter_answer_notunterkunft_hunde
 
   - story: D, 17 & Hund sucht Notunterkunft
     steps:
@@ -370,6 +508,7 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_hunde
 
+  # Notunterkunft mit Drogen -> Notunterkunft für Menschen mit Drogenproblematik
   - story: M, 16 & Drogen sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
@@ -493,6 +632,7 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_drogen
 
+  # Notunterkunft für Jugendliche -> Notunterkunft für junge Menschen
   - story: M, 16 sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
@@ -616,6 +756,7 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_jugendlich
 
+  # Notunterkunft für Non-Binäre -> Notunterkunft für non-binäre Menschen
   - story: D, 32 sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
@@ -658,6 +799,7 @@ stories:
       - action: utter_information_divers
       - action: utter_answer_notunterkunft_divers
 
+  # Notunterkunft für Frauen -> Notunterkunft für Frauen
   - story: W, 43 sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
@@ -699,6 +841,7 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_weiblich
 
+  # Notunterkunft für Männer -> Notunterkunft für Männer
   - story: M, 23 sucht Notunterkunft
     steps:
       - intent: suche_unterkunft
@@ -740,6 +883,7 @@ stories:
       - active_loop: null
       - action: utter_answer_notunterkunft_maennlich
 
+  # Shortcuts
   - story: M, 32, sucht Notunterkunft (shortcut)
     steps:
       - or:

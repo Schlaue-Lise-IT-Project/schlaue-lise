@@ -48,7 +48,7 @@ class ValidateInformation(FormValidationAction):
             dispatcher.utter_message(text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
             return {"geschlecht": None}
 
-    def validate_haustier(
+    def validate_haustierhalter(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,

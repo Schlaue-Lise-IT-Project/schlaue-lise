@@ -1,29 +1,14 @@
 version: "2.0"
-
 nlu:
   - intent: affirm
     examples: |
-      - yes
-      - y
-      - indeed
-      - of course
-      - that sounds good
-      - correct
       - Ja
       - Natürlich
       - Auf jeden Fall
       - Das klingt gut
       - Korrekt
-
   - intent: deny
     examples: |
-      - no
-      - n
-      - never
-      - I don't think so
-      - don't like that
-      - no way
-      - not really
       - Nein
       - Nö
       - Ich denke nicht
@@ -32,7 +17,6 @@ nlu:
       - Nicht wirklich
       - Auf keinen Fall
       - Nope
-
   - intent: greet
     examples: |
       - hey
@@ -48,7 +32,6 @@ nlu:
       - goodmorning
       - goodevening
       - good afternoon
-
   - intent: goodbye
     examples: |
       - good afternoon
@@ -62,7 +45,6 @@ nlu:
       - see you around
       - bye bye
       - see you later
-
   - intent: mood_great
     examples: |
       - perfect
@@ -79,7 +61,6 @@ nlu:
       - so so perfect
       - so good
       - so perfect
-
   - intent: mood_unhappy
     examples: |
       - my day was horrible
@@ -96,11 +77,61 @@ nlu:
       - extremly sad
       - so saad
       - so sad
-
-  - regex: alter
+  - intent: inform
     examples: |
-      - \d{1,3}
-
+      - Ich bin [18](alter) Jahre alt
+      - Ich bin [17](alter)
+      - Ich bin [52](alter) Jahre
+      - Ich bin unter [18](alter)
+      - Ich bin älter als [18](alter)
+      - [18](alter)
+      - [32](alter)
+      - Ich bin [männlich](geschlecht)
+      - Ich bin ein [Mann]{"entity": "geschlecht", "value": "männlich"}
+      - [Mann]{"entity": "geschlecht", "value": "männlich"}
+      - Ein [Mann]{"entity": "geschlecht", "value": "männlich"}
+      - Ein [Junge]{"entity": "geschlecht", "value": "männlich"}
+      - [Junge]{"entity": "geschlecht", "value": "männlich"}
+      - Ich bin [weiblich](geschlecht)
+      - Ich bin eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
+      - [Frau]{"entity": "geschlecht", "value": "weiblich"}
+      - Eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
+      - Ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - Ein [Mädel]{"entity": "geschlecht", "value": "weiblich"}
+      - [Mädel]{"entity": "geschlecht", "value": "weiblich"}
+      - Ich bin [divers](geschlecht)
+      - Ich fühle mich [keinem geschlecht]{"entity": "geschlecht", "value": "divers"} zugehörig
+      - Ich fühle mich [weder Mann noch Frau]{"entity": "geschlecht", "value": "divers"} zugehörig
+      - Ich bin [weder Mann noch Frau]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [weder Frau noch Mann]{"entity": "geschlecht", "value": "divers"}
+      - Weder noch
+      - Ich bin [nicht binär]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [non-binary]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [non binary]{"entity": "geschlecht", "value": "divers"}
+      - Ich habe einen [Hund](haustier)
+      - Ich habe ein [Haustier](haustier)
+      - Ich habe ein [Tier](haustier)
+      - Ich nehme [Drogen](drogen)
+      - Ich nehme [Meth](drogen)
+      - Ich rauche [Gras](drogen)
+      - Ich bin [drogenabhängig](drogen)
+      - Ich bin [heroinabhängig](drogen)
+      - [14](alter)
+      - Ich bin ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+  - synonym: männlich
+    examples: |
+      - Mann
+      - Junge
+      - Boy
+      - Man
+  - synonym: weiblich
+    examples: |
+      - Frau
+      - Mädchen
+      - Mädel
+      - Girl
+      - Woman
   - synonym: divers
     examples: |
       - keinem Geschlecht
@@ -110,21 +141,9 @@ nlu:
       - non-binary
       - non binary
       - weder noch
-
-  - synonym: männlich
+  - regex: alter
     examples: |
-      - Mann
-      - Junge
-      - Boy
-      - Man
-
-  - synonym: weiblich
-    examples: |
-      - Mädchen
-      - Mädel
-      - Girl
-      - Woman
-
+      - \d{1,3}
   - lookup: drogen
     examples: |
       - Marihuana
@@ -143,43 +162,3 @@ nlu:
       - Pappe
       - Steine
       - Drogen
-
-  - intent: inform
-    examples: |
-      - Ich bin [18](alter) Jahre alt
-      - Ich bin [17](alter)
-      - Ich bin [52](alter) Jahre
-      - Ich bin unter [18](alter)
-      - Ich bin älter als [18](alter)
-      - [18](alter) 
-      - [32](alter)
-      - Ich bin [männlich](geschlecht)
-      - Ich bin ein [Mann]{"entity":"geschlecht", "value":"männlich"}
-      - [Mann]{"entity":"geschlecht", "value":"männlich"}
-      - Ein [Mann]{"entity":"geschlecht", "value":"männlich"}
-      - Ein [Junge]{"entity":"geschlecht", "value":"männlich"}
-      - [Junge]{"entity":"geschlecht", "value":"männlich"}
-      - Ich bin [weiblich](geschlecht) 
-      - Ich bin eine [Frau]{"entity":"geschlecht", "value":"weiblich"}
-      - [Frau]{"entity":"geschlecht", "value":"weiblich"}
-      - Eine [Frau]{"entity":"geschlecht", "value":"weiblich"}
-      - Ein [Mädchen]{"entity":"geschlecht", "value":"weiblich"}
-      - [Mädchen]{"entity":"geschlecht", "value":"weiblich"}
-      - Ein [Mädel]{"entity":"geschlecht", "value":"weiblich"}
-      - [Mädel]{"entity":"geschlecht", "value":"weiblich"}
-      - Ich bin [divers](geschlecht)
-      - Ich fühle mich [keinem Geschlecht]{"entity":"geschlecht", "value":"divers"} zugehörig
-      - Ich fühle mich [weder Mann noch Frau]{"entity":"geschlecht", "value":"divers"} zugehörig
-      - Ich bin [weder Mann noch Frau]{"entity":"geschlecht", "value":"divers"}
-      - Ich bin [weder Frau noch Mann]{"entity":"geschlecht", "value":"divers"}
-      - Ich bin [nicht binär]{"entity":"geschlecht", "value":"divers"}
-      - Ich bin [non-binary]{"entity":"geschlecht", "value":"divers"}
-      - Ich bin [non binary]{"entity":"geschlecht", "value":"divers"}
-      - Ich habe einen [Hund](haustier)
-      - Ich habe ein [Haustier](haustier)
-      - Ich habe ein [Tier](haustier)
-      - Ich nehme [Drogen](drogen)
-      - Ich nehme [Meth](drogen)
-      - Ich rauche [Gras](drogen)
-      - Ich bin [drogenabhängig](drogen)
-      - Ich bin [heroinabhängig](drogen)
