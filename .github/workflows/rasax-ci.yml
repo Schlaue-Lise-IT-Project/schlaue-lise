@@ -34,9 +34,12 @@ jobs:
         if: github.ref == 'refs/heads/rasax'
         run: |
           model_path=`ls models/*.tar.gz | head -n 1`
+          echo "MODEL_PATH=${model_path}" >> $GITHUB_ENV
+          echo "SERVER_IP=${secrets.RASA_SERVER_IP}" >> $GITHUB_ENV
+          echo "GCLOUD_ID=${secrets.RASA_GCLOUD_ID}" >> $GITHUB_ENV
       - name: Upload model
         if: github.ref == 'refs/heads/rasax'
         uses: wei/curl@v1
         with:
-          args: curl -k -F curl -k -F "model=@{model_path}" "http://{secrets.RASA_SERVER_IP}/api/projects/{secrets.RASA_GCLOUD_ID}/models?api_token={secrets.RASA_TOKEN}"
+          args: curl -k -F curl -k -F "model=@${model_path}" "http://${secrets.RASA_SERVER_IP}/api/projects/${secrets.RASA_GCLOUD_ID}/models?api_token=${secrets.RASA_TOKEN}"
   
