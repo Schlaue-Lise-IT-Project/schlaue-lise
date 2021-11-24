@@ -9,7 +9,10 @@ intents:
   - deny
   - mood_great
   - mood_unhappy
+  # Bot Challenge
   - bot_challenge
+  - bot_challenge_yes
+  - bot_challenge_no
   - medicine
   - medicine_requested
   - inform_insurancestatus
