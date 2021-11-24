@@ -7,9 +7,6 @@ responses:
   utter_goodbye:
     - text: "Tschüss!"
 
-  utter_iamabot:
-    - text: "I bin ein Bot, von Rasa entwickelt."
-
   utter_ask_informationen_form_geschlecht:
     - text: "Welchem Geschlecht fühlst du dich zugehörig?"
 
@@ -34,3 +31,6 @@ responses:
         - Drogen: {drogenabhaengig}
         - Volljährig: {volljaehrig}
         - Unter 22 (jugendlich): {jugendlich}
+  
+  utter_hallo: 
+    - text: "Hallo, ich bin Lise. Wie kann ich dir weiterhelfen?"
