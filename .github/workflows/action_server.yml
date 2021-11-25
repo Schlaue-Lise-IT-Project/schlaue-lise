@@ -31,3 +31,12 @@ jobs:
           docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           docker_image_tag: ${{ github.sha }}
           rasa_sdk_version: "2.8.0"
+      - name: Tag Image latest
+        uses: RasaHQ/action-server-gha@main
+        # Full list of parameters: https://github.com/RasaHQ/action-server-gha/tree/master#input-arguments
+        with:
+          docker_image_name: "noopliez/rasa-action-server"
+          docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }} 
+          docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          docker_image_tag: "latest"
+          rasa_sdk_version: "2.8.0"
