@@ -2,26 +2,10 @@ version: "2.0"
 
 responses:
   utter_greet:
-    - text: "Hey! How are you?"
-
-  utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-    - text: "Did that help you?"
-
-  utter_happy:
-    - text: "Great, carry on!"
+    - text: "Hallo! Wie kann ich dir helfen?"
 
   utter_goodbye:
-    - text: "Bye"
-
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-
-  utter_default:
-    - text: "Bitte antworte auf die vorherige Frage."
+    - text: "Tschüss!"
 
   utter_ask_informationen_form_bgeschlecht:
     - text: "Welchem Geschlecht fühlst du dich zugehörig?"
@@ -47,6 +31,6 @@ responses:
         - Drogen: {drogenabhaengig}
         - Volljährig: {volljaehrig}
         - Unter 22 (jugendlich): {jugendlich}
-  
-  utter_hallo: 
+
+  utter_hallo:
     - text: "Hallo, ich bin Lise. Wie kann ich dir weiterhelfen?"

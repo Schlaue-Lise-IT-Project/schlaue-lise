@@ -13,11 +13,12 @@ intents:
       use_entities: true
   - deny:
       use_entities: true
-  - mood_great:
-      use_entities: true
-  - mood_unhappy:
-      use_entities: true
+  # Bot Challenge
   - bot_challenge:
+      use_entities: true
+  - bot_challenge_yes:
+      use_entities: true
+  - bot_challenge_no:
       use_entities: true
   - medicine:
       use_entities: true
@@ -25,9 +26,10 @@ intents:
       use_entities: true
   - inform_insurancestatus:
       use_entities: true
-  - spenden_erhalten:
+  # spenden
+  - spenden:
       use_entities: true
-  - selbst_spenden:
+  - spenden_specific:
       use_entities: true
   - geld_benoetigen:
       use_entities: true
@@ -40,6 +42,8 @@ intents:
       use_entities: true
   - inform:
       use_entities: true
+  # Default / Fallback
+  - out_of_scope
 entities:
   - alter
   - drogen
@@ -55,6 +59,10 @@ entities:
   - jugendlich
   - notunterkunft
   - unterkunft
+  #spenden
+  - spendenartikel
+  - spendeErhalten
+  - geld
 
 slots:
   unterkunft:
@@ -122,6 +130,15 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  # spenden:
+  spendenartikel:
+    type: list
+    influence_conversation: false
+  spendeErhalten:
+    type: bool
+    influence_conversation: true
+  geld:
+    type: text
   drogenabhaengig:
     type: rasa.shared.core.slots.BooleanSlot
     initial_value: null
@@ -138,6 +155,10 @@ actions:
   - validate_unterkunft_form
   - validate_hygiene_form
   - action_answer_hygiene
+  # Spende
+  - validate_spendenartikel_form
+  - action_answer_spende
+  - validate_spendeErhalten_form
 
 forms:
   informationen_form:
@@ -177,10 +198,10 @@ forms:
     required_slots:
       notunterkunft:
         - type: from_intent
-          value: true
+          value: True
           intent: affirm
         - type: from_intent
-          value: false
+          value: False
           intent: deny
         - type: from_intent
           value: None
@@ -191,4 +212,23 @@ forms:
         - entity: hygieneartikel
           intent: hygiene_specific
           type: from_entity
+  # spenden
+  spendenartikel_form:
+    required_slots:
+      spendenartikel:
+        - type: from_entity
+          entity: spendenartikel
+          intent: spende_specific
+  spendeErhalten_form:
+    required_slots:
+      spendeErhalten:
+        - type: from_intent
+          value: True
+          intent: affirm
+        - type: from_intent
+          value: False
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: spenden
 e2e_actions: []
