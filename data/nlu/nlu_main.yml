@@ -1,197 +1,182 @@
 version: "2.0"
 nlu:
-- intent: affirm
-  examples: |
-    - Ja
-    - Natürlich
-    - Auf jeden Fall
-    - Das klingt gut
-    - Korrekt
-    - Klar
-    - Richtig
-- intent: deny
-  examples: |
-    - Nein
-    - Nö
-    - Ich denke nicht
-    - Ich mag das nicht
-    - Ich möchte das nicht
-    - Nicht wirklich
-    - Auf keinen Fall
-    - Nope
-    - Weder
-    - weder
-    - keinen
-    - keinem
-    - kein
-    - Nicht
-    - nicht
-    - Nee
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hallo
-    - halo
-    - guten Morgen
-    - guten Tag
-    - guten Abend
-    - gute Nacht
-    - guten Nachmittag
-    - moin
-    - hey dude
-    - auf geht's
-    - servus
-    - griaß di
-- intent: goodbye
-  examples: |
-    - Schönen Abend noch
-    - bis bald
-    - Aufwiedersehen
-    - tschau
-    - bis zum nächsten mal
-    - guten abend
-    - bye
-    - goodbye
-    - schönen Tag noch
-    - auf wiedersehen
-    - bye bye
-    - machs gut
-- intent: inform
-  examples: |
-    - Ich bin [18](alter) Jahre alt
-    - Ich bin [17](alter)
-    - Ich bin [52](alter) Jahre
-    - Ich bin unter [18](alter)
-    - Ich bin älter als [18](alter)
-    - [18](alter)
-    - [32](alter)
-    - Ich bin [männlich](geschlecht)
-    - Ich bin ein [Mann]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - ich bin ein [mann]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Ich gehöre zu den [Männern]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - ich gehöre zu den [männern]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - [Männer]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - [männer]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Ich gehöre zu den [Jungs]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - ich gehöre zu den [jungs]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - [Mann]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Ein [Mann]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Ein [Junge]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - [junge]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - gehöre zu den [jungs]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Gehöre zu den [Jungs]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Bin ein [Boy]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - ein [boy]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - [boys]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Zu [Boys]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Zu [Man]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - a [man]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Zu [Men]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - [men]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - Ich bin [weiblich](geschlecht)
-    - Ich bin eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
-    - ich bin eine [frau]{"entity": "geschlecht", "value": "weiblich"}
-    - ich gehöre zu den [frauen]{"entity": "geschlecht", "value": "weiblich"}
-    - Ich gehöre zu den [Frauen]{"entity": "geschlecht", "value": "weiblich"}
-    - Ich gehöre zu den [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-    - ich gehöre zu den [mädchen]{"entity": "geschlecht", "value": "weiblich"}
-    - [Frau]{"entity": "geschlecht", "value": "weiblich"}
-    - Eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
-    - Ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-    - ein [mädchen]{"entity": "geschlecht", "value": "weiblich"}
-    - [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-    - Ein [Mädel]{"entity": "geschlecht", "value": "weiblich"}
-    - ein [mädel]{"entity": "geschlecht", "value": "weiblich"}
-    - [Mädel]{"entity": "geschlecht", "value": "weiblich"}
-    - zu den [mädels]{"entity": "geschlecht", "value": "weiblich"}
-    - Zu [Mädels]{"entity": "geschlecht", "value": "weiblich"}
-    - Bin ein [Girl]{"entity": "geschlecht", "value": "weiblich"}
-    - ein [girl]{"entity": "geschlecht", "value": "weiblich"}
-    - Zu den [Girls]{"entity": "geschlecht", "value": "weiblich"}
-    - zu [girls]{"entity": "geschlecht", "value": "weiblich"}
-    - A [Woman]{"entity": "geschlecht", "value": "weiblich"}
-    - [woman]{"entity": "geschlecht", "value": "weiblich"}
-    - Zu [Women]{"entity": "geschlecht", "value": "weiblich"}
-    - Zu [women]{"entity": "geschlecht", "value": "weiblich"}
-    - Ich bin [divers](geschlecht)
-    - Ich bin [nicht binär]{"entity": "geschlecht", "value": "divers"}
-    - Ich bin [non-binary]{"entity": "geschlecht", "value": "divers"}
-    - Ich bin [non binär]{"entity": "geschlecht", "value": "divers"}
-    - Ich bin [non binary]{"entity": "geschlecht", "value": "divers"}
-    - Ich habe einen [Hund](haustier)
-    - Ich habe ein [Haustier](haustier)
-    - Ich habe ein [Tier](haustier)
-    - Ich nehme [Drogen](drogen)
-    - Ich nehme [Meth](drogen)
-    - Ich rauche [Gras](drogen)
-    - Ich bin [drogenabhängig](drogen)
-    - Ich bin [heroinabhängig](drogen)
-- synonym: männlich
-  examples: |
-    - Mann
-    - mann
-    - Männern
-    - männern
-    - Männer
-    - männer
-    - Jungs
-    - jungs
-    - Junge
-    - junge
-    - Boy
-    - boy
-    - boys
-    - Boys
-    - Man
-    - man
-    - Men
-    - men
-- synonym: weiblich
-  examples: |
-    - Frau
-    - frau
-    - frauen
-    - Frauen
-    - Mädchen
-    - mädchen
-    - Mädel
-    - mädel
-    - mädels
-    - Mädels
-    - Girl
-    - girl
-    - Girls
-    - girls
-    - Woman
-    - woman
-    - Women
-    - women
-- synonym: divers
-  examples: |
-    - nicht binär
-    - non-binary
-    - non binär
-    - non binary
-- regex: alter
-  examples: |
-    - \d{1,3}
-- lookup: drogen
-  examples: |
-    - Marihuana
-    - Weed
-    - Gras
-    - Speed
-    - Ecstasy
-    - Pillen
-    - Pepp
-    - Koks
-    - Meth
-    - Crystal Meth
-    - Crystal
-    - Heroin
-    - Hero
-    - Pappe
-    - Steine
-    - Drogen
+  - intent: affirm
+    examples: |
+      - Ja
+      - ja 
+      - Natürlich
+      - Auf jeden Fall
+      - Das klingt gut
+      - Korrekt
+      - Klar
+      - Richtig
+  - intent: deny
+    examples: |
+      - Nein
+      - nein
+      - Nö
+      - Ich denke nicht
+      - Ich mag das nicht
+      - Ich möchte das nicht
+      - Nicht wirklich
+      - Auf keinen Fall
+      - Nope
+      - Weder
+      - weder
+      - keinen
+      - keinem
+      - kein
+      - Nicht
+      - nicht
+      - Nee
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hallo
+      - halo
+      - guten Morgen
+      - guten Tag
+      - guten Abend
+      - gute Nacht
+      - guten Nachmittag
+      - moin
+      - hey dude
+      - auf geht's
+      - servus
+      - griaß di
+  - intent: goodbye
+    examples: |
+      - Schönen Abend noch
+      - bis bald
+      - Aufwiedersehen
+      - tschau
+      - bis zum nächsten mal
+      - guten abend
+      - bye
+      - goodbye
+      - schönen Tag noch
+      - auf wiedersehen
+      - bye bye
+      - machs gut
+
+  - intent: inform
+    examples: |
+      - Ich bin [18](alter) Jahre alt
+      - Ich bin [17](alter)
+      - Ich bin [52](alter) Jahre
+      - Ich bin unter [18](alter)
+      - Ich bin älter als [18](alter)
+      - [18](alter)
+      - [32](alter)
+      - Ich bin [männlich](geschlecht)
+      - Ich bin ein [Mann]{"entity": "geschlecht", "value": "männlich"}
+      - ich bin ein [mann]{"entity": "geschlecht", "value": "männlich"}
+      - Ich gehöre zu den [Männern]{"entity": "geschlecht", "value": "männlich"}
+      - ich gehöre zu den [männern]{"entity": "geschlecht", "value": "männlich"}
+      - [Männer]{"entity": "geschlecht", "value": "männlich"}
+      - [männer]{"entity": "geschlecht", "value": "männlich"}
+      - Ich gehöre zu den [Jungs]{"entity": "geschlecht", "value": "männlich"}
+      - ich gehöre zu den [jungs]{"entity": "geschlecht", "value": "männlich"}
+      - [Mann]{"entity": "geschlecht", "value": "männlich"}
+      - Ein [Mann]{"entity": "geschlecht", "value": "männlich"}
+      - Ein [Junge]{"entity": "geschlecht", "value": "männlich"}
+      - [junge]{"entity": "geschlecht", "value": "männlich"}
+      - gehöre zu den [jungs]{"entity": "geschlecht", "value": "männlich"}
+      - Gehöre zu den [Jungs]{"entity": "geschlecht", "value": "männlich"}
+      - Bin ein [Boy]{"entity": "geschlecht", "value": "männlich"}
+      - ein [boy]{"entity": "geschlecht", "value": "männlich"}
+      - [boys]{"entity": "geschlecht", "value": "männlich"}
+      - Zu [Boys]{"entity": "geschlecht", "value": "männlich"}
+      - Zu [Man]{"entity": "geschlecht", "value": "männlich"}
+      - a [man]{"entity": "geschlecht", "value": "männlich"}
+      - Zu [Men]{"entity": "geschlecht", "value": "männlich"}
+      - [men]{"entity": "geschlecht", "value": "männlich"}
+      - Ich bin [weiblich](geschlecht)
+      - Ich bin eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
+      - ich bin eine [frau]{"entity": "geschlecht", "value": "weiblich"}
+      - ich gehöre zu den [frauen]{"entity": "geschlecht", "value": "weiblich"}
+      - Ich gehöre zu den [Frauen]{"entity": "geschlecht", "value": "weiblich"}
+      - Ich gehöre zu den [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - ich gehöre zu den [mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - [Frau]{"entity": "geschlecht", "value": "weiblich"}
+      - Eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
+      - Ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - ein [mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - Ein [Mädel]{"entity": "geschlecht", "value": "weiblich"}
+      - ein [mädel]{"entity": "geschlecht", "value": "weiblich"}
+      - [Mädel]{"entity": "geschlecht", "value": "weiblich"}
+      - zu den [mädels]{"entity": "geschlecht", "value": "weiblich"}
+      - Zu [Mädels]{"entity": "geschlecht", "value": "weiblich"}
+      - Bin ein [Girl]{"entity": "geschlecht", "value": "weiblich"}
+      - ein [girl]{"entity": "geschlecht", "value": "weiblich"}
+      - Zu den [Girls]{"entity": "geschlecht", "value": "weiblich"}
+      - zu [girls]{"entity": "geschlecht", "value": "weiblich"}
+      - A [Woman]{"entity": "geschlecht", "value": "weiblich"}      
+      - [woman]{"entity": "geschlecht", "value": "weiblich"}      
+      - Zu [Women]{"entity": "geschlecht", "value": "weiblich"}
+      - Zu [women]{"entity": "geschlecht", "value": "weiblich"}
+      - Ich bin [divers](geschlecht)
+      - Ich bin [nicht binär]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [non-binary]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [non binär]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [non binary]{"entity": "geschlecht", "value": "divers"}
+      - Ich habe einen [Hund](haustier)
+      - Ich habe ein [Haustier](haustier)
+      - Ich habe ein [Tier](haustier)
+      - Ich nehme [Drogen](drogen)
+      - Ich nehme [Meth](drogen)
+      - Ich rauche [Gras](drogen)
+      - Ich bin [drogenabhängig](drogen)
+      - Ich bin [heroinabhängig](drogen)
+  - synonym: männlich
+    examples: |
+      - Männer
+      - Männern
+      - Mann
+      - Junge
+      - Jungs
+      - Boy
+      - Boys
+      - Man
+      - Men
+  - synonym: weiblich
+    examples: |
+      - Frauen
+      - Frau
+      - Mädchen
+      - Mädel
+      - Mädels
+      - Girl
+      - Girls
+      - Woman
+      - Women
+  - synonym: divers
+    examples: |
+      - nicht binär
+      - non-binary
+      - non binär
+      - non binary
+  - regex: alter
+    examples: |
+      - \d{1,3}
+  - lookup: drogen
+    examples: |
+      - Marihuana
+      - Weed
+      - Gras
+      - Speed
+      - Ecstasy
+      - Pillen
+      - Pepp
+      - Koks
+      - Meth
+      - Crystal Meth
+      - Crystal
+      - Heroin
+      - Hero
+      - Pappe
+      - Steine
+      - Drogen

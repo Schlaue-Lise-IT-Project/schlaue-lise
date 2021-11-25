@@ -6,6 +6,7 @@ rules:
       - action: spendenartikel_form
       - intent: geld_benoetigen
       - action: utter_geldspende
+      - action: action_answer_url
 
   - rule: Spende -> Hygieneartikel
     steps:
@@ -21,6 +22,7 @@ rules:
           - requested_slot: null
       - active_loop: null
       - action: action_answer_hygiene
+      - action: action_answer_url
 
   - rule: Spende -> Hygieneartikel
     steps:
@@ -36,6 +38,7 @@ rules:
           - requested_slot: null
       - active_loop: null
       - action: action_answer_hygiene
+      - action: action_answer_url
 
   - rule: Spende nachfragen, true
     condition:
@@ -52,6 +55,7 @@ rules:
           - requested_slot: null
       - active_loop: null
       - action: action_answer_spende
+      - action: action_answer_url
 
   - rule: Spende nachfragen, false
     condition:
@@ -68,6 +72,7 @@ rules:
           - requested_slot: null
       - active_loop: null
       - action: action_answer_spende
+      - action: action_answer_url
 
   - rule: SpendeErhalten nachfragen, true
     condition:
@@ -75,6 +80,7 @@ rules:
           - spendeErhalten: True
     steps:
       - action: action_answer_spende
+      - action: action_answer_url
 
   - rule: SpendeErhalten nachfragen, false
     condition:
@@ -82,3 +88,4 @@ rules:
           - spendeErhalten: False
     steps:
       - action: action_answer_spende
+      - action: action_answer_url

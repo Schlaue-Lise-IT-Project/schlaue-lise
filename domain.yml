@@ -20,11 +20,16 @@ intents:
       use_entities: true
   - bot_challenge_no:
       use_entities: true
+  # Medizin
   - medicine:
       use_entities: true
   - medicine_requested:
       use_entities: true
-  - inform_insurancestatus:
+  - medicine_specific_insurancestatus:
+      use_entities: true
+  - medicine_specific_emergency:
+      use_entities: true
+  - medicine_all_information:
       use_entities: true
   # spenden
   - spenden:
@@ -50,11 +55,13 @@ entities:
   - drogenabhaengig
   - bgeschlecht
   - go_alone
+  - medicine
+  - emergency
+  - insurancestatus
   - haustier
   - chaustierhalter
   # Hygiene
   - hygieneartikel
-  - insurancestatus
   - volljaehrig
   - jugendlich
   - notunterkunft
@@ -76,11 +83,6 @@ slots:
     auto_fill: true
     influence_conversation: true
   insurancestatus:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  go_alone:
     type: rasa.shared.core.slots.BooleanSlot
     initial_value: null
     auto_fill: true
@@ -94,6 +96,16 @@ slots:
       - männlich
       - weiblich
       - divers
+  medicine:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  emergency:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   alter:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -159,6 +171,9 @@ actions:
   - validate_spendenartikel_form
   - action_answer_spende
   - validate_spendeErhalten_form
+  # URL
+  - action_answer_url
+  - validate_medicine_form
 
 forms:
   informationen_form:
@@ -231,4 +246,26 @@ forms:
         - type: from_intent
           value: None
           intent: spenden
+  medicine_form:
+    required_slots:
+      emergency:
+        - type: from_intent
+          value: True
+          intent: affirm
+        - type: from_intent
+          value: False
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: medicine_requested
+      insurancestatus:
+        - type: from_intent
+          value: True
+          intent: affirm
+        - type: from_intent
+          value: False
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: medicine_requested
 e2e_actions: []
