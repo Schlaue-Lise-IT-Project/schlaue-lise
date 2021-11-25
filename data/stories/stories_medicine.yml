@@ -1,5 +1,98 @@
 version: "2.0"
 
-stories: 
+stories:
+  - story: versichert und kein notfall
+    steps:
+      - or:
+          - intent: medicine_requested
+          - intent: medicine_specific_insurancestatus
+            entities:
+              - insurancestatus: insurancestatus
+          - intent: medicine_specific_emergency
+            entities:
+              - emergency: emergency
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emegency
+      - slot_was_set:
+          - emergency: false
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - slot_was_set:
+          - insurancestatus: true
+      - active_loop: null
+      - action: utter_answer_medical_assistance
 
+  - story: nicht versichert und kein notfall
+    steps:
+      - or:
+          - intent: medicine_requested
+          - intent: medicine_specific_insurancestatus
+            entities:
+              - insurancestatus: insurancestatus
+          - intent: medicine_specific_emergency
+            entities:
+              - emergency: emergency
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emegency
+      - slot_was_set:
+          - emergency: false
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - slot_was_set:
+          - insurancestatus: false
+      - active_loop: null
+      - action: utter_answer_medical_assistance
 
+  - story: versichert und notfall
+    steps:
+      - or:
+          - intent: medicine_requested
+          - intent: medicine_specific_insurancestatus
+            entities:
+              - insurancestatus: insurancestatus
+          - intent: medicine_specific_emergency
+            entities:
+              - emergency: emergency
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emegency
+      - slot_was_set:
+          - emergency: true
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - slot_was_set:
+          - insurancestatus: true
+      - active_loop: null
+      - action: utter_answer_emergeny
+
+  - story: nicht versichert und notfall
+    steps:
+      - or:
+          - intent: medicine_requested
+          - intent: medicine_specific_insurancestatus
+            entities:
+              - insurancestatus: insurancestatus
+          - intent: medicine_specific_emergency
+            entities:
+              - emergency: emergency
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: emegency
+      - slot_was_set:
+          - emergency: true
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - slot_was_set:
+          - insurancestatus: false
+      - active_loop: null
+      - action: utter_answer_emergeny
