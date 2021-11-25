@@ -34,13 +34,13 @@ responses:
   utter_answer_notunterkunft_maennlich:
     - text: "Hier findest du die Notunterkünfte für Männer. \n - Domus Misericordiae Notschlafstelle für wohnungslose Männer\n - Haus Großweidenmühlstraße Haus für Männer\n - Die Heilsarmee Sozialwerk Nbg. Notübernachtung"
 
-  utter_ask_informationen_form_geschlecht:
+  utter_ask_informationen_form_bgeschlecht:
     - text: "Welchem Geschlecht fühlst du dich zugehörig?"
 
   utter_ask_informationen_form_alter:
     - text: "Wie alt bist du?"
 
-  utter_ask_informationen_form_haustierhalter:
+  utter_ask_informationen_form_chaustierhalter:
     - text: "Hast du ein Haustier?"
 
   utter_ask_informationen_form_drogenabhaengig:
