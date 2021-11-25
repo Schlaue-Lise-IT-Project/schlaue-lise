@@ -14,7 +14,7 @@ rules:
       - active_loop: null
       - slot_was_set:
           - emergency: False
-      - action: utter_answer_medical_assistance
+      - action: utter_answer_medical_assistance_insurance_true
 
   - rule: Versicherung vorhanden (emergency true)
     condition:
@@ -44,7 +44,7 @@ rules:
       - active_loop: null
       - slot_was_set:
           - emergency: False
-      - action: utter_answer_medical_assistance
+      - action: utter_answer_medical_assistance_insurance_false
 
   - rule: Keine Versicherung vorhanden (emergency true)
     condition:
@@ -61,7 +61,7 @@ rules:
           - emergency: True
       - action: utter_answer_emergeny
 
-  - rule: Notfall erkannt
+  - rule: Notfall erkannt (insurancestatus > true)
     condition:
       - slot_was_set:
           - emergency: True
@@ -72,9 +72,26 @@ rules:
       - slot_was_set:
           - requested_slot: insurancestatus
       - active_loop: null
+      - slot_was_set:
+          - insurancestatus: True
       - action: utter_answer_emergeny
 
-  - rule: Kein Notfall
+  - rule: Notfall erkannt (insurancestatus > false)
+    condition:
+      - slot_was_set:
+          - emergency: True
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - active_loop: null
+      - slot_was_set:
+          - insurancestatus: False
+      - action: utter_answer_emergeny
+
+  - rule: Kein Notfall (insurancestatus > true)
     condition:
       - slot_was_set:
           - emergency: False
@@ -85,4 +102,21 @@ rules:
       - slot_was_set:
           - requested_slot: insurancestatus
       - active_loop: null
-      - action: utter_answer_medical_assistance
+      - slot_was_set:
+          - insurancestatus: True
+      - action: utter_answer_medical_assistance_insurance_true
+
+  - rule: Kein Notfall (insurancestatus > false)
+    condition:
+      - slot_was_set:
+          - emergency: False
+    steps:
+      - action: utter_open_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+      - slot_was_set:
+          - requested_slot: insurancestatus
+      - active_loop: null
+      - slot_was_set:
+          - insurancestatus: False
+      - action: utter_answer_medical_assistance_insurance_false

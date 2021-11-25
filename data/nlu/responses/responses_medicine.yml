@@ -16,7 +16,7 @@ responses:
   utter_ask_insurancestatus:
     - text: "Bist du krankenversichert? "
 
-  utter_answer_medical_assistance:
+  utter_answer_medical_assistance_insurance_true:
     - text: |
         > Deine erkannten Informationen sind: 
           - Notfall: {emergency}
@@ -24,6 +24,20 @@ responses:
 
         Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
            - ...
+
+  utter_answer_medical_assistance_insurance_false:
+    - text: |
+        > Deine erkannten Informationen sind: 
+          - Notfall: {emergency}
+          - Versicherungsstatus: {insurancestatus}
+
+        Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
+           Ambulanz Klinikum Nord 
+           Prof.-Ernst-Nathan-Str. 1 90419 Nürnberg
+           0911 3980
+           Geöffnet 0:00 - 24:00 
+
+           ...
 
   utter_answer_emergeny:
     - text: |
