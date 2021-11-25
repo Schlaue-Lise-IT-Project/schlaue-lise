@@ -9,27 +9,52 @@ responses:
         - type: slot
           name: volljaehrig
           value: True
-      text: "Diese Stellen helfen dir, eine langfristige Unterkunft für Erwachsene zu finden."
+      text: "Diese Stellen helfen dir, eine langfristige Unterkunft für Erwachsene zu finden: \n - Amt für Existenzsicherung und soziale Integration - Sozialamt \n - Unterbringung in Pensionen \n - Unterbringung in stadteigenen Wohnungen \n - Vermittlung von Wohnungen in Sozialimmobilien \n - Hilfen für Wohnungslose, Nichtsesshafte und Durchreisende"
 
-    - text: "Diese Stellen können dir helfen, eine langfristige Unterkunft für Minderjährige zu finden."
+    - text: "Diese Stellen können dir helfen, eine langfristige Unterkunft für Minderjährige zu finden. \n - Zentrale des Jugendamts im Sozialrathaus\n - Kinder- und Jugendhilfezentrum \n - SleepIn"
 
   utter_answer_notunterkunft_hunde:
-    - text: "Hier kannst du eine Notunterkunft für Menschen mit Haustier finden."
+    - text: "Hier kannst du eine Notunterkunft für Menschen mit Haustier finden.\n - Quartier \n - Tierheim & Tierschutzverein Nürnberg, Fürth u. Umg. e. V."
 
   utter_answer_notunterkunft_drogen:
-    - text: "Hier findest du eine Notunterkunft für Menschen mit Drogenproblemen."
+    - text: "Hier findest du eine Notunterkunft für Menschen mit Drogenproblemen.\n - Hängematte e.V."
 
   utter_answer_notunterkunft_jugendlich:
-    - text: "Hier kannst du eine Notunterkunft für junge Menschen finden."
+    - text: "Hier kannst du eine Notunterkunft für junge Menschen finden. \n - SleepIn"
 
   utter_information_divers:
     - text: "Nürnberg verfügt derzeit noch über keine gesonderten Schlafplatzangebote für nicht-binäre Menschen.\n\nWir zeigen dir deshalb alle Einrichtungen für Männer und Frauen an, damit du selbst entscheiden kannst, welche Option für dich am besten passt."
 
   utter_answer_notunterkunft_divers:
-    - text: "Hier findest du alle Notunterkünfte für Erwachsene aufgelistet."
+    - text: "Hier findest du alle Notunterkünfte für Erwachsene aufgelistet.  \n - Haus Großweidenmühlstraße Haus für Frauen \n - Die Heilsarmee Sozialwerk Nbg. Facheinrichtung für Frauen \n - Domus Misericordiae Notschlafstelle für wohnungslose Männer\n - Haus Großweidenmühlstraße Haus für Männer\n - Die Heilsarmee Sozialwerk Nbg. Notübernachtung"
 
   utter_answer_notunterkunft_weiblich:
-    - text: "Hier findest du die Notunterkünfte für Frauen."
+    - text: "Hier findest du die Notunterkünfte für Frauen. \n - Haus Großweidenmühlstraße Haus für Frauen \n - Die Heilsarmee Sozialwerk Nbg. Facheinrichtung für Frauen"
 
   utter_answer_notunterkunft_maennlich:
-    - text: "Hier findest du die Notunterkünfte für Männer."
+    - text: "Hier findest du die Notunterkünfte für Männer. \n - Domus Misericordiae Notschlafstelle für wohnungslose Männer\n - Haus Großweidenmühlstraße Haus für Männer\n - Die Heilsarmee Sozialwerk Nbg. Notübernachtung"
+
+  utter_ask_informationen_form_geschlecht:
+    - text: "Welchem Geschlecht fühlst du dich zugehörig?"
+
+  utter_ask_informationen_form_alter:
+    - text: "Wie alt bist du?"
+
+  utter_ask_informationen_form_haustierhalter:
+    - text: "Hast du ein Haustier?"
+
+  utter_ask_informationen_form_drogenabhaengig:
+    - text: "Nimmst du Drogen?"
+
+  utter_informationen:
+    - text: "Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert."
+
+  utter_informationen_slots_values:
+    - text: |+
+        Folgende Informationen wurden erfasst (werden nicht abgespeichert):
+        - Alter: {alter}
+        - Geschlecht: {geschlecht}
+        - Haustier: {haustierhalter}
+        - Drogen: {drogenabhaengig}
+        - Volljährig: {volljaehrig}
+        - Unter 22 (jugendlich): {jugendlich}

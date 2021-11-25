@@ -197,6 +197,7 @@ events.db-wal
 rasa.db
 rasa.db-shm
 rasa.db-wal
+story_graph.dot
 
 # OS 
 .DS_Store

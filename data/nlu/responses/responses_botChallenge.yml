@@ -1,0 +1,11 @@
+version: "2.0"
+
+responses:
+  utter_iamabot:
+    - text: "Ich bin ein Chat-Assistent, der dir bei der Navigation durch die App hilft."
+
+  utter_yesiamabot:
+    - text: "Ja, ich bin ein Chat-Assistent, der dir bei der Navigation durch die App hilft."
+    
+  utter_noiamabot:
+    - text: "Nein, ich bin ein Chat-Assistent, der dir bei der Navigation durch die App hilft."

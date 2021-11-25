@@ -1,0 +1,11 @@
+version: "2.0"
+
+responses:
+  utter_out_of_scope:
+    - text: "Out_of_scope: Es tut mir Leid, da kann ich dir nicht helfen. Ich kann dir aber zum Beispiel helfen einen Schlafplatz, Arzt, Hygieneartikel oder anderweitige Hilfsgüter zu finden, wenn du dazu eine Anfrage hast."
+
+  utter_please_rephrase:
+    - text: "Please_rephrase: Es tut mir Leid, ich hab dich nicht verstanden, bitte formuliere deine Anfrage neu. Ich kann dir helfen einen Schlafplatz, Arzt, Hygieneartikel oder anderweitige Hilfsgüter zu finden."
+
+  utter_default:
+    - text: "Default: Es tut mir Leid, ich hab dich nicht verstanden, bitte formuliere deine Anfrage neu. Ich kann dir helfen einen Schlafplatz, Arzt, Hygieneartikel oder anderweitige Hilfsgüter zu finden."
