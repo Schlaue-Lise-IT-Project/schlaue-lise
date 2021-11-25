@@ -34,5 +34,9 @@ jobs:
         run: |
           model_path=`ls models/*.tar.gz | head -n 1`
           echo "MODEL_PATH=${model_path}" >> $GITHUB_ENV
-          curl -k -F "model=@${{ env.MODEL_PATH }}" "http://34.159.228.55/api/projects/rasa-x-332920/models?api_token=${{ secrets.RASA_TOKEN }}"
+      - name: Upload Model
+        if: github.ref == 'refs/heads/rasax'
+        uses: wei/curl@v1
+        with:
+          args: -k -F "model=@${{ env.MODEL_PATH }}" "http://34.159.228.55/api/projects/rasa-x-332920/models?api_token=${{ secrets.RASA_TOKEN }}"
   
