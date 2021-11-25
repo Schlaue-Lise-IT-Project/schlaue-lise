@@ -10,7 +10,7 @@ from rasa_sdk.types import DomainDict
 from rasa_sdk import Action, Tracker
 
 
-# logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 class ValidateInformation(FormValidationAction):
     def name(self) -> Text:
