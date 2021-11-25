@@ -53,8 +53,8 @@ responses:
     - text: |+
         Folgende Informationen wurden erfasst (werden nicht abgespeichert):
         - Alter: {alter}
-        - Geschlecht: {geschlecht}
-        - Haustier: {haustierhalter}
+        - Geschlecht: {bgeschlecht}
+        - Haustier: {chaustierhalter}
         - Drogen: {drogenabhaengig}
         - Volljährig: {volljaehrig}
         - Unter 22 (jugendlich): {jugendlich}
