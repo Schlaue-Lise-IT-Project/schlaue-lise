@@ -7,30 +7,5 @@ responses:
   utter_goodbye:
     - text: "Tschüss!"
 
-  utter_ask_informationen_form_bgeschlecht:
-    - text: "Welchem Geschlecht fühlst du dich zugehörig?"
-
-  utter_ask_informationen_form_alter:
-    - text: "Wie alt bist du?"
-
-  utter_ask_informationen_form_chaustierhalter:
-    - text: "Hast du ein Haustier?"
-
-  utter_ask_informationen_form_drogenabhaengig:
-    - text: "Nimmst du Drogen?"
-
-  utter_informationen:
-    - text: "Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert."
-
-  utter_informationen_slots_values:
-    - text: |+
-        Folgende Informationen wurden erfasst (werden nicht abgespeichert):
-        - Alter: {alter}
-        - Geschlecht: {bgeschlecht}
-        - Haustier: {chaustierhalter}
-        - Drogen: {drogenabhaengig}
-        - Volljährig: {volljaehrig}
-        - Unter 22 (jugendlich): {jugendlich}
-
   utter_hallo:
     - text: "Hallo, ich bin Lise. Wie kann ich dir weiterhelfen?"
