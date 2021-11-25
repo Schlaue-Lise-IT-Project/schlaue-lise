@@ -122,6 +122,9 @@ forms:
         - type: from_entity
           entity: geschlecht
           intent: inform
+        - type: from_intent
+          intent: deny
+          value: divers
       haustierhalter:
         - type: from_intent
           value: True

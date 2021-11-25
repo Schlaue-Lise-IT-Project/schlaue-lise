@@ -19,6 +19,13 @@ nlu:
       - Nicht wirklich
       - Auf keinen Fall
       - Nope
+      - Weder
+      - weder
+      - keinen
+      - keinem
+      - kein
+      - Nicht
+      - nicht
       - Nee
   - intent: greet
     examples: |
