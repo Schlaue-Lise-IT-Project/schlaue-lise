@@ -462,7 +462,7 @@ In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. Er nimmt Droge
 
 ## Medizin
 
-In dem Fall, dass man medizinische Hilfe braucht, können hier Adressen und Kontaktdaten zu medizinischen Hilfsstellen entsprechend des Versicherungsstatuses der/des Anwender:in abgefragt werden. Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden.
+In dem Fall, dass man medizinsiche Hilfe braucht, können hier Adressen und Kontaktdaten zu medizinischen Hilfsstellen entsprechend des Versicherungsstatuses der/des Anwender:in abgefragt werden. Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden.
 
 ### Beispieleingaben:
 
