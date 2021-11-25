@@ -3,11 +3,29 @@ version: "2.0"
 stories:
   - story: spenden
     steps:
-      - or:
-        - intent: spenden
-        - intent: spenden_specific
-          entities: 
-            - spendenartikel: spendenartikel
+      - intent: spenden
+      - action: spendenartikel_form
+      - active_loop: spendenartikel_form
+      - slot_was_set:
+        - requested_slot: spendenartikel
+      - intent: spenden_specific
+      - slot_was_set:
+        - spendenartikel: [Essen, Hose, Pullover, Handy]
+      - action: spendeErhalten_form
+      - active_loop: spendeErhalten_form
+      - slot_was_set:
+        - requested_slot: spendeErhalten
+      - slot_was_set:
+        - spendeErhalten: true
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_answer_spende
+      - action: action_answer_url
+
+  - story: spenden_specific
+    steps:
+      - intent: spenden_specific
       - action: spendenartikel_form
       - active_loop: spendenartikel_form
       - slot_was_set:
@@ -22,45 +40,18 @@ stories:
       - slot_was_set:
         - requested_slot: spendeErhalten
       - slot_was_set:
-        - spendeErhalten: True
+        - spendeErhalten: true
       - slot_was_set:
         - requested_slot: null
       - active_loop: null
       - action: action_answer_spende
-
-
-
-  # - story: braucht Spenden
-  #   steps:
-  #     - intent: spenden
-  #     - action: utter_open_spenden
-  #     - action: spendenartikel_form
-  #     - active_loop: spendenartikel_form
-  #     - active_loop: null
-  #     - action: utter_spendenartikel
-
-  # - story: gibt Spenden
-  #   steps:
-  #     - intent: selbst_spenden
-  #     - action: utter_open_selbst_spenden
-  #     - action: spende_form
-  #     - active_loop: spende_form
-  #     - active_loop: null
-  #     - action: utter_spende
-
-  # - story: gibt Gebrauchsgegenstand
-  #   steps:
-  #     - intent: gebrauchsgegenstand_spenden
-  #     - action: utter_open_selbst_spenden
-  #     - action: gebrauchsgegenstand_form
-  #     - active_loop: gebrauchsgegenstand_form
-  #     - active_loop: null
-  #     - action: utter_gebrauchsgegenstand
+      - action: action_answer_url
 
   - story: braucht geld
     steps:
       - intent: geld_benoetigen
       - action: utter_geldspende
+      - action: action_answer_url
       
 
  

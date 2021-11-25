@@ -110,6 +110,8 @@ actions:
   - validate_spendenartikel_form
   - action_answer_spende
   - validate_spendeErhalten_form
+  # URL
+  - action_answer_url
 
 forms:
   informationen_form:
