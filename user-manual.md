@@ -387,7 +387,7 @@ Chatbot: Hier kannst du eine Notunterkunft (Deep Link) für Menschen mit Drogenp
 In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. Er nimmt Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die Menschen ohne Haustier aber mit Drogenproblemen aufnehmen. Hat ein Hilfesuchender ein Haustier und ein Drogenproblem wird bei der Auswahl der Notunterkünfte das Haustier priorisiert.
 
 ## Medizin 
-In dem Fall, dass man medizinsiche Hilfe braucht, können hier Adressen und Kontaktdaten zu medizinischen Hilfsstellen entsprechend des Versicherungsstatuses des Nutzers abgefragt werden. Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden. 
+In dem Fall, dass man medizinsiche Hilfe braucht, können hier Adressen und Kontaktdaten zu medizinischen Hilfsstellen entsprechend des Versicherungsstatuses der/des Anwender:in abgefragt werden. Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden. 
 
 ### Beispieleingaben:
 #### Um in das Medizin-Menü zu kommen:
@@ -418,7 +418,7 @@ Notfall
 ```
 
 #### Angabe von Versicherungsstatus:
-Nachdem der Versicherungsstatus mitgeteilt wurde wird danach noch die Information eingeholt, ob es sich um einen Notfall handelt und ein Sanitäter benötgit wird, oder nicht. 
+Nachdem der Versicherungsstatus mitgeteilt wurde wird danach noch die Information eingeholt, ob es sich um einen Notfall handelt und ein Krankenwagen benötgit wird, oder nicht. 
 ```
 Ich bin versichert
 bin versichert 
