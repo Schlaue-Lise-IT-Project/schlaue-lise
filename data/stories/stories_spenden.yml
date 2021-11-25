@@ -6,7 +6,7 @@ stories:
       - or:
         - intent: spenden
         - intent: spenden_specific
-          entities: 
+          entities:
             - spendenartikel: spendenartikel
       - action: spendenartikel_form
       - active_loop: spendenartikel_form
@@ -14,22 +14,17 @@ stories:
         - requested_slot: spendenartikel
       - slot_was_set:
         - spendenartikel: [Essen, Hose, Pullover, Handy]
-      - slot_was_set:
-        - requested_slot: null
-      - active_loop: null
       - action: spendeErhalten_form
       - active_loop: spendeErhalten_form
       - slot_was_set:
         - requested_slot: spendeErhalten
       - slot_was_set:
-        - spendeErhalten: True
+        - spendeErhalten: true
       - slot_was_set:
         - requested_slot: null
       - active_loop: null
       - action: action_answer_spende
-
-
-
+ 
   # - story: braucht Spenden
   #   steps:
   #     - intent: spenden
