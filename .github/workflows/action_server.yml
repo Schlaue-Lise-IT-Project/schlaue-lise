@@ -27,24 +27,26 @@ jobs:
           # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
           #
           # github.sha - The commit SHA that triggered the workflow run
-          docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }} 
+          docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }}
           docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           docker_image_tag: ${{ github.sha }}
+          dockerfile: "Dockerfile"
           rasa_sdk_version: "2.8.0"
   reupload_as_latest:
-      runs-on: ubuntu-latest
-      name: Tag Docker Image Latest
-      steps: 
-        - name: Checkout repository
-          uses: actions/checkout@v2
-          
-        - id: action_server
-          name: Tag Image latest
-          uses: RasaHQ/action-server-gha@main
-          # Full list of parameters: https://github.com/RasaHQ/action-server-gha/tree/master#input-arguments
-          with:
-            docker_image_name: "noopliez/rasa-action-server"
-            docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }} 
-            docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-            docker_image_tag: "latest"
-            rasa_sdk_version: "2.8.0"
+    runs-on: ubuntu-latest
+    name: Tag Docker Image Latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - id: action_server
+        name: Tag Image latest
+        uses: RasaHQ/action-server-gha@main
+        # Full list of parameters: https://github.com/RasaHQ/action-server-gha/tree/master#input-arguments
+        with:
+          docker_image_name: "noopliez/rasa-action-server"
+          docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }}
+          docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          docker_image_tag: "latest"
+          dockerfile: "Dockerfile"
+          rasa_sdk_version: "2.8.0"
