@@ -70,59 +70,59 @@ nlu:
       - Ich bin älter als [18](alter)
       - [18](alter)
       - [32](alter)
-      - Ich bin [männlich](geschlecht)
-      - Ich bin ein [Mann]{"entity": "geschlecht", "value": "männlich"}
-      - ich bin ein [mann]{"entity": "geschlecht", "value": "männlich"}
-      - Ich gehöre zu den [Männern]{"entity": "geschlecht", "value": "männlich"}
-      - ich gehöre zu den [männern]{"entity": "geschlecht", "value": "männlich"}
-      - [Männer]{"entity": "geschlecht", "value": "männlich"}
-      - [männer]{"entity": "geschlecht", "value": "männlich"}
-      - Ich gehöre zu den [Jungs]{"entity": "geschlecht", "value": "männlich"}
-      - ich gehöre zu den [jungs]{"entity": "geschlecht", "value": "männlich"}
-      - [Mann]{"entity": "geschlecht", "value": "männlich"}
-      - Ein [Mann]{"entity": "geschlecht", "value": "männlich"}
-      - Ein [Junge]{"entity": "geschlecht", "value": "männlich"}
-      - [junge]{"entity": "geschlecht", "value": "männlich"}
-      - gehöre zu den [jungs]{"entity": "geschlecht", "value": "männlich"}
-      - Gehöre zu den [Jungs]{"entity": "geschlecht", "value": "männlich"}
-      - Bin ein [Boy]{"entity": "geschlecht", "value": "männlich"}
-      - ein [boy]{"entity": "geschlecht", "value": "männlich"}
-      - [boys]{"entity": "geschlecht", "value": "männlich"}
-      - Zu [Boys]{"entity": "geschlecht", "value": "männlich"}
-      - Zu [Man]{"entity": "geschlecht", "value": "männlich"}
-      - a [man]{"entity": "geschlecht", "value": "männlich"}
-      - Zu [Men]{"entity": "geschlecht", "value": "männlich"}
-      - [men]{"entity": "geschlecht", "value": "männlich"}
-      - Ich bin [weiblich](geschlecht)
-      - Ich bin eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
-      - ich bin eine [frau]{"entity": "geschlecht", "value": "weiblich"}
-      - ich gehöre zu den [frauen]{"entity": "geschlecht", "value": "weiblich"}
-      - Ich gehöre zu den [Frauen]{"entity": "geschlecht", "value": "weiblich"}
-      - Ich gehöre zu den [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-      - ich gehöre zu den [mädchen]{"entity": "geschlecht", "value": "weiblich"}
-      - [Frau]{"entity": "geschlecht", "value": "weiblich"}
-      - Eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
-      - Ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-      - ein [mädchen]{"entity": "geschlecht", "value": "weiblich"}
-      - [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-      - Ein [Mädel]{"entity": "geschlecht", "value": "weiblich"}
-      - ein [mädel]{"entity": "geschlecht", "value": "weiblich"}
-      - [Mädel]{"entity": "geschlecht", "value": "weiblich"}
-      - zu den [mädels]{"entity": "geschlecht", "value": "weiblich"}
-      - Zu [Mädels]{"entity": "geschlecht", "value": "weiblich"}
-      - Bin ein [Girl]{"entity": "geschlecht", "value": "weiblich"}
-      - ein [girl]{"entity": "geschlecht", "value": "weiblich"}
-      - Zu den [Girls]{"entity": "geschlecht", "value": "weiblich"}
-      - zu [girls]{"entity": "geschlecht", "value": "weiblich"}
-      - A [Woman]{"entity": "geschlecht", "value": "weiblich"}      
-      - [woman]{"entity": "geschlecht", "value": "weiblich"}      
-      - Zu [Women]{"entity": "geschlecht", "value": "weiblich"}
-      - Zu [women]{"entity": "geschlecht", "value": "weiblich"}
-      - Ich bin [divers](geschlecht)
-      - Ich bin [nicht binär]{"entity": "geschlecht", "value": "divers"}
-      - Ich bin [non-binary]{"entity": "geschlecht", "value": "divers"}
-      - Ich bin [non binär]{"entity": "geschlecht", "value": "divers"}
-      - Ich bin [non binary]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [männlich](bgeschlecht)
+      - Ich bin ein [Mann]{"entity": "bgeschlecht", "value": "männlich"}
+      - ich bin ein [mann]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ich gehöre zu den [Männern]{"entity": "bgeschlecht", "value": "männlich"}
+      - ich gehöre zu den [männern]{"entity": "bgeschlecht", "value": "männlich"}
+      - [Männer]{"entity": "bgeschlecht", "value": "männlich"}
+      - [männer]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ich gehöre zu den [Jungs]{"entity": "bgeschlecht", "value": "männlich"}
+      - ich gehöre zu den [jungs]{"entity": "bgeschlecht", "value": "männlich"}
+      - [Mann]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ein [Mann]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ein [Junge]{"entity": "bgeschlecht", "value": "männlich"}
+      - [junge]{"entity": "bgeschlecht", "value": "männlich"}
+      - gehöre zu den [jungs]{"entity": "bgeschlecht", "value": "männlich"}
+      - Gehöre zu den [Jungs]{"entity": "bgeschlecht", "value": "männlich"}
+      - Bin ein [Boy]{"entity": "bgeschlecht", "value": "männlich"}
+      - ein [boy]{"entity": "bgeschlecht", "value": "männlich"}
+      - [boys]{"entity": "bgeschlecht", "value": "männlich"}
+      - Zu [Boys]{"entity": "bgeschlecht", "value": "männlich"}
+      - Zu [Man]{"entity": "bgeschlecht", "value": "männlich"}
+      - a [man]{"entity": "bgeschlecht", "value": "männlich"}
+      - Zu [Men]{"entity": "bgeschlecht", "value": "männlich"}
+      - [men]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ich bin [weiblich](bgeschlecht)
+      - Ich bin eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+      - ich bin eine [frau]{"entity": "bgeschlecht", "value": "weiblich"}
+      - ich gehöre zu den [frauen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ich gehöre zu den [Frauen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ich gehöre zu den [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - ich gehöre zu den [mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - ein [mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ein [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
+      - ein [mädel]{"entity": "bgeschlecht", "value": "weiblich"}
+      - [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
+      - zu den [mädels]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Zu [Mädels]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Bin ein [Girl]{"entity": "bgeschlecht", "value": "weiblich"}
+      - ein [girl]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Zu den [Girls]{"entity": "bgeschlecht", "value": "weiblich"}
+      - zu [girls]{"entity": "bgeschlecht", "value": "weiblich"}
+      - A [Woman]{"entity": "bgeschlecht", "value": "weiblich"}      
+      - [woman]{"entity": "bgeschlecht", "value": "weiblich"}      
+      - Zu [Women]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Zu [women]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ich bin [divers](bgeschlecht)
+      - Ich bin [nicht binär]{"entity": "bgeschlecht", "value": "divers"}
+      - Ich bin [non-binary]{"entity": "bgeschlecht", "value": "divers"}
+      - Ich bin [non binär]{"entity": "bgeschlecht", "value": "divers"}
+      - Ich bin [non binary]{"entity": "bgeschlecht", "value": "divers"}
       - Ich habe einen [Hund](haustier)
       - Ich habe ein [Haustier](haustier)
       - Ich habe ein [Tier](haustier)
