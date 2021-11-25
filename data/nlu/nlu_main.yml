@@ -3,6 +3,7 @@ nlu:
   - intent: affirm
     examples: |
       - Ja
+      - ja 
       - Natürlich
       - Auf jeden Fall
       - Das klingt gut
@@ -12,6 +13,7 @@ nlu:
   - intent: deny
     examples: |
       - Nein
+      - nein
       - Nö
       - Ich denke nicht
       - Ich mag das nicht

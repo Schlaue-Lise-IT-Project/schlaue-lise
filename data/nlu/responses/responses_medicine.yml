@@ -1,26 +1,45 @@
 version: "2.0"
 
 responses:
-  utter_medicine:
-    - text: "Go to hospital now!"
-
   utter_open_medicine:
     - text: "... gehe zu 'Medizin-Übersicht'"
-
-  utter_request_able_to_go_alone:
-    - text: "Bist du in der Lage die medizinische Hilfsstelle selbstständig zu erreichen?"
-
-  utter_save_able_to_go_alone:
-    - text: "... saving status: 'able to go alone'"
-
-  utter_request_insured:
-    - text: "Bist du krankenversichert? "
 
   utter_save_insured:
     - text: "... saving insurance-status: 'insurancestatus'\n> erkannter Versicherungsstatus: '{insurancestatus}'"
 
-  utter_medicine_adresses_insured_go_alone:
-    - text: "Folgende Adressen wurden für deine Anlgaben \n- <able to walk?> \n- <versicherungsstatus> \n gefunden .... "
-
   utter_insurancestatus_back:
     - text: "> erkannter Versicherungsstatus: '{insurancestatus}'"
+
+  utter_ask_emergency:
+    - text: "Handelt sich es um einen Notfall und du brauchst sofort einen Notarzt?"
+
+  utter_ask_insurancestatus:
+    - text: "Bist du krankenversichert? "
+
+  utter_answer_medical_assistance_insurance_true:
+    - text: |
+        > Deine erkannten Informationen sind: 
+          - Notfall: {emergency}
+          - Versicherungsstatus: {insurancestatus}
+
+        Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
+           - ...
+
+  utter_answer_medical_assistance_insurance_false:
+    - text: |
+        > Deine erkannten Informationen sind: 
+          - Notfall: {emergency}
+          - Versicherungsstatus: {insurancestatus}
+
+        Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
+           Ambulanz Klinikum Nord 
+           Prof.-Ernst-Nathan-Str. 1 90419 Nürnberg
+           0911 3980
+           Geöffnet 0:00 - 24:00 
+
+           ...
+
+  utter_answer_emergeny:
+    - text: |
+        > Notfall registriert! 
+          Öffne Notrufinformationen ...
