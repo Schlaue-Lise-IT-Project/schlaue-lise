@@ -1,0 +1,17 @@
+version: "2.0"
+
+stories:
+- story: bot Challenge
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+  
+- story: bot Challenge Yes
+  steps:
+    - intent: bot_challenge_yes
+    - action: utter_yesiamabot
+
+- story: bot Challenge No
+  steps:
+    - intent: bot_challenge_no
+    - action: utter_noiamabot

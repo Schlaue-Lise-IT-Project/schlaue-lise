@@ -8,6 +8,8 @@ nlu:
       - Auf jeden Fall
       - Das klingt gut
       - Korrekt
+      - Klar
+      - Richtig
   - intent: deny
     examples: |
       - Nein
@@ -19,66 +21,46 @@ nlu:
       - Nicht wirklich
       - Auf keinen Fall
       - Nope
+      - Weder
+      - weder
+      - keinen
+      - keinem
+      - kein
+      - Nicht
+      - nicht
+      - Nee
   - intent: greet
     examples: |
       - hey
       - hello
       - hi
-      - hello there
-      - good morning
-      - good evening
+      - hallo
+      - halo
+      - guten Morgen
+      - guten Tag
+      - guten Abend
+      - gute Nacht
+      - guten Nachmittag
       - moin
-      - hey there
-      - let's go
       - hey dude
-      - goodmorning
-      - goodevening
-      - good afternoon
+      - auf geht's
+      - servus
+      - griaß di
   - intent: goodbye
     examples: |
-      - good afternoon
-      - cu
-      - good by
-      - cee you later
-      - good night
+      - Schönen Abend noch
+      - bis bald
+      - Aufwiedersehen
+      - tschau
+      - bis zum nächsten mal
+      - guten abend
       - bye
       - goodbye
-      - have a nice day
-      - see you around
+      - schönen Tag noch
+      - auf wiedersehen
       - bye bye
-      - see you later
-  - intent: mood_great
-    examples: |
-      - perfect
-      - great
-      - amazing
-      - feeling like a king
-      - wonderful
-      - I am feeling very good
-      - I am great
-      - I am amazing
-      - I am going to save the world
-      - super stoked
-      - extremely good
-      - so so perfect
-      - so good
-      - so perfect
-  - intent: mood_unhappy
-    examples: |
-      - my day was horrible
-      - I am sad
-      - I don't feel very well
-      - I am disappointed
-      - super sad
-      - I'm so sad
-      - sad
-      - very sad
-      - unhappy
-      - not good
-      - not very good
-      - extremly sad
-      - so saad
-      - so sad
+      - machs gut
+
   - intent: inform
     examples: |
       - Ich bin [18](alter) Jahre alt
@@ -90,26 +72,56 @@ nlu:
       - [32](alter)
       - Ich bin [männlich](geschlecht)
       - Ich bin ein [Mann]{"entity": "geschlecht", "value": "männlich"}
+      - ich bin ein [mann]{"entity": "geschlecht", "value": "männlich"}
+      - Ich gehöre zu den [Männern]{"entity": "geschlecht", "value": "männlich"}
+      - ich gehöre zu den [männern]{"entity": "geschlecht", "value": "männlich"}
+      - [Männer]{"entity": "geschlecht", "value": "männlich"}
+      - [männer]{"entity": "geschlecht", "value": "männlich"}
+      - Ich gehöre zu den [Jungs]{"entity": "geschlecht", "value": "männlich"}
+      - ich gehöre zu den [jungs]{"entity": "geschlecht", "value": "männlich"}
       - [Mann]{"entity": "geschlecht", "value": "männlich"}
       - Ein [Mann]{"entity": "geschlecht", "value": "männlich"}
       - Ein [Junge]{"entity": "geschlecht", "value": "männlich"}
-      - [Junge]{"entity": "geschlecht", "value": "männlich"}
+      - [junge]{"entity": "geschlecht", "value": "männlich"}
+      - gehöre zu den [jungs]{"entity": "geschlecht", "value": "männlich"}
+      - Gehöre zu den [Jungs]{"entity": "geschlecht", "value": "männlich"}
+      - Bin ein [Boy]{"entity": "geschlecht", "value": "männlich"}
+      - ein [boy]{"entity": "geschlecht", "value": "männlich"}
+      - [boys]{"entity": "geschlecht", "value": "männlich"}
+      - Zu [Boys]{"entity": "geschlecht", "value": "männlich"}
+      - Zu [Man]{"entity": "geschlecht", "value": "männlich"}
+      - a [man]{"entity": "geschlecht", "value": "männlich"}
+      - Zu [Men]{"entity": "geschlecht", "value": "männlich"}
+      - [men]{"entity": "geschlecht", "value": "männlich"}
       - Ich bin [weiblich](geschlecht)
       - Ich bin eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
+      - ich bin eine [frau]{"entity": "geschlecht", "value": "weiblich"}
+      - ich gehöre zu den [frauen]{"entity": "geschlecht", "value": "weiblich"}
+      - Ich gehöre zu den [Frauen]{"entity": "geschlecht", "value": "weiblich"}
+      - Ich gehöre zu den [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - ich gehöre zu den [mädchen]{"entity": "geschlecht", "value": "weiblich"}
       - [Frau]{"entity": "geschlecht", "value": "weiblich"}
       - Eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
       - Ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - ein [mädchen]{"entity": "geschlecht", "value": "weiblich"}
       - [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
       - Ein [Mädel]{"entity": "geschlecht", "value": "weiblich"}
+      - ein [mädel]{"entity": "geschlecht", "value": "weiblich"}
       - [Mädel]{"entity": "geschlecht", "value": "weiblich"}
+      - zu den [mädels]{"entity": "geschlecht", "value": "weiblich"}
+      - Zu [Mädels]{"entity": "geschlecht", "value": "weiblich"}
+      - Bin ein [Girl]{"entity": "geschlecht", "value": "weiblich"}
+      - ein [girl]{"entity": "geschlecht", "value": "weiblich"}
+      - Zu den [Girls]{"entity": "geschlecht", "value": "weiblich"}
+      - zu [girls]{"entity": "geschlecht", "value": "weiblich"}
+      - A [Woman]{"entity": "geschlecht", "value": "weiblich"}      
+      - [woman]{"entity": "geschlecht", "value": "weiblich"}      
+      - Zu [Women]{"entity": "geschlecht", "value": "weiblich"}
+      - Zu [women]{"entity": "geschlecht", "value": "weiblich"}
       - Ich bin [divers](geschlecht)
-      - Ich fühle mich [keinem geschlecht]{"entity": "geschlecht", "value": "divers"} zugehörig
-      - Ich fühle mich [weder Mann noch Frau]{"entity": "geschlecht", "value": "divers"} zugehörig
-      - Ich bin [weder Mann noch Frau]{"entity": "geschlecht", "value": "divers"}
-      - Ich bin [weder Frau noch Mann]{"entity": "geschlecht", "value": "divers"}
-      - Weder noch
       - Ich bin [nicht binär]{"entity": "geschlecht", "value": "divers"}
       - Ich bin [non-binary]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [non binär]{"entity": "geschlecht", "value": "divers"}
       - Ich bin [non binary]{"entity": "geschlecht", "value": "divers"}
       - Ich habe einen [Hund](haustier)
       - Ich habe ein [Haustier](haustier)
@@ -119,30 +131,34 @@ nlu:
       - Ich rauche [Gras](drogen)
       - Ich bin [drogenabhängig](drogen)
       - Ich bin [heroinabhängig](drogen)
-      - [14](alter)
-      - Ich bin ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
   - synonym: männlich
     examples: |
+      - Männer
+      - Männern
       - Mann
       - Junge
+      - Jungs
       - Boy
+      - Boys
       - Man
+      - Men
   - synonym: weiblich
     examples: |
+      - Frauen
       - Frau
       - Mädchen
       - Mädel
+      - Mädels
       - Girl
+      - Girls
       - Woman
+      - Women
   - synonym: divers
     examples: |
-      - keinem Geschlecht
-      - weder Mann noch Frau
-      - weder Frau noch Mann
       - nicht binär
       - non-binary
+      - non binär
       - non binary
-      - weder noch
   - regex: alter
     examples: |
       - \d{1,3}

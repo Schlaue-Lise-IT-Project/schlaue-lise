@@ -1,0 +1,91 @@
+version: "2.0"
+
+rules:
+  - rule: Spende -> Geld
+    steps:
+      - action: spendenartikel_form
+      - intent: geld_benoetigen
+      - action: utter_geldspende
+      - action: action_answer_url
+
+  - rule: Spende -> Hygieneartikel
+    steps:
+      - action: spendenartikel_form
+      - intent: hygiene_suche
+      - action: hygiene_form
+      - active_loop: hygiene_form
+      - slot_was_set:
+          - requested_slot: hygieneartikel
+      - slot_was_set:
+          - hygieneartikel: [Seife, Kondome, Watte, Tampons]
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_answer_hygiene
+      - action: action_answer_url
+
+  - rule: Spende -> Hygieneartikel
+    steps:
+      - action: spendenartikel_form
+      - intent: hygiene_specific
+      - action: hygiene_form
+      - active_loop: hygiene_form
+      - slot_was_set:
+          - requested_slot: hygieneartikel
+      - slot_was_set:
+          - hygieneartikel: [Seife, Kondome, Watte, Tampons]
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_answer_hygiene
+      - action: action_answer_url
+
+  - rule: Spende nachfragen, true
+    condition:
+      - slot_was_set:
+          - spendenartikel: [Essen, Hose, Pullover, Handy]
+    steps:
+      - action: spendeErhalten_form
+      - active_loop: spendeErhalten_form
+      - slot_was_set:
+          - requested_slot: spendeErhalten
+      - slot_was_set:
+          - spendeErhalten: True
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_answer_spende
+      - action: action_answer_url
+
+  - rule: Spende nachfragen, false
+    condition:
+      - slot_was_set:
+          - spendenartikel: [Essen, Hose, Pullover, Handy]
+    steps:
+      - action: spendeErhalten_form
+      - active_loop: spendeErhalten_form
+      - slot_was_set:
+          - requested_slot: spendeErhalten
+      - slot_was_set:
+          - spendeErhalten: False
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_answer_spende
+      - action: action_answer_url
+
+  - rule: SpendeErhalten nachfragen, true
+    condition:
+      - slot_was_set:
+          - spendeErhalten: True
+    steps:
+      - action: action_answer_spende
+      - action: action_answer_url
+
+  - rule: SpendeErhalten nachfragen, false
+    condition:
+      - slot_was_set:
+          - spendeErhalten: False
+    steps:
+      - action: action_answer_spende
+      - action: action_answer_url
