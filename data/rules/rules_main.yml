@@ -12,7 +12,7 @@ rules:
       - intent: greet
       - action: utter_hallo
 
-  - rule: bedanken
+  - rule: Auf Danke entsprechend reagieren
     steps:
       - intent: danke
       - action: utter_danke
