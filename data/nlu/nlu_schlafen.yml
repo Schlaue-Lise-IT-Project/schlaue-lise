@@ -1,127 +1,128 @@
 version: "2.0"
 nlu:
-  - intent: suche_unterkunft
-    examples: |
-      - Ich suche einen [Schlafplatz](unterkunft) für heute Nacht
-      - Ich benötige einen [Schlafplatz](unterkunft) für heute
-      - Ich will heute Nacht einen [Schlafplatz](unterkunft)
-      - Ich möchte einen [Schlafplatz](unterkunft) für heute Nacht
-      - Ich brauche heute ein [Dach über dem Kopf](unterkunft)
-      - Ich brauche heute was zum [pennen](unterkunft)
-      - Ich brauche für heute Nacht was zum [pennen](unterkunft)
-      - [Notunterkunft](unterkunft)
-      - Ich suche eine [Notunterkunft](unterkunft)
-      - Ich suche eine [Wohnung](unterkunft)
-      - Ich brauche eine [Wohnung](unterkunft)
-      - Ich will eine [Wohnung](unterkunft)
-      - Ich suche nach einem [Heimplatz](unterkunft)
-      - Ich möchte ins [Obdachlosenheim](unterkunft)
-      - Ich suche längerfistig einen [Schlafplatz](unterkunft)
-      - Ich möchte [weg von der Straße](unterkunft)
-      - [Wohnung](unterkunft)
-      - [schlafen](unterkunft)
-      - [Dach über dem Kopf](unterkunft)
-      - [ratzen](unterkunft)
-      - [knacken](unterkunft)
-      - [schlummern](unterkunft)
-      - [pennen](unterkunft)
-      - Ich brauche einen Ort zum Pennen
-  - synonym: unterkunft
-    examples: |
-      - Schlafplatz
-      - Dach über dem Kopf
-      - pennen
-      - Notunterkunft
-      - Wohnung
-      - Heimplatz
-      - Obdachlosenheim
-      - weg von der Straße
-      - schlafen
-      - ratzen
-      - knacken
-      - schlummern
-  - intent: inform
-    examples: |
-      - Ich bin [18](alter) Jahre alt
-      - Ich bin [17](alter)
-      - Ich bin [52](alter) Jahre
-      - Ich bin unter [18](alter)
-      - Ich bin älter als [18](alter)
-      - [18](alter)
-      - [32](alter)
-      - Ich bin [männlich](bgeschlecht)
-      - Ich bin ein [Mann]{"entity": "bgeschlecht", "value": "männlich"}
-      - [Mann]{"entity": "bgeschlecht", "value": "männlich"}
-      - Ein [Mann]{"entity": "bgeschlecht", "value": "männlich"}
-      - Ein [Junge]{"entity": "bgeschlecht", "value": "männlich"}
-      - [Junge]{"entity": "bgeschlecht", "value": "männlich"}
-      - Ich bin [weiblich](bgeschlecht)
-      - Ich bin eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
-      - [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
-      - Eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
-      - Ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
-      - [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
-      - Ein [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
-      - [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
-      - Ich bin [divers](bgeschlecht)
-      - Ich fühle mich [keinem bgeschlecht]{"entity": "bgeschlecht", "value": "divers"} zugehörig
-      - Ich fühle mich [weder Mann noch Frau]{"entity": "bgeschlecht", "value": "divers"} zugehörig
-      - Ich bin [weder Mann noch Frau]{"entity": "bgeschlecht", "value": "divers"}
-      - Ich bin [weder Frau noch Mann]{"entity": "bgeschlecht", "value": "divers"}
-      - Weder noch
-      - Ich bin [nicht binär]{"entity": "bgeschlecht", "value": "divers"}
-      - Ich bin [non-binary]{"entity": "bgeschlecht", "value": "divers"}
-      - Ich bin [non binary]{"entity": "bgeschlecht", "value": "divers"}
-      - Ich habe einen [Hund](haustier)
-      - Ich habe ein [Haustier](haustier)
-      - Ich habe ein [Tier](haustier)
-      - Ich nehme [Drogen](drogen)
-      - Ich nehme [Meth](drogen)
-      - Ich rauche [Gras](drogen)
-      - Ich bin [drogenabhängig](drogen)
-      - Ich bin [heroinabhängig](drogen)
-      - [14](alter)
-      - Ich bin ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
-  - synonym: männlich
-    examples: |
-      - Mann
-      - Junge
-      - Boy
-      - Man
-  - synonym: weiblich
-    examples: |
-      - Frau
-      - Mädchen
-      - Mädel
-      - Girl
-      - Woman
-  - synonym: divers
-    examples: |
-      - keinem Geschlecht
-      - weder Mann noch Frau
-      - weder Frau noch Mann
-      - nicht binär
-      - non-binary
-      - non binary
-      - weder noch
-  - regex: alter
-    examples: |
-      - \d{1,3}
-  - lookup: drogen
-    examples: |
-      - Marihuana
-      - Weed
-      - Gras
-      - Speed
-      - Ecstasy
-      - Pillen
-      - Pepp
-      - Koks
-      - Meth
-      - Crystal Meth
-      - Crystal
-      - Heroin
-      - Hero
-      - Pappe
-      - Steine
-      - Drogen
+- intent: suche_unterkunft
+  examples: |
+    - Ich suche einen [Schlafplatz](unterkunft) für heute Nacht
+    - Ich benötige einen [Schlafplatz](unterkunft) für heute
+    - Ich will heute Nacht einen [Schlafplatz](unterkunft)
+    - Ich möchte einen [Schlafplatz](unterkunft) für heute Nacht
+    - Ich brauche heute ein [Dach über dem Kopf](unterkunft)
+    - Ich brauche heute was zum [pennen](unterkunft)
+    - Ich brauche für heute Nacht was zum [pennen](unterkunft)
+    - [Notunterkunft](unterkunft)
+    - Ich suche eine [Notunterkunft](unterkunft)
+    - Ich suche eine [Wohnung](unterkunft)
+    - Ich brauche eine [Wohnung](unterkunft)
+    - Ich will eine [Wohnung](unterkunft)
+    - Ich suche nach einem [Heimplatz](unterkunft)
+    - Ich möchte ins [Obdachlosenheim](unterkunft)
+    - Ich suche längerfistig einen [Schlafplatz](unterkunft)
+    - Ich möchte [weg von der Straße](unterkunft)
+    - [Wohnung](unterkunft)
+    - [schlafen](unterkunft)
+    - [Dach über dem Kopf](unterkunft)
+    - [ratzen](unterkunft)
+    - [knacken](unterkunft)
+    - [schlummern](unterkunft)
+    - [pennen](unterkunft)
+    - Ich brauche einen Ort zum Pennen
+- intent: inform
+  examples: |
+    - Ich bin [18](alter) Jahre alt
+    - Ich bin [17](alter)
+    - Ich bin [52](alter) Jahre
+    - Ich bin unter [18](alter)
+    - Ich bin älter als [18](alter)
+    - [18](alter)
+    - [32](alter)
+    - Ich bin [männlich](bgeschlecht)
+    - Ich bin ein [Mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
+    - [Mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
+    - Ein [Mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
+    - Ein [Junge]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
+    - [Junge]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
+    - Ich bin [weiblich](bgeschlecht)
+    - Ich bin eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+    - [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+    - Eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+    - Ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+    - [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+    - Ein [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
+    - [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
+    - Ich bin [divers](bgeschlecht)
+    - Ich fühle mich [keinem bgeschlecht]{"entity": "bgeschlecht", "value": "divers"} zugehörig
+    - Ich fühle mich [weder Mann noch Frau]{"entity": "bgeschlecht", "value": "divers"} zugehörig
+    - Ich bin [weder Mann noch Frau]{"entity": "bgeschlecht", "value": "divers"}
+    - Ich bin [weder Frau noch Mann]{"entity": "bgeschlecht", "value": "divers"}
+    - Weder noch
+    - Ich bin [nicht binär]{"entity": "bgeschlecht", "value": "divers"}
+    - Ich bin [non-binary]{"entity": "bgeschlecht", "value": "divers"}
+    - Ich bin [non binary]{"entity": "bgeschlecht", "value": "divers"}
+    - Ich habe einen [Hund](haustier)
+    - Ich habe ein [Haustier](haustier)
+    - Ich habe ein [Tier](haustier)
+    - Ich nehme [Drogen](drogen)
+    - Ich nehme [Meth](drogen)
+    - Ich rauche [Gras](drogen)
+    - Ich bin [drogenabhängig](drogen)
+    - Ich bin [heroinabhängig](drogen)
+    - [14](alter)
+    - Ich bin ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+- synonym: unterkunft
+  examples: |
+    - Schlafplatz
+    - Dach über dem Kopf
+    - pennen
+    - Notunterkunft
+    - Wohnung
+    - Heimplatz
+    - Obdachlosenheim
+    - weg von der Straße
+    - schlafen
+    - ratzen
+    - knacken
+    - schlummern
+- synonym: männlich
+  examples: |
+    - Mann
+    - Junge
+    - Boy
+    - Man
+- synonym: weiblich
+  examples: |
+    - Frau
+    - Mädchen
+    - Mädel
+    - Girl
+    - Woman
+- synonym: divers
+  examples: |
+    - keinem bgeschlecht
+    - weder Mann noch Frau
+    - weder Frau noch Mann
+    - nicht binär
+    - non-binary
+    - non binary
+    - keinem Geschlecht
+    - weder noch
+- regex: alter
+  examples: |
+    - \d{1,3}
+- lookup: drogen
+  examples: |
+    - Marihuana
+    - Weed
+    - Gras
+    - Speed
+    - Ecstasy
+    - Pillen
+    - Pepp
+    - Koks
+    - Meth
+    - Crystal Meth
+    - Crystal
+    - Heroin
+    - Hero
+    - Pappe
+    - Steine
+    - Drogen
