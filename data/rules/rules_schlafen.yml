@@ -7,6 +7,7 @@ rules:
           - notunterkunft: false
     steps:
       - action: utter_answer_laengerfristige_unterkunft
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für drogenabhängige Hundebesitzer vor
     condition:
@@ -18,6 +19,7 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_hunde
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für nicht-drogenabhängige Hundebesitzer vor
     condition:
@@ -29,6 +31,7 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_hunde
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für drogenabhängige Menschen vor
     condition:
@@ -38,6 +41,7 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_drogen
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für junge Erwachsene vor
     condition:
@@ -53,6 +57,7 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_jugendlich
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für Minderjährige vor
     condition:
@@ -68,6 +73,7 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_jugendlich
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für Männer vor
     condition:
@@ -85,6 +91,7 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_maennlich
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für Frauen vor
     condition:
@@ -102,6 +109,7 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_weiblich
+      - action: action_answer_url
 
   - rule: Schlage Notunterkunft für Non-Binäre vor
     condition:
@@ -119,3 +127,4 @@ rules:
           - notunterkunft: true
     steps:
       - action: utter_answer_notunterkunft_divers
+      - action: action_answer_url
