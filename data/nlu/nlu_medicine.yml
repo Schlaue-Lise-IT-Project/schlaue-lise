@@ -34,22 +34,22 @@ nlu:
     - es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
     - ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
     - ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
+- synonym: 'True'
+  examples: |
+    - versichert
+    - Notarzt
+    - Notfall
+- synonym: 'False'
+  examples: |
+    - nicht versichert
 - synonym: medicine
   examples: |
     - verletzt
     - geschnitten
     - verbrannt
-- synonym: 'True'
-  examples: |
-    - Notarzt
-    - Notfall
-    - versichert
 - synonym: emergency
   examples: |
     - Sanitäter
     - Sanni
     - Sanka
     - Krankenwagen
-- synonym: 'False'
-  examples: |
-    - nicht versichert
