@@ -5,6 +5,12 @@ responses:
     - text: "Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?"
 
   utter_ask_spendeErhalten:
+    - condition:
+      - type: slot
+        name: hygieneartikel
+        value: [Tampon]
+      text: "Möchtest du diese Dinge: {spendenartikel} {hygieneartikel} erhalten?"
+    
     - text: "Möchtest du diese Dinge: {spendenartikel} erhalten?"
 
   utter_geldspende:

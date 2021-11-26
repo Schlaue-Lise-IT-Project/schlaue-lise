@@ -223,40 +223,50 @@ class ActionAnswerSpende(Action):
     ) -> List[Dict[Text, Any]]:
         answer = "";
 
-        slot_value = tracker.get_slot("spendenartikel")
+        hygiene_slot = tracker.get_slot("hygieneartikel")
+        spendenartikel = tracker.get_slot("spendenartikel")
         spendeErhalten = tracker.get_slot("spendeErhalten")
 
-        contains = False
+        spende = list()
+        spende_schlafen = list()
 
-        output = False
-
-        for item in slot_value:
+        for item in spendenartikel:
             temp = item.lower()
             if temp == "decke" or temp == "schlafsack" or temp == "isomatte" or temp == "kissen" :
-                if not(output):
-                    answer += "Alles klar. Diese Artikel:\n"
-                    output = True
-                answer += f"  - {item}\n"
+                spende_schlafen.append(item)
             else:
-                contains = True
+                spende.append(item)
         
-        if output: 
+        if len(spende_schlafen) != 0:
+            answer += "Diese Artikel:\n"
+            for item in spende_schlafen:
+                answer += f"  - {item}\n"
             if spendeErhalten:
                 answer += f"\nFindest du bei diesen Stellen: Obdachlosenhilfe"
             else: 
                 answer += f"\nKannst du bei diesen Stellen abgeben: Obdachlosenhilfe"
 
-        if contains:
+        if len(spende) != 0:
             answer += "\nDiese Artikel:\n"
-            for item in slot_value:
-                temp = item.lower()
-                if temp != "decke" and temp != "schlafsack" and temp != "isomatte" and temp != "kissen" :
-                    answer += f"  - {item}\n"
-
+            for item in spende:
+                answer += f"  - {item}\n"
             if spendeErhalten:
                 answer += f"\nFindest du bei diesen Stellen: (noch nicht im Prototyp hinterlegt)"
             else: 
                 answer += f"\nKannst du bei diesen Stellen abgeben: (noch nicht im Prototyp hinterlegt)"
+
+        if len(hygiene_slot) != 0:
+            answer += "\nDie Hygieneartikel:\n"
+            for item in hygiene_slot:
+                answer += f"  - {item}\n"
+            if spendeErhalten:
+                answer += f"\nFindest du bei diesen Stellen:"
+                answer += f"\n - mudra"
+                answer += f"\n - Obdachlosenhilfe Nürnberg"
+                answer += f"\n - Heinzelmännchen"
+                answer += f"\n - Nürnberger Engel"
+            else:
+                answer += f"\nkönnen nicht gespendet werden."
 
         dispatcher.utter_message(text=answer)
 
