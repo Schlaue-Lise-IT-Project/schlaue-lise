@@ -23,6 +23,10 @@ nlu:
     examples: |
       - Ich brauche Hygieneartikel
       - Wo bekomme ich Hygieneartikel her?
+      - Barauche ein Hygieneprodukt.
+      - Wo gibt es Körperpflegeartikel?
+      - Ich benötige ein Körperpflegeprodukt.
+      - Welche Einrichtung verteilt Hygienebedarf?
 
   - intent: hygiene_specific
     examples: |
