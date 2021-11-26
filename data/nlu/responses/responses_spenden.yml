@@ -8,7 +8,7 @@ responses:
     - condition:
       - type: slot
         name: hygieneartikel
-        value: [Tampon]
+        value: [Seife, Kondome, Watte, Tampons]
       text: "Möchtest du diese Dinge: {spendenartikel} {hygieneartikel} erhalten?"
     
     - text: "Möchtest du diese Dinge: {spendenartikel} erhalten?"
