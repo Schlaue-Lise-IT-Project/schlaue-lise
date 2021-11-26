@@ -60,7 +60,19 @@ nlu:
       - auf wiedersehen
       - bye bye
       - machs gut
-
+  - intent: bedanken
+    examples: |
+      - danke
+      - thanks
+      - thx
+      - merci
+      - vergelts Gott
+      - dankeschön
+      - herzlichen Dank
+      - vielen lieben Dank
+      - dankesehr
+      - DANKE
+      - hab Dank
   - intent: inform
     examples: |
       - Ich bin [18](alter) Jahre alt

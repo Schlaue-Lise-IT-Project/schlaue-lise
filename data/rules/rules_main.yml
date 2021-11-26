@@ -11,3 +11,8 @@ rules:
     steps:
       - intent: greet
       - action: utter_hallo
+
+  - rule: bedanken
+    steps:
+      - intent: danke
+      - action: utter_danke
