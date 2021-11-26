@@ -223,9 +223,9 @@ forms:
   hygiene_form:
     required_slots:
       hygieneartikel:
-        - type: from_entity
-          entity: hygieneartikel
+        - entity: hygieneartikel
           intent: hygiene_specific
+          type: from_entity
   # spenden
   spendenartikel_form:
     required_slots:
