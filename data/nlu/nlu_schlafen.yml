@@ -49,29 +49,29 @@ nlu:
       - Ich bin älter als [18](alter)
       - [18](alter)
       - [32](alter)
-      - Ich bin [männlich](geschlecht)
-      - Ich bin ein [Mann]{"entity": "geschlecht", "value": "männlich"}
-      - [Mann]{"entity": "geschlecht", "value": "männlich"}
-      - Ein [Mann]{"entity": "geschlecht", "value": "männlich"}
-      - Ein [Junge]{"entity": "geschlecht", "value": "männlich"}
-      - [Junge]{"entity": "geschlecht", "value": "männlich"}
-      - Ich bin [weiblich](geschlecht)
-      - Ich bin eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
-      - [Frau]{"entity": "geschlecht", "value": "weiblich"}
-      - Eine [Frau]{"entity": "geschlecht", "value": "weiblich"}
-      - Ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-      - [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
-      - Ein [Mädel]{"entity": "geschlecht", "value": "weiblich"}
-      - [Mädel]{"entity": "geschlecht", "value": "weiblich"}
-      - Ich bin [divers](geschlecht)
-      - Ich fühle mich [keinem geschlecht]{"entity": "geschlecht", "value": "divers"} zugehörig
-      - Ich fühle mich [weder Mann noch Frau]{"entity": "geschlecht", "value": "divers"} zugehörig
-      - Ich bin [weder Mann noch Frau]{"entity": "geschlecht", "value": "divers"}
-      - Ich bin [weder Frau noch Mann]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [männlich](bgeschlecht)
+      - Ich bin ein [Mann]{"entity": "bgeschlecht", "value": "männlich"}
+      - [Mann]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ein [Mann]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ein [Junge]{"entity": "bgeschlecht", "value": "männlich"}
+      - [Junge]{"entity": "bgeschlecht", "value": "männlich"}
+      - Ich bin [weiblich](bgeschlecht)
+      - Ich bin eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+      - [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Eine [Frau]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ein [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
+      - [Mädel]{"entity": "bgeschlecht", "value": "weiblich"}
+      - Ich bin [divers](bgeschlecht)
+      - Ich fühle mich [keinem bgeschlecht]{"entity": "bgeschlecht", "value": "divers"} zugehörig
+      - Ich fühle mich [weder Mann noch Frau]{"entity": "bgeschlecht", "value": "divers"} zugehörig
+      - Ich bin [weder Mann noch Frau]{"entity": "bgeschlecht", "value": "divers"}
+      - Ich bin [weder Frau noch Mann]{"entity": "bgeschlecht", "value": "divers"}
       - Weder noch
-      - Ich bin [nicht binär]{"entity": "geschlecht", "value": "divers"}
-      - Ich bin [non-binary]{"entity": "geschlecht", "value": "divers"}
-      - Ich bin [non binary]{"entity": "geschlecht", "value": "divers"}
+      - Ich bin [nicht binär]{"entity": "bgeschlecht", "value": "divers"}
+      - Ich bin [non-binary]{"entity": "bgeschlecht", "value": "divers"}
+      - Ich bin [non binary]{"entity": "bgeschlecht", "value": "divers"}
       - Ich habe einen [Hund](haustier)
       - Ich habe ein [Haustier](haustier)
       - Ich habe ein [Tier](haustier)
@@ -81,7 +81,7 @@ nlu:
       - Ich bin [drogenabhängig](drogen)
       - Ich bin [heroinabhängig](drogen)
       - [14](alter)
-      - Ich bin ein [Mädchen]{"entity": "geschlecht", "value": "weiblich"}
+      - Ich bin ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
   - synonym: männlich
     examples: |
       - Mann
