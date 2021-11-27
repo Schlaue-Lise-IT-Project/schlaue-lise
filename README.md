@@ -1,34 +1,36 @@
 # IT-Projekt: Schlaue Lise
 
-# Anaconda Installation
+## Inhaltsverzeichnis
+
+1. [Anaconda Installation](#anaconda-installation)
+2. [Lokale Installation](#Probleme-mit-Timeout-Error)
+
+## Anaconda Installation
 
 Eine benutzerfreundliche Python-Distribution ist Anaconda.
 Hier die Anleitung dazu von Herrn Prof. Dr.
 Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_.
 
-## Lokale Installation
+### Lokale Installation
 
-### Virtuelle Environments
-
-Es bietet sich an, mit virtuellen Environments zu arbeiten, wenn man mit Python arbeitet,
+Es bietet sich an, mit **virtuellen Environments** zu arbeiten, wenn man mit Python arbeitet,
 um (Dependency-) Konflikte mit anderen Projekten zu vermeiden.
 
-Dazu gibt es hier im Verzeichnis die Datei `environment.yml`.
-
+Dazu gibt es hier im Verzeichnis die Datei `environment.yml`. 
 Über diese Datei wird automatisch ein Environment für das Projekt angelegt.
 
 Weiterführende Informationen dazu hier:
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
-Dazu muss allerdings erst Anaconda installiert sein, was im nächsten Schritt passiert.
+Hierzu muss allerdings erst Anaconda installiert sein, siehe nächster Schritt [Installation](#installation).
 
 ### Installation
 
 Eine populäre Python-Distribution ist [Anaconda](https://www.anaconda.com/).
-Wenn ihr diese Distribution installiert, dann werden automatisch eine Vielzahl an Werkzeugen und Bibliotheken für Data Science mit installiert.
-Installiert Anaconda (inklusive GUI für die Verwaltung). Wenn ihr lieber volle Kontrolle über alles haben wollt und euch auf der Kommandozeile zu Hause fühlt, installiert [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+Wenn diese Distribution installiert wird, werden automatisch eine Vielzahl an Werkzeugen und Bibliotheken für Data Science mit installiert.
+Entweder installiert man Anaconda (inklusive GUI für die Verwaltung), oder wenn man volle Kontrolle über alles haben will und sich auf der Kommandozeile zu Hause fühlt, kann man stattdessen [Miniconda](https://docs.conda.io/en/latest/miniconda.html) installieren.
 
-Hier die Installationsanleitungen:
+Weblinks zu den Installationsanleitungen:
 
 - <https://docs.anaconda.com/anaconda/install>
 - <https://docs.conda.io/en/latest/miniconda.html>
