@@ -82,7 +82,34 @@ Dieser Schritt ist **IMMER AUSZUFÜHREN**:
 (env)> python -m spacy download de_core_news_md
 ```
 
-Ihr habt jetzt ein Python-Environment mit Rasa und allen Dependencies, SpaCy-Dateien, etc. Damit können alle mit demselben Background arbeiten.
+**Optional**, wenn ihr mit Rasa X (Local Mode) arbeitet:
+
+```sh
+(env)> pip install -U sanic-jwt==1.6.0
+```
+
+### Hinweise zu Rasa X 
+Rasa X formatiert automatisch eure YAML-Files, das ist nicht weiter schlimm und führt nur in Forms zu Problemen. Da werden nämlich die Slots von Rasa X alphabetisch sortiert. Das ist ein bekannter Bug, der noch nicht behoben wurde. In unserem Fall ist es bspw. so:
+
+Eigentlich werden bei der `informationen_form` die `Slots` in folgender Reihenfolge abgefragt:
+
+```
+Alter -> Geschlecht -> Haustiere -> Drogen
+```
+
+Nach der Sortierung durch Rasa X wird dann aber folgendermaßen abgefragt:
+
+```
+Alter -> Drogen -> Geschlecht -> Haustiere
+```
+
+Es ist also notwendig, die `Slots` entsprechend zu ändern, damit sie in der richtigen Reihenfolge abgefragt werden:
+
+```
+Alter -> BGeschlecht -> CHaustiere -> Drogen
+```
+
+Das ist nur ein unschöner Workaround, aber er funktioniert. 
 
 ## Probleme mit Timeout-Error
 

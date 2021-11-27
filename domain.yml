@@ -11,9 +11,12 @@ intents:
   - bot_challenge
   - bot_challenge_yes
   - bot_challenge_no
+  # Medizin
   - medicine
   - medicine_requested
-  - inform_insurancestatus
+  - medicine_specific_insurancestatus
+  - medicine_specific_emergency
+  - medicine_all_information
   # spenden
   - spenden
   - spenden_specific
@@ -31,12 +34,13 @@ entities:
   - drogen
   - drogenabhaengig
   - geschlecht
-  - go_alone
+  - medicine
+  - emergency
+  - insurancestatus
   - haustier
   - haustierhalter
   # Hygiene
   - hygieneartikel
-  - insurancestatus
   - volljaehrig
   - jugendlich
   - notunterkunft
@@ -53,10 +57,13 @@ slots:
   notunterkunft:
     type: bool
     influence_conversation: true
-  insurancestatus:
+  medicine:
     type: text
     influence_conversation: true
-  go_alone:
+  insurancestatus:
+    type: bool
+    influence_conversation: true
+  emergency:
     type: bool
     influence_conversation: true
   geschlecht:
@@ -95,7 +102,7 @@ slots:
   spendeErhalten:
     type: bool
     influence_conversation: true
-  geld: 
+  geld:
     type: text
   drogenabhaengig:
     type: bool
@@ -110,6 +117,9 @@ actions:
   - validate_spendenartikel_form
   - action_answer_spende
   - validate_spendeErhalten_form
+  # URL
+  - action_answer_url
+  - validate_medicine_form
 
 forms:
   informationen_form:
@@ -182,3 +192,25 @@ forms:
         - type: from_intent
           value: None
           intent: spenden
+  medicine_form:
+    required_slots:
+      emergency:
+        - type: from_intent
+          value: True
+          intent: affirm
+        - type: from_intent
+          value: False
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: medicine_requested
+      insurancestatus:
+        - type: from_intent
+          value: True
+          intent: affirm
+        - type: from_intent
+          value: False
+          intent: deny
+        - type: from_intent
+          value: None
+          intent: medicine_requested

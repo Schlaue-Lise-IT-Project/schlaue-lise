@@ -10,7 +10,58 @@ from rasa_sdk.types import DomainDict
 from rasa_sdk import Action, Tracker
 
 
-# logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
+
+
+class ValidateMedicineForm(FormValidationAction):
+
+    def name(self) -> Text:
+        return "validate_medicine_form"
+
+    def validate_emergency(
+        self,
+        slot_value: bool,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict
+    ) -> Dict[Text, Any]:
+
+        # zeigt beim nächsten mal slot_value-type an
+        text = f">>>>Slot emergency ist gesetzt auf '{slot_value}' und vom Typ {logger.info(type(slot_value))}"
+
+        intent = tracker.latest_message['intent'].get('name')
+
+        if(intent == 'affirm'):
+            return{"emergency": True}
+        elif(intent == 'deny'):
+            return{"emergency": False}
+        elif(intent == 'medicine_specific_emergency' or intent == 'medicine_all_information'):
+            return {"emergency": slot_value}
+        else:
+            dispatcher.utter_message(
+                text="Entschuldigung, die Eingabe zu >>Notfall<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
+            return {"emergency": None}
+
+    def validate_insurancestatus(
+            self,
+            slot_value: bool,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,) -> Dict[Text, Any]:
+
+        intent = tracker.latest_message['intent'].get('name')
+
+        if(intent == 'affirm'):
+            return{"insurancestatus": True}
+        elif(intent == 'deny'):
+            return{"insurancestatus": False}
+        elif(intent == 'medicine_specific_insurancestatus' or intent == 'medicine_all_information'):
+            return {"insurancestatus": slot_value}
+        else:
+            dispatcher.utter_message(
+                text="Entschuldigung, die Eingabe zu >>Versicherungsstatus<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
+            return {"insurancestatus": None}
+
 
 class ValidateInformation(FormValidationAction):
     def name(self) -> Text:
@@ -23,18 +74,19 @@ class ValidateInformation(FormValidationAction):
         tracker: Tracker,
         domain: DomainDict
     ) -> Dict[Text, Any]:
-        try: 
+        try:
             if int(slot_value) >= 18:
                 if int(slot_value) >= 22:
                     return {"volljaehrig": True, "jugendlich": False}
-                else: 
+                else:
                     return {"volljaehrig": True, "jugendlich": True}
             else:
                 return {"volljaehrig": False, "jugendlich": True}
         except:
-            dispatcher.utter_message(text="Die Eingabe zu >>Alter<< wurde nicht erkannt. Bitte gib eine Zahl an, die dein >>Alter<< darstellt.")
+            dispatcher.utter_message(
+                text="Die Eingabe zu >>Alter<< wurde nicht erkannt. Bitte gib eine Zahl an, die dein >>Alter<< darstellt.")
             return {"alter": None}
-    
+
     def validate_geschlecht(
         self,
         slot_value: Any,
@@ -45,7 +97,8 @@ class ValidateInformation(FormValidationAction):
         if slot_value.lower() in ["männlich", "weiblich", "divers"]:
             return {"geschlecht": slot_value}
         else:
-            dispatcher.utter_message(text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
+            dispatcher.utter_message(
+                text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
             return {"geschlecht": None}
 
     def validate_haustierhalter(
@@ -58,7 +111,8 @@ class ValidateInformation(FormValidationAction):
         if type(slot_value) is bool:
             return {"haustierhalter": slot_value}
         else:
-            dispatcher.utter_message(text="Entschuldigung, die Eingabe zu >>Haustieren<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
+            dispatcher.utter_message(
+                text="Entschuldigung, die Eingabe zu >>Haustieren<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
             return {"haustierhalter": None}
 
     def validate_drogenabhaengig(
@@ -71,8 +125,10 @@ class ValidateInformation(FormValidationAction):
         if type(slot_value) is bool:
             return {"drogenabhaengig": slot_value}
         else:
-            dispatcher.utter_message(text="Es tut mir Leid, die Eingabe für >>Drogen<< wurde nicht erkannt. Du kannst auf eine Frage zu >>Drogen<< mit 'Ja' oder 'Nein' antworten.")
+            dispatcher.utter_message(
+                text="Es tut mir Leid, die Eingabe für >>Drogen<< wurde nicht erkannt. Du kannst auf eine Frage zu >>Drogen<< mit 'Ja' oder 'Nein' antworten.")
             return {"drogenabhaengig": None}
+
 
 class ValidateNotunterkunft(FormValidationAction):
     def name(self):
@@ -88,8 +144,10 @@ class ValidateNotunterkunft(FormValidationAction):
         if slot_value is not None and type(slot_value) is bool:
             return {"notunterkunft": slot_value}
         else:
-            dispatcher.utter_message(text="Entschuldigung, die Eingabe für >>Notunterkunft<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
+            dispatcher.utter_message(
+                text="Entschuldigung, die Eingabe für >>Notunterkunft<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
             return {"notunterkunft": None}
+
 
 class ValidateHygieneartikel(FormValidationAction):
     def name(self):
@@ -105,17 +163,18 @@ class ValidateHygieneartikel(FormValidationAction):
         if type(slot_value) is list:
             return {"hygieneartikel": slot_value}
         else:
-            dispatcher.utter_message(text="Es tut mir Leid, aber es scheint nicht geklappt zu haben. Du kannst hier einfach alle gewünschten >>Hygieneartikel<< auflisten.")
+            dispatcher.utter_message(
+                text="Es tut mir Leid, aber es scheint nicht geklappt zu haben. Du kannst hier einfach alle gewünschten >>Hygieneartikel<< auflisten.")
             return {"hygieneartikel": None}
 
 class ActionAnswerHygiene(Action):
     def name(self):
         return "action_answer_hygiene"
-    
+
     def run(
-        self, 
-        dispatcher: "CollectingDispatcher", 
-        tracker: Tracker, 
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: Tracker,
         domain: "DomainDict"
     ) -> List[Dict[Text, Any]]:
         answer = "Alles klar. Diese Artikel:\n"
@@ -164,40 +223,50 @@ class ActionAnswerSpende(Action):
     ) -> List[Dict[Text, Any]]:
         answer = "";
 
-        slot_value = tracker.get_slot("spendenartikel")
+        hygiene_slot = tracker.get_slot("hygieneartikel")
+        spendenartikel = tracker.get_slot("spendenartikel")
         spendeErhalten = tracker.get_slot("spendeErhalten")
 
-        contains = False
+        spende = list()
+        spende_schlafen = list()
 
-        output = False
-
-        for item in slot_value:
+        for item in spendenartikel:
             temp = item.lower()
             if temp == "decke" or temp == "schlafsack" or temp == "isomatte" or temp == "kissen" :
-                if not(output):
-                    answer += "Alles klar. Diese Artikel:\n"
-                    output = True
-                answer += f"  - {item}\n"
+                spende_schlafen.append(item)
             else:
-                contains = True
+                spende.append(item)
         
-        if output: 
+        if len(spende_schlafen) != 0:
+            answer += "Diese Artikel:\n"
+            for item in spende_schlafen:
+                answer += f"  - {item}\n"
             if spendeErhalten:
                 answer += f"\nFindest du bei diesen Stellen: Obdachlosenhilfe"
             else: 
                 answer += f"\nKannst du bei diesen Stellen abgeben: Obdachlosenhilfe"
 
-        if contains:
+        if len(spende) != 0:
             answer += "\nDiese Artikel:\n"
-            for item in slot_value:
-                temp = item.lower()
-                if temp != "decke" and temp != "schlafsack" and temp != "isomatte" and temp != "kissen" :
-                    answer += f"  - {item}\n"
-
+            for item in spende:
+                answer += f"  - {item}\n"
             if spendeErhalten:
                 answer += f"\nFindest du bei diesen Stellen: (noch nicht im Prototyp hinterlegt)"
             else: 
                 answer += f"\nKannst du bei diesen Stellen abgeben: (noch nicht im Prototyp hinterlegt)"
+
+        if len(hygiene_slot) != 0:
+            answer += "\nDie Hygieneartikel:\n"
+            for item in hygiene_slot:
+                answer += f"  - {item}\n"
+            if spendeErhalten:
+                answer += f"\nFindest du bei diesen Stellen:"
+                answer += f"\n - mudra"
+                answer += f"\n - Obdachlosenhilfe Nürnberg"
+                answer += f"\n - Heinzelmännchen"
+                answer += f"\n - Nürnberger Engel"
+            else:
+                answer += f"\nkönnen nicht gespendet werden."
 
         dispatcher.utter_message(text=answer)
 
