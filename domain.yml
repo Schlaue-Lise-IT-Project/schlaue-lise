@@ -12,7 +12,6 @@ intents:
   - bot_challenge_yes
   - bot_challenge_no
   # Medizin
-  - medicine
   - medicine_requested
   - medicine_specific_insurancestatus
   - medicine_specific_emergency
@@ -34,7 +33,6 @@ entities:
   - drogen
   - drogenabhaengig
   - geschlecht
-  - medicine
   - emergency
   - insurancestatus
   - haustier

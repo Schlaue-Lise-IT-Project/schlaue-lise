@@ -3,15 +3,15 @@ version: "2.0"
 nlu:
   - intent: medicine_requested
     examples: |
-      - Ich brauche einen [Arzt](medicine)
-      - Ich brauche [Medizin](medicine)
-      - Ich brauche [medizinische](medicine) Hilfe
-      - Ich suche einen [Arzt](medicine)
-      - Ich habe mich [verletzt](medicine)
-      - Ich habe mich [geschnitten](medicine)
-      - Ich habe mich [verbrannt](medicine)
-      - Ich hatte einen [Unfall](medicine)
-      - Ich [fühle mich nicht gut](medicine)
+      - Ich brauche einen Arzt
+      - Ich brauche Medizin
+      - Ich brauche medizinische Hilfe
+      - Ich suche einen Arzt
+      - Ich habe mich verletzt
+      - Ich habe mich geschnitten
+      - Ich habe mich verbrannt
+      - Ich hatte einen Unfall
+      - Ich fühle mich nicht gut
 
   - intent: medicine_specific_insurancestatus
     examples: |
