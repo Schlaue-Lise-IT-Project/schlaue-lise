@@ -1,21 +1,6 @@
 version: "2.0"
 
 nlu:
-  - synonym: medicine
-    examples: |
-      - verletzt 
-      - geschnitten
-      - verbrannt
-
-  - synonym: emergency
-    examples: |
-      - Notarzt 
-      - Sanitäter 
-      - Sanni 
-      - Sanka
-      - Krankenwagen
-      - Notfall
-
   - intent: medicine_requested
     examples: |
       - Ich brauche einen [Arzt](medicine)
@@ -23,6 +8,8 @@ nlu:
       - Ich brauche [medizinische](medicine) Hilfe
       - Ich suche einen [Arzt](medicine)
       - Ich habe mich [verletzt](medicine)
+      - Ich habe mich [geschnitten](medicine)
+      - Ich habe mich [verbrannt](medicine)
       - Ich hatte einen [Unfall](medicine)
       - Ich [fühle mich nicht gut](medicine)
 
@@ -32,14 +19,18 @@ nlu:
       - bin [nicht versichert]{"entity":"insurancestatus", "value":"False"}
       - [versichert]{"entity":"insurancestatus", "value":"True"}
       - [nicht versichert]{"entity":"insurancestatus", "value":"False"}
-      - habe eine [Versicherung](insurancestatus){"entity":"insurancestatus", "value":"True"}
-      - habe [keine Versicherung](insurancestatus){"entity":"insurancestatus", "value":"False"}
-      - [Versicherung](insurancestatus){"entity":"insurancestatus", "value":"True"}
-      - [keine Versicherung](insurancestatus){"entity":"insurancestatus", "value":"False"}
+      - habe eine [Versicherung]{"entity":"insurancestatus", "value":"True"}
+      - habe [keine Versicherung]{"entity":"insurancestatus", "value":"False"}
+      - [Versicherung]{"entity":"insurancestatus", "value":"True"}
+      - [keine Versicherung]{"entity":"insurancestatus", "value":"False"}
 
   - intent: medicine_specific_emergency
     examples: |
       - ich brauche einen [Notarzt]{"entity":"emergency", "value":"True"}
+      - ich brauche einen [Sanitäter]{"entity":"emergency", "value":"True"}
+      - ich brauche einen [Sanni]{"entity":"emergency", "value":"True"}
+      - ich brauche einen [Sanker]{"entity":"emergency", "value":"True"}
+      - ich brauche einen [Krankenwagen]{"entity":"emergency", "value":"True"}
       - es ist ein [Notfall]{"entity":"emergency", "value":"True"}
       - [Notarzt]{"entity":"emergency", "value":"True"}
 
