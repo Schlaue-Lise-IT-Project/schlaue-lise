@@ -528,3 +528,10 @@ Es ist ein Notfall und ich bin versichert
 ich bin nicht versichert und es ist ein Notfall
 ich bin versichert und es ist ein Notfall
 ```
+
+## URL, die am Ende erzeugt wird
+Am Ende jeder Story wird eine URL erzeugt, die alle befüllten Slots auflistet. Die befüllten Slots werden dabei nach dem Prinzip eines GET-Requests an die URL `www.schlaue-lise.de` gehängt. 
+Wenn man diese URL antippt, soll man dann auf die Seite mit den jeweiligen Infos geleitet werden. Diese Internetseite existiert noch nicht. 
+Damit die URL nach jeder Story ausgegeben wird, muss ans Ende jeder Story folgende Action hinzugefügt werden:
+`action: action_answer_url`.
+Hier kann es zu Timeout Errors kommen, wenn der Computer zu langsam ist. In der README.md ist beschrieben, wie dieser behoben werden kann.

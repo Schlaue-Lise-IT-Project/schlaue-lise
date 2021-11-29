@@ -40,6 +40,24 @@ rules:
       - action: action_answer_hygiene
       - action: action_answer_url
 
+  - rule: Spende -> Hygieneartikel + Spendenartikel
+    condition:
+      - slot_was_set:
+          - spendenartikel: [Essen, Hose, Pullover, Handy]
+          - hygieneartikel: [Seife, Kondome, Watte, Tampons]
+    steps:
+      - action: spendeErhalten_form
+      - active_loop: spendeErhalten_form
+      - slot_was_set:
+          - requested_slot: spendeErhalten
+      - slot_was_set:
+          - spendeErhalten: True
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_answer_spende
+      - action: action_answer_url
+
   - rule: Spende nachfragen, true
     condition:
       - slot_was_set:
