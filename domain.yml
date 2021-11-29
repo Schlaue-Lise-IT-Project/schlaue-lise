@@ -160,9 +160,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
-responses:
-  utter_danke:
-  - text: Voll gerne.
+responses: {}
 actions:
 - validate_informationen_form
 - validate_unterkunft_form
@@ -173,7 +171,6 @@ actions:
 - validate_spendeErhalten_form
 - action_answer_url
 - validate_medicine_form
-- utter_danke
 forms:
   informationen_form:
     required_slots:

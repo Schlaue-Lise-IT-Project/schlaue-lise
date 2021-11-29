@@ -24,9 +24,3 @@ nlu:
     - spreche ich mit einem menschen
     - Bist du menschlich?
     - bist du menschlich
-- intent: spenden_erhalten
-  examples: |
-    - Außerdem brauche ich noch Spenden
-- intent: bedanken
-  examples: |
-    - Danke

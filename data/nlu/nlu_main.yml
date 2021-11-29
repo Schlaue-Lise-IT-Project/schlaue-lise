@@ -51,7 +51,6 @@ nlu:
     - greetz
     - moinsen
     - Hallo
-    - danke
 - intent: goodbye
   examples: |
     - Schönen Abend noch
