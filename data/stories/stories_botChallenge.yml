@@ -1,17 +1,189 @@
 version: "2.0"
-
 stories:
 - story: bot Challenge
   steps:
-    - intent: bot_challenge
-    - action: utter_iamabot
-  
+  - intent: bot_challenge
+  - action: utter_iamabot
 - story: bot Challenge Yes
   steps:
-    - intent: bot_challenge_yes
-    - action: utter_yesiamabot
-
+  - intent: bot_challenge_yes
+  - action: utter_yesiamabot
 - story: bot Challenge No
   steps:
-    - intent: bot_challenge_no
-    - action: utter_noiamabot
+  - intent: bot_challenge_no
+  - action: utter_noiamabot
+- story: Story from Conversation ID 1a8020c531a743f0aa894a5cdc1b8af5
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: hygiene_suche
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - requested_slot: hygieneartikel
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: seife
+    - hygieneartikel: tampons
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+      - tampons
+  - action: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+      - tampons
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url
+- story: Story from Conversation ID 3ed84a168a034b589d656424509b5e20
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: spenden
+  - action: spendenartikel_form
+  - active_loop: spendenartikel_form
+  - slot_was_set:
+    - requested_slot: spendenartikel
+  - intent: spenden_specific
+    entities:
+    - spendenartikel: Schlafsack
+  - slot_was_set:
+    - spendenartikel:
+      - Schlafsack
+  - action: spendeErhalten_form
+  - active_loop: spendeErhalten_form
+  - slot_was_set:
+    - requested_slot: spendeErhalten
+  - intent: deny
+  - action: spendeErhalten_form
+  - slot_was_set:
+    - spendeErhalten: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_spende
+  - action: action_answer_url
+- story: Story from Conversation ID 50877ae5df944a0988665e19904bdbb9
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: spenden
+  - action: spendenartikel_form
+  - active_loop: spendenartikel_form
+  - slot_was_set:
+    - requested_slot: spendenartikel
+  - intent: spenden_specific
+    entities:
+    - spendenartikel: Schlafsack
+  - slot_was_set:
+    - spendenartikel:
+      - Schlafsack
+  - action: spendeErhalten_form
+  - active_loop: spendeErhalten_form
+  - slot_was_set:
+    - requested_slot: spendeErhalten
+  - intent: affirm
+  - action: spendeErhalten_form
+  - slot_was_set:
+    - spendeErhalten: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_spende
+  - action: action_answer_url
+- story: Story from Conversation ID d43edf12cda64699af2a64a744ad5cbc
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: geld_benoetigen
+    entities:
+    - geld: Geld
+  - slot_was_set:
+    - geld: Geld
+  - action: utter_geldspende
+  - action: action_answer_url
+- story: Story from Conversation ID 2b50ee4f744a4ad6bffbc5c70486369a
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: geld_benoetigen
+  - action: utter_geldspende
+  - action: action_answer_url
+- story: Story from Conversation ID c3b342e31ac54ad1b12e623d429083c1
+  steps:
+  - intent: geld_benoetigen
+  - action: utter_geldspende
+  - action: action_answer_url
+- story: Story from Conversation ID 0302c14943b14e06882a9a8f4a42e513
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: geld_benoetigen
+  - action: utter_geldspende
+  - action: action_answer_url
+- story: Story from Conversation ID 526f7f14a943470a892171e9ac5bf23f
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: spenden_specific
+    entities:
+    - spendenartikel: Schlafsack
+  - slot_was_set:
+    - spendenartikel:
+      - Schlafsack
+  - action: spendenartikel_form
+  - active_loop: spendenartikel_form
+  - slot_was_set:
+    - spendenartikel:
+      - Schlafsack
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: spendeErhalten_form
+  - active_loop: spendeErhalten_form
+  - slot_was_set:
+    - requested_slot: spendeErhalten
+  - intent: affirm
+  - action: spendeErhalten_form
+  - slot_was_set:
+    - spendeErhalten: true
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_spende
+  - action: action_answer_url
+- story: Story from Conversation ID d3b9b1abb8c14f9ea012f089c90dd3d8
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: seife
+    - hygieneartikel: tampons
+    - hygieneartikel: watte
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+      - tampons
+      - watte
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+      - tampons
+      - watte
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+      - tampons
+      - watte
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url

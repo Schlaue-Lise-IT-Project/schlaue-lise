@@ -1,51 +1,64 @@
 version: "2.0"
 nlu:
-  - intent: hygiene_suche
-    examples: |
-      - Ich brauche Hygieneartikel
-      - Wo bekomme ich Hygieneartikel her?
-      - Barauche ein Hygieneprodukt.
-      - Wo gibt es Körperpflegeartikel?
-      - Ich benötige ein Körperpflegeprodukt.
-      - Welche Einrichtung verteilt Hygienebedarf?
-  - intent: hygiene_specific
-    examples: |
-      - Ich brauche [Binden](hygieneartikel)
-      - Ich will [Kondome](hygieneartikel)
-      - Ich brauche dringend ein [OB](hygieneartikel)
-      - Brauch eine Packung [Watte](hygieneartikel)
-      - Ein Stück [Seife](hygieneartikel)
-      - Ich benötige [Tampons](hygieneartikel)
-      - Ich brauche [Shampoo](hygieneartikel)
-      - Ich möchte [Duschgel](hygieneartikel)
-      - Brauche dringend [Klopapier](hygieneartikel)
-      - Ich brauche [Windeln](hygieneartikel)
-      - Ich benötige [Küchenrollen](hygieneartikel) oder [Zewa](hygieneartikel)
-      - Ich brauche [Tempos](hygieneartikel)
-      - Brauche [Taschentücher](hygieneartikel)
-      - Ich brauche dringend [Reinigungstücher](hygieneartikel)
-      - Ich brauche unbedingt [Feuchttücher](hygieneartikel)
-      - Ich brauche [Kondome](hygieneartikel), [Tampons](hygieneartikel) und [Seife](hygieneartikel)
-      - ich brauch [kondome](hygieneartikel) [tampons](hygieneartikel) [seife](hygieneartikel)
-      - [tampons](hygieneartikel) [seife](hygieneartikel) [kondome](hygieneartikel) und [duschgel](hygieneartikel)
-      - ich brauch [seife](hygieneartikel) [kondome](hygieneartikel) und [duschgel](hygieneartikel)
-      - brauche außerdem noch [tampons](hygieneartikel)
-      - ok nochmal von vorn. ich brauch dringend [kondome](hygieneartikel) [seife](hygieneartikel) [tampons](hygieneartikel) und ne menge [duschgel](hygieneartikel)
-      - ich brauche [kondome](hygieneartikel)
-  - lookup: hygieneartikel
-    examples: |
-      - Seife
-      - Binden
-      - Tampons
-      - OB
-      - Watte
-      - Shampoo
-      - Duschgel
-      - Klopapier
-      - Windeln
-      - Küchenrollen
-      - Zewa
-      - Tempos
-      - Taschentücher
-      - Reinigungstücher
-      - Feuchttücher
+- intent: hygiene_suche
+  examples: |
+    - Ich brauche Hygieneartikel
+    - Wo bekomme ich Hygieneartikel her?
+    - Barauche ein Hygieneprodukt.
+    - Wo gibt es Körperpflegeartikel?
+    - Ich benötige ein Körperpflegeprodukt.
+    - Welche Einrichtung verteilt Hygienebedarf?
+    - ich brauche [hygieneartikel](hygieneartikel)
+    - Außerdem brauche ich noch [Hygieneartikel](hygieneartikel)
+    - brauche [Hygieneartikel](hygieneartikel)
+    - Wo gibts [hygieneartikel](hygieneartikel)?
+    - ich brauche Hygieneartikel
+- intent: hygiene_specific
+  examples: |
+    - Ich brauche [Binden](hygieneartikel)
+    - Ich will [Kondome](hygieneartikel)
+    - Ich brauche dringend ein [OB](hygieneartikel)
+    - Brauch eine Packung [Watte](hygieneartikel)
+    - Ein Stück [Seife](hygieneartikel)
+    - Ich benötige [Tampons](hygieneartikel)
+    - Ich brauche [Shampoo](hygieneartikel)
+    - Ich möchte [Duschgel](hygieneartikel)
+    - Brauche dringend [Klopapier](hygieneartikel)
+    - Ich brauche [Windeln](hygieneartikel)
+    - Ich benötige [Küchenrollen](hygieneartikel) oder [Zewa](hygieneartikel)
+    - Ich brauche [Tempos](hygieneartikel)
+    - Brauche [Taschentücher](hygieneartikel)
+    - Ich brauche dringend [Reinigungstücher](hygieneartikel)
+    - Ich brauche unbedingt [Feuchttücher](hygieneartikel)
+    - Ich brauche [Kondome](hygieneartikel), [Tampons](hygieneartikel) und [Seife](hygieneartikel)
+    - ich brauch [kondome](hygieneartikel) [tampons](hygieneartikel) [seife](hygieneartikel)
+    - [tampons](hygieneartikel) [seife](hygieneartikel) [kondome](hygieneartikel) und [duschgel](hygieneartikel)
+    - ich brauch [seife](hygieneartikel) [kondome](hygieneartikel) und [duschgel](hygieneartikel)
+    - brauche außerdem noch [tampons](hygieneartikel)
+    - ok nochmal von vorn. ich brauch dringend [kondome](hygieneartikel) [seife](hygieneartikel) [tampons](hygieneartikel) und ne menge [duschgel](hygieneartikel)
+    - ich brauche [kondome](hygieneartikel)
+    - [seife](hygieneartikel) [watte](hygieneartikel) [tampons](hygieneartikel)
+    - [watte](hygieneartikel)
+    - ich brauch [hygieneartikel](hygieneartikel)
+    - [seife](hygieneartikel) und [tampons](hygieneartikel)
+    - Ich brauche [Seife](hygieneartikel), [Duschgel](hygieneartikel), [Kondome](hygieneartikel) und [Klopapier](hygieneartikel)
+    - [seife](hygieneartikel) [tampons](hygieneartikel) und [watte](hygieneartikel)
+    - [seife](hygieneartikel)
+    - ich brauch [seife](hygieneartikel) [tampons](hygieneartikel) und [watte](hygieneartikel)
+- lookup: hygieneartikel
+  examples: |
+    - Seife
+    - Binden
+    - Tampons
+    - OB
+    - Watte
+    - Shampoo
+    - Duschgel
+    - Klopapier
+    - Windeln
+    - Küchenrollen
+    - Zewa
+    - Tempos
+    - Taschentücher
+    - Reinigungstücher
+    - Feuchttücher
