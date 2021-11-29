@@ -87,10 +87,26 @@ nlu:
     - [mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
     - [weiblich](bgeschlecht)
     - [16](alter)
+- synonym: unterkunft
+  examples: |
+    - pennen
+    - Schlafen
+    - Schlafplatz
+    - Dach über dem Kopf
+    - Notunterkunft
+    - Wohnung
+    - Heimplatz
+    - Obdachlosenheim
+    - weg von der Straße
+    - schlafen
+    - ratzen
+    - knacken
+    - schlummern
 - synonym: männlich
   examples: |
     - Mann
     - Junge
+    - mann
     - Boy
     - Man
 - synonym: weiblich
@@ -102,28 +118,14 @@ nlu:
     - Woman
 - synonym: divers
   examples: |
-    - keinem geschlecht
     - weder Mann noch Frau
     - weder Frau noch Mann
     - nicht binär
     - non-binary
     - non binary
+    - keinem geschlecht
     - keinem Geschlecht
     - weder noch
-- synonym: unterkunft
-  examples: |
-    - Schlafplatz
-    - Dach über dem Kopf
-    - pennen
-    - Notunterkunft
-    - Wohnung
-    - Heimplatz
-    - Obdachlosenheim
-    - weg von der Straße
-    - schlafen
-    - ratzen
-    - knacken
-    - schlummern
 - regex: alter
   examples: |
     - \d{1,3}
