@@ -118,7 +118,6 @@ nlu:
     - Woman
 - synonym: divers
   examples: |
-    - keinem bgeschlecht
     - weder Mann noch Frau
     - weder Frau noch Mann
     - nicht binär
