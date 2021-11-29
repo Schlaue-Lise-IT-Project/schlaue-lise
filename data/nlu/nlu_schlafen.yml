@@ -81,8 +81,8 @@ nlu:
     - Ich bin ein [Mädchen]{"entity": "bgeschlecht", "value": "weiblich"}
     - [35](alter)
     - ich bin ein [Mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
-    - ich bin ein [mann]{"entity": "geschlecht", "value": "m\u00e4nnlich"}
-    - [männlich](geschlecht)
+    - ich bin ein [mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
+    - [männlich](bgeschlecht)
     - [23](alter)
     - [mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
     - [weiblich](bgeschlecht)
@@ -118,7 +118,6 @@ nlu:
     - Woman
 - synonym: divers
   examples: |
-    - keinem bgeschlecht
     - weder Mann noch Frau
     - weder Frau noch Mann
     - nicht binär
