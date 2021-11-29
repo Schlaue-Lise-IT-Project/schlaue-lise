@@ -11,4 +11,4 @@ responses:
     - text: "Hallo, ich bin Lise. Wie kann ich dir weiterhelfen?"
 
   utter_danke:
-    - text: "Bitte. Ich freue mich, dass ich dir helfen konnte."
+    - text: "Gerne. Kann ich sonst noch etwas für dich tun?"
