@@ -6,7 +6,11 @@ name: Rasa X CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [rasax]
+    branches:   
+      - main
+  pull_request:
+    branches: 
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,12 +34,12 @@ jobs:
           rasa_test: false
           github_token: ${{ secrets.RASA_GHA_TOKEN }}
       - name: Set Model Name
-        if: github.ref == 'refs/heads/rasax'
+        if: github.ref == 'refs/heads/main'
         run: |
           model_path=`ls models/*.tar.gz | head -n 1`
           echo "MODEL_PATH=${model_path}" >> $GITHUB_ENV
       - name: Upload Model
-        if: github.ref == 'refs/heads/rasax'
+        if: github.ref == 'refs/heads/main'
         uses: wei/curl@v1
         with:
           args: -k -F "model=@${{ env.MODEL_PATH }}" "http://34.159.228.55/api/projects/default/models?api_token=${{ secrets.RASA_TOKEN }}"

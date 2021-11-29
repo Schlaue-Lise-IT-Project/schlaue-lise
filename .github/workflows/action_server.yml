@@ -3,7 +3,12 @@ name: Action Server CI
 on:
   push:
     branches:
-      - rasax
+      - main
+    paths:
+      - "actions/**"
+  pull_request:
+    branches:
+      - main
     paths:
       - "actions/**"
 
