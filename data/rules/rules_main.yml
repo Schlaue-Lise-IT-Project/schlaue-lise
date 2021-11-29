@@ -11,3 +11,8 @@ rules:
     steps:
       - intent: greet
       - action: utter_hallo
+
+  - rule: Auf Danke entsprechend reagieren
+    steps:
+      - intent: danke
+      - action: utter_danke
