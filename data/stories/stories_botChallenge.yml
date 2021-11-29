@@ -1,17 +1,184 @@
 version: "2.0"
-
 stories:
 - story: bot Challenge
   steps:
-    - intent: bot_challenge
-    - action: utter_iamabot
-  
+  - intent: bot_challenge
+  - action: utter_iamabot
 - story: bot Challenge Yes
   steps:
-    - intent: bot_challenge_yes
-    - action: utter_yesiamabot
-
+  - intent: bot_challenge_yes
+  - action: utter_yesiamabot
 - story: bot Challenge No
   steps:
-    - intent: bot_challenge_no
-    - action: utter_noiamabot
+  - intent: bot_challenge_no
+  - action: utter_noiamabot
+- story: Story from Conversation ID 27c6dfb7c5a749c69473a3dfc4ec52ee
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: hygiene_suche
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - requested_slot: hygieneartikel
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: Seife
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - action: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url
+  - intent: restart
+  - action: action_restart
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: Seife
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url
+  - intent: restart
+  - action: action_restart
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: Binden
+  - slot_was_set:
+    - hygieneartikel:
+      - Binden
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - Binden
+  - slot_was_set:
+    - hygieneartikel:
+      - Binden
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url
+  - intent: restart
+  - action: action_restart
+- story: Story from Conversation ID ab7d4cfd848842b3af9003bbcb4907f4
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: hygiene_suche
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - requested_slot: hygieneartikel
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: Seife
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - action: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url
+- story: Story from Conversation ID d535ec28ad4340719fb86416f562477b
+  steps:
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: Seife
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - slot_was_set:
+    - hygieneartikel:
+      - Seife
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url
+  - intent: restart
+  - action: action_restart
+  - intent: greet
+  - action: utter_hallo
+  - intent: hygiene_suche
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - requested_slot: hygieneartikel
+  - intent: nlu_fallback
+    entities:
+    - hygieneartikel: seife
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+  - action: utter_please_rephrase
+  - action: hygiene_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url
+- story: Story from Conversation ID 233b66526907476e9c6a87cd4319f0e2
+  steps:
+  - intent: greet
+  - action: utter_hallo
+  - intent: hygiene_suche
+  - action: hygiene_form
+  - active_loop: hygiene_form
+  - slot_was_set:
+    - requested_slot: hygieneartikel
+  - intent: hygiene_specific
+    entities:
+    - hygieneartikel: seife
+    - hygieneartikel: tampons
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+      - tampons
+  - action: hygiene_form
+  - slot_was_set:
+    - hygieneartikel:
+      - seife
+      - tampons
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_answer_hygiene
+  - action: action_answer_url

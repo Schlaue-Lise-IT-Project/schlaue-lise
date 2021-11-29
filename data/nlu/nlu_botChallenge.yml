@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: bot_challenge
   examples: |
@@ -9,7 +8,6 @@ nlu:
     - Mit wem rede ich
     - Wer bist du?
     - wer bist du
-
 - intent: bot_challenge_yes
   examples: |
     - Bist du ein Bot?
@@ -18,7 +16,6 @@ nlu:
     - spreche ich mit einem bot
     - Bist du eine Maschine?
     - bist du eine maschine
-
 - intent: bot_challenge_no
   examples: |
     - Bist du ein Mensch?
@@ -27,4 +24,9 @@ nlu:
     - spreche ich mit einem menschen
     - Bist du menschlich?
     - bist du menschlich
-
+- intent: spenden_erhalten
+  examples: |
+    - Außerdem brauche ich noch Spenden
+- intent: bedanken
+  examples: |
+    - Danke
