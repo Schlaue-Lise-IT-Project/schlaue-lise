@@ -13,6 +13,8 @@ intents:
       use_entities: true
   - deny:
       use_entities: true
+  - danke:
+      use_entities: true
   # Bot Challenge
   - bot_challenge:
       use_entities: true
