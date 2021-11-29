@@ -64,7 +64,7 @@ nlu:
       - auf wiedersehen
       - bye bye
       - machs gut
-  - intent: bedanken
+  - intent: danke
     examples: |
       - danke
       - thanks
