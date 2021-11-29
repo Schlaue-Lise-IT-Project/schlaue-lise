@@ -6,11 +6,6 @@ on:
       - main
     paths:
       - "actions/**"
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "actions/**"
 
   workflow_dispatch:
 
