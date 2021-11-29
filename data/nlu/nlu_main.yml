@@ -1,66 +1,81 @@
 version: "2.0"
 nlu:
-  - intent: affirm
-    examples: |
-      - Ja
-      - ja 
-      - Natürlich
-      - Auf jeden Fall
-      - Das klingt gut
-      - Korrekt
-      - Klar
-      - Richtig
-  - intent: deny
-    examples: |
-      - Nein
-      - nein
-      - Nö
-      - Ich denke nicht
-      - Ich mag das nicht
-      - Ich möchte das nicht
-      - Nicht wirklich
-      - Auf keinen Fall
-      - Nope
-      - Weder
-      - weder
-      - keinen
-      - keinem
-      - kein
-      - Nicht
-      - nicht
-      - Nee
-  - intent: greet
-    examples: |
-      - hey
-      - hello
-      - hi
-      - hallo
-      - halo
-      - guten Morgen
-      - guten Tag
-      - guten Abend
-      - gute Nacht
-      - guten Nachmittag
-      - moin
-      - hey dude
-      - auf geht's
-      - servus
-      - sevusla
-      - griaß di
-      - greetz
-      - moinsen
-  - intent: goodbye
-    examples: |
-      - Schönen Abend noch
-      - bis bald
-      - Aufwiedersehen
-      - tschau
-      - bis zum nächsten mal
-      - guten abend
-      - bye
-      - chao
-      - goodbye
-      - schönen Tag noch
-      - auf wiedersehen
-      - bye bye
-      - machs gut
+- intent: affirm
+  examples: |
+    - Ja
+    - ja
+    - Natürlich
+    - Auf jeden Fall
+    - Das klingt gut
+    - Korrekt
+    - Klar
+    - Richtig
+- intent: deny
+  examples: |
+    - Nein
+    - nein
+    - Nö
+    - Ich denke nicht
+    - Ich mag das nicht
+    - Ich möchte das nicht
+    - Nicht wirklich
+    - Auf keinen Fall
+    - Nope
+    - Weder
+    - weder
+    - keinen
+    - keinem
+    - kein
+    - Nicht
+    - nicht
+    - Nee
+    - nö
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hallo
+    - halo
+    - guten Morgen
+    - guten Tag
+    - guten Abend
+    - gute Nacht
+    - guten Nachmittag
+    - moin
+    - hey dude
+    - auf geht's
+    - servus
+    - sevusla
+    - griaß di
+    - greetz
+    - moinsen
+    - Hallo
+- intent: goodbye
+  examples: |
+    - Schönen Abend noch
+    - bis bald
+    - Aufwiedersehen
+    - tschau
+    - bis zum nächsten mal
+    - guten abend
+    - bye
+    - chao
+    - goodbye
+    - schönen Tag noch
+    - auf wiedersehen
+    - bye bye
+    - machs gut
+- intent: danke
+  examples: |
+    - danke
+    - thanks
+    - thx
+    - merci
+    - vergelts Gott
+    - dankeschön
+    - herzlichen Dank
+    - vielen lieben Dank
+    - dankesehr
+    - DANKE
+    - hab Dank

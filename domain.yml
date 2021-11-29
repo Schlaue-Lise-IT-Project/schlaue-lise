@@ -1,214 +1,268 @@
-version: "2.0"
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  # Bot Challenge
-  - bot_challenge
-  - bot_challenge_yes
-  - bot_challenge_no
-  # Medizin
-  - medicine_requested
-  - medicine_specific_insurancestatus
-  - medicine_specific_emergency
-  - medicine_all_information
-  # spenden
-  - spenden
-  - spenden_specific
-  - geld_benoetigen
-  # Hygiene
-  - hygiene_suche
-  - hygiene_specific
-  - suche_unterkunft
-  - inform
-  # Default / Fallback
-  - out_of_scope
-
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- danke:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- bot_challenge_yes:
+    use_entities: true
+- bot_challenge_no:
+    use_entities: true
+- medicine:
+    use_entities: true
+- medicine_requested:
+    use_entities: true
+- medicine_specific_insurancestatus:
+    use_entities: true
+- medicine_specific_emergency:
+    use_entities: true
+- medicine_all_information:
+    use_entities: true
+- spenden:
+    use_entities: true
+- spenden_specific:
+    use_entities: true
+- geld_benoetigen:
+    use_entities: true
+- hygiene_suche:
+    use_entities: true
+- hygiene_specific:
+    use_entities: true
+- suche_unterkunft:
+    use_entities: true
+- inform:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
 entities:
-  - alter
-  - drogen
-  - drogenabhaengig
-  - geschlecht
-  - emergency
-  - insurancestatus
-  - haustier
-  - haustierhalter
-  # Hygiene
-  - hygieneartikel
-  - volljaehrig
-  - jugendlich
-  - notunterkunft
-  - unterkunft
-  #spenden
-  - spendenartikel
-  - spendeErhalten
-  - geld
-
+- alter
+- drogen
+- drogenabhaengig
+- bgeschlecht
+- medicine
+- emergency
+- insurancestatus
+- haustier
+- chaustierhalter
+- hygieneartikel
+- volljaehrig
+- jugendlich
+- notunterkunft
+- unterkunft
+- spendenartikel
+- spendeErhalten
+- geld
 slots:
   unterkunft:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   notunterkunft:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   medicine:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   insurancestatus:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   emergency:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
-  geschlecht:
-    type: categorical
+  bgeschlecht:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
     values:
-      - männlich
-      - weiblich
-      - divers
-    influence_conversation: true
+    - männlich
+    - weiblich
+    - divers
   alter:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   volljaehrig:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   jugendlich:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
-  haustierhalter:
-    type: bool
+  chaustierhalter:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   haustier:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
-  # Hygiene
   hygieneartikel:
-    type: list
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   drogen:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
-  # spenden:
   spendenartikel:
-    type: list
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   spendeErhalten:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   geld:
-    type: text
-  drogenabhaengig:
-    type: bool
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
-
+  drogenabhaengig:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses: {}
 actions:
-  - validate_informationen_form
-  - validate_unterkunft_form
-  - validate_hygiene_form
-  - action_answer_hygiene
-  # Spende
-  - validate_spendenartikel_form
-  - action_answer_spende
-  - validate_spendeErhalten_form
-  # URL
-  - action_answer_url
-  - validate_medicine_form
-
+- validate_informationen_form
+- validate_unterkunft_form
+- validate_hygiene_form
+- action_answer_hygiene
+- validate_spendenartikel_form
+- action_answer_spende
+- validate_spendeErhalten_form
+- action_answer_url
+- validate_medicine_form
 forms:
   informationen_form:
     required_slots:
       alter:
-        - type: from_entity
-          entity: alter
-          intent: inform
-      geschlecht:
-        - type: from_entity
-          entity: geschlecht
-          intent: inform
-        - type: from_intent
-          intent: deny
-          value: divers
-      haustierhalter:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: inform
+      - entity: alter
+        intent: inform
+        type: from_entity
+      bgeschlecht:
+      - entity: bgeschlecht
+        intent: inform
+        type: from_entity
+      - intent: deny
+        type: from_intent
+        value: divers
+      chaustierhalter:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: inform
+        type: from_intent
+        value: None
       drogenabhaengig:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: inform
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: inform
+        type: from_intent
+        value: None
   unterkunft_form:
     required_slots:
       notunterkunft:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: suche_unterkunft
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: suche_unterkunft
+        type: from_intent
+        value: None
   hygiene_form:
     required_slots:
       hygieneartikel:
-        - type: from_entity
-          entity: hygieneartikel
-          intent: hygiene_specific
-  # spenden
+      - entity: hygieneartikel
+        intent: hygiene_specific
+        type: from_entity
   spendenartikel_form:
     required_slots:
       spendenartikel:
-        - type: from_entity
-          entity: spendenartikel
-          intent: spende_specific
+      - entity: spendenartikel
+        intent: spende_specific
+        type: from_entity
   spendeErhalten_form:
     required_slots:
       spendeErhalten:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: spenden
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: spenden
+        type: from_intent
+        value: None
   medicine_form:
     required_slots:
       emergency:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: medicine_requested
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: medicine_requested
+        type: from_intent
+        value: None
       insurancestatus:
-        - type: from_intent
-          value: True
-          intent: affirm
-        - type: from_intent
-          value: False
-          intent: deny
-        - type: from_intent
-          value: None
-          intent: medicine_requested
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      - intent: medicine_requested
+        type: from_intent
+        value: None
+e2e_actions: []

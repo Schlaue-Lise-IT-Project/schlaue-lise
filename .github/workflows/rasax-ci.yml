@@ -6,7 +6,8 @@ name: Rasa X CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ rasax ]
+    branches:   
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,13 +26,17 @@ jobs:
       - name: Run rasa train
         uses: RasaHQ/rasa-train-test-gha@main
         with:
-          rasa_version: '2.8.0'
-          rasa_image: 'noopliez/rasa-spacy-de-md:2.8.0'
-          train_args: '--fixed-model-name my_model'
+          rasa_version: "2.8.0"
+          rasa_image: "noopliez/rasa-spacy-de-md:2.8.0"
           rasa_test: false
           github_token: ${{ secrets.RASA_GHA_TOKEN }}
-      - name: Upload model
-        if: github.ref == 'refs/heads/rasax'
+      - name: Set Model Name
+        if: github.ref == 'refs/heads/main'
+        run: |
+          model_path=`ls models/*.tar.gz | head -n 1`
+          echo "MODEL_PATH=${model_path}" >> $GITHUB_ENV
+      - name: Upload Model
+        if: github.ref == 'refs/heads/main'
         uses: wei/curl@v1
         with:
-          args: curl -k -F "model=@models/my_model.tar.gz" "https://34.159.228.55/projects/default/models?api_token={secrets.RASA_TOKEN}"
+          args: -k -F "model=@${{ env.MODEL_PATH }}" "http://34.159.228.55/api/projects/default/models?api_token=${{ secrets.RASA_TOKEN }}"
