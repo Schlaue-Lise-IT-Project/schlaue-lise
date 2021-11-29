@@ -1,9 +1,6 @@
 version: "2.0"
 
 responses:
-  utter_open_medicine:
-    - text: "... gehe zu 'Medizin-Übersicht'"
-
   utter_save_insured:
     - text: "... saving insurance-status: 'insurancestatus'\n> erkannter Versicherungsstatus: '{insurancestatus}'"
 
@@ -31,13 +28,33 @@ responses:
           - Notfall: {emergency}
           - Versicherungsstatus: {insurancestatus}
 
-        Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
+        Folgende Hilfestellen haben wir für deine Anfrage gefunden:
+           ___________________________________________ 
            Ambulanz Klinikum Nord 
            Prof.-Ernst-Nathan-Str. 1 90419 Nürnberg
            0911 3980
            Geöffnet 0:00 - 24:00 
+           ___________________________________________
+           Caritas Straßenambulanz - Franz von Assisi 
+           Straßburger Str. 14
+           90443 Nürnberg
+           0911 47 49 48 60
 
-           ...
+           Ärztliche Sprechstunde: 
+           Mo 9:00 - 12:30 + 14:00 - 17:00 
+           Di 9:00 - 12:30 + 15:30 - 17:00
+           Mi 9:00 - 12:30 + 14:00 - 16:00
+           Do 9:00 - 11:00 + 14:00 - 17:00 
+           Fr 9:00 - 12:30 
+
+           Chirurgische Sprechstunde: Do 14:00 - 16:00
+
+           Vorsorgeuntersuchung von nicht krankenver- 
+           sicherten Kindern: Mo 14:00 - 17:00 
+           
+           Substitutionssprechstunden: 
+           ausschließlich nach Terminvereinbaung 
+           ___________________________________________
 
   utter_answer_emergeny:
     - text: |
