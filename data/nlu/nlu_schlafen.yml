@@ -107,7 +107,7 @@ nlu:
     - [man](bgeschlecht)
     - [männer](bgeschlecht)
     - [Divers](bgeschlecht)
-    - Ich bin [28](alter) Jahre alt, [männlich](bgeschlecht), habe keinen [Hund](haustier) und nehme [keine](insurancestatus) [Drogen](drogen)
+    - Ich bin [28](alter) Jahre alt, [männlich](bgeschlecht), habe keinen [Hund](haustier) und nehme keine [Drogen](drogen)
 - synonym: unterkunft
   examples: |
     - pennen
