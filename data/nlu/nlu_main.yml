@@ -89,3 +89,7 @@ nlu:
     - ok danke
     - Danke
     - Dankeschön
+- synonym: 'True'
+  examples: |
+    - notfall
+    - Notfall

@@ -50,16 +50,6 @@ nlu:
     - ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
     - [notarzt]{"entity": "emergency", "value": "True"}
     - ich brauche einen Arzt und bin [versichert]{"entity": "insurancestatus", "value": "True"}
-- synonym: 'True'
-  examples: |
-    - versichert
-    - Versicherung
-    - Notarzt
-    - Sanitäter
-    - Sanni
-    - Sanker
-    - Krankenwagen
-    - Notfall
 - synonym: 'False'
   examples: |
     - nicht versichert
