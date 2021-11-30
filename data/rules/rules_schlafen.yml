@@ -128,3 +128,12 @@ rules:
     steps:
       - action: utter_answer_notunterkunft_divers
       - action: action_answer_url
+  
+  - rule: Nach inform immer Schlafen ausführen
+    steps:
+      - or:
+        - intent: inform
+        - intent: suche_unterkunft
+      - action: utter_informationen
+      - action: informationen_form  
+      - active_loop: informationen_form
