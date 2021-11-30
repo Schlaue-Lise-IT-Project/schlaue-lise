@@ -48,6 +48,8 @@ nlu:
     - ich suche eine [unterkunft](unterkunft)
     - ich such ne [unterkunft](unterkunft)
     - ich brauche ne [unterkunft](unterkunft)
+    - ich such was zum [pennen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich brauche eine [unterkunft](unterkunft)
 - intent: inform
   examples: |
     - Ich bin [18](alter) Jahre alt
@@ -103,10 +105,13 @@ nlu:
     - [32](alter) Jahre alt
     - [Männlich](bgeschlecht)
     - [man](bgeschlecht)
+    - [männer](bgeschlecht)
+    - [Divers](bgeschlecht)
 - synonym: unterkunft
   examples: |
     - pennen
     - Schlafen
+    - schlafen
     - Schlafplatz
     - Dach über dem Kopf
     - Notunterkunft
@@ -114,7 +119,6 @@ nlu:
     - Heimplatz
     - Obdachlosenheim
     - weg von der Straße
-    - schlafen
     - ratzen
     - knacken
     - schlummern
@@ -130,10 +134,12 @@ nlu:
     - Frau
     - Mädchen
     - Mädel
+    - frau
     - Girl
     - Woman
 - synonym: divers
   examples: |
+    - keinem bgeschlecht
     - weder Mann noch Frau
     - weder Frau noch Mann
     - nicht binär

@@ -52,6 +52,7 @@ nlu:
     - Ich brauche [Seife](hygieneartikel), [Kondome](hygieneartikel), [Watte](hygieneartikel) und [Duschgel](hygieneartikel)
     - ich brauch [seife](hygieneartikel) [tampons](hygieneartikel) und [watte](hygieneartikel)
     - [seife](hygieneartikel) [tampons](hygieneartikel) und [watte](hygieneartikel)
+    - [seife](hygieneartikel) [watte](hygieneartikel)
 - lookup: hygieneartikel
   examples: |
     - Seife
