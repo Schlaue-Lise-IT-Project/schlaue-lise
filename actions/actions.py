@@ -94,9 +94,12 @@ class ValidateInformation(FormValidationAction):
         tracker: Tracker,
         domain: DomainDict
     ) -> Dict[Text, Any]:
+        logger.info("Validating Geschlecht")
         if slot_value.lower() in ["männlich", "weiblich", "divers"]:
-            return {"bgeschlecht": slot_value}
+            logger.info(f"Slot Value accepted")
+            return {"bgeschlecht": slot_value.lower()}
         else:
+            logger.info(f"Slot Value rejected")
             dispatcher.utter_message(text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
             return {"bgeschlecht": None}
 
