@@ -11,6 +11,7 @@ nlu:
     - Klar
     - Richtig
     - ja [notfall]{"entity": "emergency", "value": "True"}
+    - Ja [Notfall]{"entity": "emergency", "value": "True"}
     - yes
 - intent: deny
   examples: |
