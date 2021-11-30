@@ -5,10 +5,13 @@ responses:
     - text: "Hallo! Wie kann ich dir helfen?"
 
   utter_goodbye:
-    - text: "Tschüss!"
+    - text: "Ok, auf Wiedersehen."
 
   utter_hallo:
     - text: "Hallo, ich bin Lise. Wie kann ich dir weiterhelfen?"
 
   utter_danke:
     - text: "Gerne. Kann ich sonst noch etwas für dich tun?"
+
+  utter_continue:
+    - text: "Alles klar, um was geht es?"
