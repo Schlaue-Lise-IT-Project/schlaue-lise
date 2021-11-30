@@ -47,7 +47,7 @@ responses:
     - text: "Nimmst du Drogen?"
 
   utter_informationen:
-    - text: "Ich benötige noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert."
+    - text: "Ok, zum Thema 'Unterkunft' benötige ich noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert."
 
   utter_informationen_slots_values:
     - text: |+

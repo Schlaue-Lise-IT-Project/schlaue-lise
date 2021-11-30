@@ -1,6 +1,14 @@
 version: "2.0"
-# stories:
-# - story: happy path
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
+stories:
+- story: happy ending
+  steps:
+  - intent: danke
+  - action: utter_danke
+  - intent: deny
+  - action: utter_goodbye
+- story: unhappy ending
+  steps:
+  - intent: danke
+  - action: utter_danke
+  - intent: affirm
+  - action: utter_continue
