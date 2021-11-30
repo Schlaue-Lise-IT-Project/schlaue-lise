@@ -37,6 +37,17 @@ nlu:
     - ich brauche einen [platz](unterkunft) zum [pennen]{"entity": "unterkunft", "value": "unterkunft"}
     - Ich brauche einen [Schlafplatu](unterkunft)
     - Ich brauche einen Ort zum [Schlafen]{"entity": "unterkunft", "value": "unterkunft"}
+    - Ich brauche einen [Platz](unterkunft) zum [schlafen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich brauche einen [Platz](unterkunft) zum [pennen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich suche einen Ort zum [schlafen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich brauche etwas zum [schlafen]{"entity": "unterkunft", "value": "unterkunft"}
+    - such ne [bleibe](unterkunft)
+    - brauch was zu [schlafen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich brauch ne [unterkunft](unterkunft)
+    - ich suche was zu [pennen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich suche eine [unterkunft](unterkunft)
+    - ich such ne [unterkunft](unterkunft)
+    - ich brauche ne [unterkunft](unterkunft)
 - intent: inform
   examples: |
     - Ich bin [18](alter) Jahre alt
@@ -87,6 +98,11 @@ nlu:
     - [mann]{"entity": "bgeschlecht", "value": "m\u00e4nnlich"}
     - [weiblich](bgeschlecht)
     - [16](alter)
+    - [34](alter)
+    - [frau]{"entity": "bgeschlecht", "value": "weiblich"}
+    - [32](alter) Jahre alt
+    - [Männlich](bgeschlecht)
+    - [man](bgeschlecht)
 - synonym: unterkunft
   examples: |
     - pennen
@@ -118,6 +134,7 @@ nlu:
     - Woman
 - synonym: divers
   examples: |
+    - keinem bgeschlecht
     - weder Mann noch Frau
     - weder Frau noch Mann
     - nicht binär

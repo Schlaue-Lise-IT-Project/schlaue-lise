@@ -30,6 +30,7 @@ nlu:
     - nicht
     - Nee
     - nö
+    - ney
 - intent: greet
   examples: |
     - hey
@@ -81,3 +82,5 @@ nlu:
     - hab Dank
     - Danke?
     - Ok danke
+    - ok danke
+    - Danke

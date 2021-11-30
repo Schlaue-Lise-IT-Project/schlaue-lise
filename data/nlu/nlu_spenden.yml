@@ -29,6 +29,7 @@ nlu:
     - Ich brauche einen [Rucksack](spendenartikel)
     - [Rucksack](spendenartikel)
     - [Schlafsack](spendenartikel)
+    - ich brauche einen [Schlafsack](spendenartikel)
 - intent: spenden
   examples: |
     - Ich möchte Spenden erhalten
@@ -38,12 +39,14 @@ nlu:
     - Ich hab was abzugeben
     - Ich möchte spenden
     - Ich brauche was
+    - ich will spenden
 - intent: geld_benoetigen
   examples: |
     - Ich brauch [Geld}](geld)
     - Ich brauch [Kohle](geld)
     - bin [pleite](geld)
     - brauch [geld](geld)
+    - Ich brauche [Schotter](geld)
 - lookup: spendenartikel
   examples: |
     - Kleidung
