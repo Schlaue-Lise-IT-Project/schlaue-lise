@@ -47,6 +47,7 @@ nlu:
     - bin [pleite](geld)
     - brauch [geld](geld)
     - Ich brauche [Schotter](geld)
+    - brauche [geld](geld)
 - lookup: spendenartikel
   examples: |
     - Kleidung

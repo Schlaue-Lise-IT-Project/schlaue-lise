@@ -16,6 +16,7 @@ nlu:
     - ich brauch hygieneartikel
     - Ich benötige Hygieneartikel
     - ich brauche hygieneartikel
+    - Wo bekomme ich Hygieneartikel?
 - intent: hygiene_specific
   examples: |
     - Ich brauche [Binden](hygieneartikel)
@@ -53,6 +54,8 @@ nlu:
     - ich brauch [seife](hygieneartikel) [tampons](hygieneartikel) und [watte](hygieneartikel)
     - [seife](hygieneartikel) [tampons](hygieneartikel) und [watte](hygieneartikel)
     - [seife](hygieneartikel) [watte](hygieneartikel)
+    - [Tampons](hygieneartikel)
+    - ich brauche [Tampons](hygieneartikel)
 - lookup: hygieneartikel
   examples: |
     - Seife

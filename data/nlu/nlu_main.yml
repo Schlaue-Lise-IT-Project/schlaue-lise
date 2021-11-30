@@ -10,6 +10,9 @@ nlu:
     - Korrekt
     - Klar
     - Richtig
+    - ja [notfall]{"entity": "emergency", "value": "True"}
+    - Ja [Notfall]{"entity": "emergency", "value": "True"}
+    - yes
 - intent: deny
   examples: |
     - Nein
@@ -67,6 +70,7 @@ nlu:
     - auf wiedersehen
     - bye bye
     - machs gut
+    - Auf Wiedersehen
 - intent: danke
   examples: |
     - danke
@@ -84,3 +88,4 @@ nlu:
     - Ok danke
     - ok danke
     - Danke
+    - Dankeschön
