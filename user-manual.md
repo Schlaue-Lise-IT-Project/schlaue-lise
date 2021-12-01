@@ -597,7 +597,7 @@ Chatbot: > Notfall registriert!
 ```
 
 #### Beispiel 4: "Medizinische Informationen in der Eingabe mitteilen - Versicherungsstatus und Notfall"
-Es  ist auch möglich in Satz den Versicherungsstatus zusammen mit der Information, dass es sich um einen Notfall handelt mitzuteilen. Es wird somit gleich zur entsprechenden Ausgabe gesprungen. 
+Es  ist auch möglich in einem Satz den Versicherungsstatus zusammen mit der Information, dass es sich um einen Notfall handelt mitzuteilen. Es wird somit gleich zur entsprechenden Ausgabe gesprungen. 
 ```
 Eingabe: Ich bin versichert und es ist ein Notfall 
 Chatbot: > Notfall registriert! 
