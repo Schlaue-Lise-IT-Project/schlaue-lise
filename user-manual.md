@@ -478,6 +478,8 @@ Ich habe mich geschnitten
 Ich habe mich verbrannt
 Ich hatte einen Unfall
 Ich fühle mich nicht gut
+Ich brauche Hilfe 
+Unfall 
 ```
 
 Auch gibt es die Möglichkeit über direkte Informationseingabe über Notfallstatus oder Versicherungsstatus ins Medizin-Menü zu gelangen.
