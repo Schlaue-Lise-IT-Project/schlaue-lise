@@ -3,23 +3,22 @@ nlu:
 - intent: medicine_requested
   examples: |
     - Ich brauche einen Arzt
-    - ich brauche einen Arzt 
+    - ich brauche einen arzt 
     - Ich brauche Medizin
-    - ich brauche Medizin 
+    - ich brauche medizin 
     - Ich brauche medizinische Hilfe
-    - ich brauche medizinische Hilfe 
+    - ich brauche Medizinische hilfe 
     - Ich suche einen Arzt
-    - ich suche einen Arzt 
+    - ich suche einen arzt 
     - Ich habe mich verletzt
-    - ich habe mich verletzt 
+    - ich habe mich Verletzt 
     - Ich habe mich geschnitten
-    - ich habe mich geschnitten 
+    - ich habe mich Geschnitten 
     - Ich habe mich verbrannt
-    - ich habe mich verbrannt 
+    - ich habe mich Verbrannt 
     - Ich hatte einen Unfall
-    - ich hatte einen Unfall 
+    - ich hatte einen unfall 
     - Ich fühle mich nicht gut
-    - ich fühle mich nicht gut 
     - ich brauche hilfe
     - Ich brauche Hilfe
     - ich brauch nen Arzt
