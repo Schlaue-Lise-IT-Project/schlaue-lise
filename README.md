@@ -3,7 +3,9 @@
 ## Inhaltsverzeichnis
 
 1. [Anaconda Installation](#anaconda-installation)
-2. [Lokale Installation](#Probleme-mit-Timeout-Error)
+2. [Rasa X](#rasa-x)
+3. [Probleme mit Timeout Error](#Probleme-mit-Timeout-Error)
+4. [Rasa Befehle](#rasa-befehle)
 
 ## Anaconda Installation
 
@@ -16,13 +18,13 @@ Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_.
 Es bietet sich an, mit **virtuellen Environments** zu arbeiten, wenn man mit Python arbeitet,
 um (Dependency-) Konflikte mit anderen Projekten zu vermeiden.
 
-Dazu gibt es hier im Verzeichnis die Datei `environment.yml`. 
+Dazu gibt es hier im Verzeichnis die Datei [`environments.yml`](environment.yml). 
 Über diese Datei wird automatisch ein Environment für das Projekt angelegt.
 
 Weiterführende Informationen dazu hier:
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
-Hierzu muss allerdings erst Anaconda installiert sein, siehe nächster Schritt [Installation](#installation).
+Zunächst muss allerdings erst Anaconda installiert sein, siehe nächster Schritt [Installation](#installation).
 
 ### Installation
 
@@ -35,15 +37,17 @@ Weblinks zu den Installationsanleitungen:
 - <https://docs.anaconda.com/anaconda/install>
 - <https://docs.conda.io/en/latest/miniconda.html>
 
-Darüber hinaus brauchen wir noch weitere Libraries.
+### Installation weiterer Libraries
+
+Darüber hinaus werden noch weitere Libraries benötigt.
 Für die Installation gibt es bei Anaconda den Kommandozeilen-Befehl `conda`,
 der ein sauberes Paket-Management beinhaltet. Er ist für das Basis-Setup dem Standard-Installer `pip`
 für Python vorzuziehen. Allerdings sind nicht alle Pakte über `conda` verfügbar,
 sodass gelegentlich auf `pip` ausgewichen werden muss. Die notwendigen Pakete stehen in der Datei [`environments.yml`](environment.yml).
 
-Nach der Anaconda-Installation könnt ihr das "Anaconda Prompt" (z.B. in Windows aus dem Startmenü erreichbar).
+Nach der Anaconda-Installation kann das "Anaconda Prompt" (z.B. in Windows aus dem Startmenü erreichbar) genutzt werden.
 
-Führt dann folgende Kommandos auf der Kommandozeile aus:
+Folgende Kommandos sind auf der Kommandozeile auszuführen:
 
 **Optional**, wenn schon mal gemacht:
 
@@ -65,9 +69,7 @@ Dieser Schritt ist **IMMER AUSZUFÜHREN**:
 Dieser Schritt ist **optional**, wenn es schon einmal konfiguriert wurde:
 
 ```sh
-# Da ein lokales Environment etwas hässlich in der Kommandozeile
-# angezeigt wird, bietet sich noch folgender Befehl an, der den
-# Root-Folder (hier: env) des Environments als Namen anzeigt:
+# Da ein lokales Environment etwas hässlich in der Kommandozeile angezeigt wird, bietet sich noch folgender Befehl an, der den Root-Folder (hier: env) des Environments als Namen anzeigt:
 > conda config --set env_prompt '({name}) '
 ```
 
@@ -84,14 +86,17 @@ Dieser Schritt ist **IMMER AUSZUFÜHREN**:
 (env)> python -m spacy download de_core_news_md
 ```
 
-**Optional**, wenn ihr mit Rasa X (Local Mode) arbeitet:
+**Optional**, wenn mit Rasa X (Local Mode) gearbeitet wird:
 
 ```sh
 (env)> pip install -U sanic-jwt==1.6.0
 ```
 
-### Hinweise zu Rasa X 
-Rasa X formatiert automatisch eure YAML-Files, das ist nicht weiter schlimm und führt nur in Forms zu Problemen. Da werden nämlich die Slots von Rasa X alphabetisch sortiert. Das ist ein bekannter Bug, der noch nicht behoben wurde. In unserem Fall ist es bspw. so:
+## Rasa X 
+
+http://34.159.228.55/login
+
+Rasa X formatiert automatisch die YAML-Files, das ist nicht weiter schlimm und führt nur in Forms zu Problemen. Es werden die Slots von Rasa X alphabetisch sortiert. Das ist ein bekannter Bug bei Rasa, der noch nicht behoben wurde. In diesem Projektfall ist es bspw. so:
 
 Eigentlich werden bei der `informationen_form` die `Slots` in folgender Reihenfolge abgefragt:
 
@@ -99,7 +104,7 @@ Eigentlich werden bei der `informationen_form` die `Slots` in folgender Reihenfo
 Alter -> Geschlecht -> Haustiere -> Drogen
 ```
 
-Nach der Sortierung durch Rasa X wird dann aber folgendermaßen abgefragt:
+Nach der Sortierung durch Rasa X wird jedoch folgendermaßen abgefragt:
 
 ```
 Alter -> Drogen -> Geschlecht -> Haustiere
@@ -115,7 +120,7 @@ Das ist nur ein unschöner Workaround, aber er funktioniert.
 
 ## Probleme mit Timeout-Error
 
-Es kann sein, dass manche Computer zu langsam sind, um die entsprechend auf Eingaben zu reagieren. Es kommt dann zu einem `TimeoutError`. Dieser kann folgendermaßen umgangen werden:
+Es kann sein, dass manche Computer zu langsam sind, um entsprechend auf Eingaben zu reagieren. Es kommt dann zu einem `TimeoutError`. Dieser kann folgendermaßen umgangen werden:
 
 ```python
 # <Projektverzeichnis>/env\Lib\site-packages\rasa\core\channels\console.py
@@ -125,18 +130,27 @@ DEFAULT_STREAM_READING_TIMEOUT_IN_SECONDS = 20 # default: 10
 
 Das ist ein Workaround und keine richtige Lösung. Damit können aber langsame Maschinen die Anfragen bearbeiten.
 
-## Rasa Befehle
+## Rasa Befehle 
+
+Um den Chatbot während der Implementierung zu testen, werden einige gängige Befehle für die Konsole benötigt, welche im folgenden aufgelistet sind.
+
+### Environment auswählen
+
+Für das Testen und ausführen des Chatbots muss das entsprechende Environment aktiviert werden.
 
 ```sh
-conda info --env
-conda activate
-rasa train
-rasa shell
-conda deactivate
+conda info --env # anzeige aller möglichen Environments
+conda activate ./env # aktivieren des Environments
+```
+### Chatbot trainieren
+
+```sh
+rasa train # Modell trainieren
+rasa shell # Chatbot auf der Konsole starten
+# oder
+rasa interactive # trackt die gespeicherten Daten während der Konversation und ermöglicht einen Export des Dialogs als Stories etc.
 ```
 
-## Um Rasa Custom actions zum laufen zu bringen
-1. in endpoints.yml müssen Zeile 13 und 14 entkommentiert werden
-2. in einem extra Terminal muss "rasa run actions" eingegeben werden 
+### Rasa Custom actions
+Um die Rasa Custom actions zu aktivieren muss in einem extra Terminal `rasa run actions` ausgeführt werden.
 
-am besten mit rasa interactive die Funktionalität der slots überprüfen.
