@@ -11,7 +11,6 @@ stories:
           - intent: medicine_specific_emergency
             entities:
               - emergency: emergency
-      - action: utter_open_medicine
       - action: medicine_form
       - active_loop: medicine_form
       - slot_was_set:
@@ -24,6 +23,7 @@ stories:
           - insurancestatus: true
       - active_loop: null
       - action: utter_answer_medical_assistance_insurance_true
+      - action: action_answer_url
 
   - story: nicht versichert und kein notfall
     steps:
@@ -35,7 +35,6 @@ stories:
           - intent: medicine_specific_emergency
             entities:
               - emergency: emergency
-      - action: utter_open_medicine
       - action: medicine_form
       - active_loop: medicine_form
       - slot_was_set:
@@ -48,6 +47,7 @@ stories:
           - insurancestatus: false
       - active_loop: null
       - action: utter_answer_medical_assistance_insurance_false
+      - action: action_answer_url
 
   - story: versichert und notfall
     steps:
@@ -59,7 +59,6 @@ stories:
           - intent: medicine_specific_emergency
             entities:
               - emergency: emergency
-      - action: utter_open_medicine
       - action: medicine_form
       - active_loop: medicine_form
       - slot_was_set:
@@ -72,6 +71,7 @@ stories:
           - insurancestatus: true
       - active_loop: null
       - action: utter_answer_emergeny
+      - action: action_answer_url
 
   - story: nicht versichert und notfall
     steps:
@@ -83,7 +83,6 @@ stories:
           - intent: medicine_specific_emergency
             entities:
               - emergency: emergency
-      - action: utter_open_medicine
       - action: medicine_form
       - active_loop: medicine_form
       - slot_was_set:
@@ -96,3 +95,4 @@ stories:
           - insurancestatus: false
       - active_loop: null
       - action: utter_answer_emergeny
+      - action: action_answer_url

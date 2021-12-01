@@ -1,71 +1,75 @@
 version: "2.0"
-
 nlu:
-  - lookup: spendenartikel
-    examples: |
-      - Kleidung
-      - Jacke
-      - Hose
-      - Pullover
-      - Unterwäsche
-      - BH
-      - Slip
-      - Schlafsack
-      - Isomatte
-      - Decke
-      - Kissen
-      - Nahrungsmittel
-      - Essen
-      - Kochzubehör
-      - Topf
-      - Pfanne
-      - Campingkocher
-      - Technik
-      - Handy
-      - Kopfhörer
-      - Laptop
-      - Freizeitartikel 
-      - Bildung
-
-  - intent: spenden_specific
-    examples: | 
-      - Ich brauch [Kleidung](spendenartikel)
-      - ich brauch [Jacke](spendenartikel)
-      - Ich benötige eine [Hose](spendenartikel)
-      - Ich brauch einen [Pullover](spendenartikel)
-      - ich brauch dringend [Unterwäsche](spendenartikel)
-      - brauch nen [BH](spendenartikel)
-      - ich brauch nen [Slip](spendenartikel)
-      - ich brauch nen [Schlafsack](spendenartikel)
-      - benötige eine [Isomatte](spendenartikel)
-      - ich brauch eine [Decke](spendenartikel)
-      - ich brauch ein [Kissen](spendenartikel)
-      - ich brauch was zu [essen](spendenartikel)
-      - ich brauch [Nahrungsmittel](spendenartikel)
-      - ich benötige [Kochzubehör](spendenartikel)
-      - ich brauch nen [Topf](spendenartikel)
-      - ich brauch eine [Pfanne](spendenartikel)
-      - benötige nen [Campingkocher](spendenartikel)
-      - ich brauch [Technik](spendenartikel)
-      - ich brauch ein neues [Handy](spendenartikel)
-      - ich brauch [Kopfhörer](spendenartikel)
-      - ich will nen [Laptop](spendenartikel)
-      - ich brauch [Freizeitartikel](spendenartikel)
-      - ich brauch was zur [Bildung](spendenartikel)
-
-  - intent: spenden
-    examples: |
-      - Ich möchte Spenden erhalten
-      - Ich brauche Spenden
-      - ich brauch was
-      - Ich möchte selbst spenden
-      - Ich hab was abzugeben
-
-  - intent: geld_benoetigen
-    examples: |
-      - Ich brauch [Geld}](geld)
-      - Ich brauch [Kohle](geld)
-      - bin [pleite](geld)
-      - brauch [geld](geld)
-
-
+- intent: spenden_specific
+  examples: |
+    - Ich brauch [Kleidung](spendenartikel)
+    - ich brauch [Jacke](spendenartikel)
+    - Ich benötige eine [Hose](spendenartikel)
+    - Ich brauch einen [Pullover](spendenartikel)
+    - ich brauch dringend [Unterwäsche](spendenartikel)
+    - brauch nen [BH](spendenartikel)
+    - ich brauch nen [Slip](spendenartikel)
+    - ich brauch nen [Schlafsack](spendenartikel)
+    - benötige eine [Isomatte](spendenartikel)
+    - ich brauch eine [Decke](spendenartikel)
+    - ich brauch ein [Kissen](spendenartikel)
+    - ich brauch was zu [essen](spendenartikel)
+    - ich brauch [Nahrungsmittel](spendenartikel)
+    - ich benötige [Kochzubehör](spendenartikel)
+    - ich brauch nen [Topf](spendenartikel)
+    - ich brauch eine [Pfanne](spendenartikel)
+    - benötige nen [Campingkocher](spendenartikel)
+    - ich brauch [Technik](spendenartikel)
+    - ich brauch ein neues [Handy](spendenartikel)
+    - ich brauch [Kopfhörer](spendenartikel)
+    - ich will nen [Laptop](spendenartikel)
+    - ich brauch [Freizeitartikel](spendenartikel)
+    - ich brauch was zur [Bildung](spendenartikel)
+    - [Schlafsack](spendenartikel) und [Kleidung](spendenartikel)
+    - Ich brauche einen [Rucksack](spendenartikel)
+    - [Rucksack](spendenartikel)
+    - [Schlafsack](spendenartikel)
+    - ich brauche einen [Schlafsack](spendenartikel)
+- intent: spenden
+  examples: |
+    - Ich möchte Spenden erhalten
+    - Ich brauche Spenden
+    - ich brauch was
+    - Ich möchte selbst spenden
+    - Ich hab was abzugeben
+    - Ich möchte spenden
+    - Ich brauche was
+    - ich will spenden
+- intent: geld_benoetigen
+  examples: |
+    - Ich brauch [Geld}](geld)
+    - Ich brauch [Kohle](geld)
+    - bin [pleite](geld)
+    - brauch [geld](geld)
+    - Ich brauche [Schotter](geld)
+    - brauche [geld](geld)
+- lookup: spendenartikel
+  examples: |
+    - Kleidung
+    - Jacke
+    - Hose
+    - Pullover
+    - Unterwäsche
+    - BH
+    - Slip
+    - Schlafsack
+    - Isomatte
+    - Decke
+    - Kissen
+    - Nahrungsmittel
+    - Essen
+    - Kochzubehör
+    - Topf
+    - Pfanne
+    - Campingkocher
+    - Technik
+    - Handy
+    - Kopfhörer
+    - Laptop
+    - Freizeitartikel
+    - Bildung

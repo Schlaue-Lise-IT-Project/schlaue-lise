@@ -12,7 +12,7 @@ rules:
   - rule: Schlage Notunterkunft für drogenabhängige Hundebesitzer vor
     condition:
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - drogenabhaengig: true
       - slot_was_set:
@@ -24,7 +24,7 @@ rules:
   - rule: Schlage Notunterkunft für nicht-drogenabhängige Hundebesitzer vor
     condition:
       - slot_was_set:
-          - haustierhalter: true
+          - chaustierhalter: true
       - slot_was_set:
           - drogenabhaengig: false
       - slot_was_set:
@@ -50,7 +50,7 @@ rules:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - drogenabhaengig: false
       - slot_was_set:
@@ -66,7 +66,7 @@ rules:
       - slot_was_set:
           - jugendlich: true
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - drogenabhaengig: false
       - slot_was_set:
@@ -82,9 +82,9 @@ rules:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - geschlecht: männlich
+          - bgeschlecht: männlich
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - drogenabhaengig: false
       - slot_was_set:
@@ -100,9 +100,9 @@ rules:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - geschlecht: weiblich
+          - bgeschlecht: weiblich
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - drogenabhaengig: false
       - slot_was_set:
@@ -118,9 +118,9 @@ rules:
       - slot_was_set:
           - jugendlich: false
       - slot_was_set:
-          - geschlecht: divers
+          - bgeschlecht: divers
       - slot_was_set:
-          - haustierhalter: false
+          - chaustierhalter: false
       - slot_was_set:
           - drogenabhaengig: false
       - slot_was_set:
@@ -128,3 +128,12 @@ rules:
     steps:
       - action: utter_answer_notunterkunft_divers
       - action: action_answer_url
+  
+  - rule: Nach inform immer Schlafen ausführen
+    steps:
+      - or:
+        - intent: inform
+        - intent: suche_unterkunft
+      - action: utter_informationen
+      - action: informationen_form  
+      - active_loop: informationen_form

@@ -86,22 +86,24 @@ class ValidateInformation(FormValidationAction):
             dispatcher.utter_message(
                 text="Die Eingabe zu >>Alter<< wurde nicht erkannt. Bitte gib eine Zahl an, die dein >>Alter<< darstellt.")
             return {"alter": None}
-
-    def validate_geschlecht(
+    
+    def validate_bgeschlecht(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict
     ) -> Dict[Text, Any]:
+        logger.info("Validating Geschlecht")
         if slot_value.lower() in ["männlich", "weiblich", "divers"]:
-            return {"geschlecht": slot_value}
+            logger.info(f"Slot Value accepted")
+            return {"bgeschlecht": slot_value.lower()}
         else:
-            dispatcher.utter_message(
-                text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
-            return {"geschlecht": None}
+            logger.info(f"Slot Value rejected")
+            dispatcher.utter_message(text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
+            return {"bgeschlecht": None}
 
-    def validate_haustierhalter(
+    def validate_chaustierhalter(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
@@ -109,11 +111,10 @@ class ValidateInformation(FormValidationAction):
         domain: DomainDict
     ) -> Dict[Text, Any]:
         if type(slot_value) is bool:
-            return {"haustierhalter": slot_value}
+            return {"chaustierhalter": slot_value}
         else:
-            dispatcher.utter_message(
-                text="Entschuldigung, die Eingabe zu >>Haustieren<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
-            return {"haustierhalter": None}
+            dispatcher.utter_message(text="Entschuldigung, die Eingabe zu >>Haustieren<< wurde nicht erkannt. Du kannst auf diese Frage mit 'Ja' oder 'Nein' antworten.")
+            return {"chaustierhalter": None}
 
     def validate_drogenabhaengig(
         self,
@@ -230,12 +231,13 @@ class ActionAnswerSpende(Action):
         spende = list()
         spende_schlafen = list()
 
-        for item in spendenartikel:
-            temp = item.lower()
-            if temp == "decke" or temp == "schlafsack" or temp == "isomatte" or temp == "kissen" :
-                spende_schlafen.append(item)
-            else:
-                spende.append(item)
+        if spendenartikel:
+            for item in spendenartikel:
+                temp = item.lower()
+                if temp == "decke" or temp == "schlafsack" or temp == "isomatte" or temp == "kissen" :
+                    spende_schlafen.append(item)
+                else:
+                    spende.append(item)
         
         if len(spende_schlafen) != 0:
             answer += "Diese Artikel:\n"
@@ -255,7 +257,7 @@ class ActionAnswerSpende(Action):
             else: 
                 answer += f"\nKannst du bei diesen Stellen abgeben: (noch nicht im Prototyp hinterlegt)"
 
-        if len(hygiene_slot) != 0:
+        if hygiene_slot and len(hygiene_slot) != 0:
             answer += "\nDie Hygieneartikel:\n"
             for item in hygiene_slot:
                 answer += f"  - {item}\n"
