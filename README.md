@@ -4,6 +4,7 @@
 
 1. [Anaconda Installation](#anaconda-installation)
 2. [Rasa X](#rasa-x)
+3. [Pipeline Deployment](#pipeline-deployment)
 3. [Probleme mit Timeout Error](#Probleme-mit-Timeout-Error)
 4. [Rasa Befehle](#rasa-befehle)
 
@@ -37,9 +38,9 @@ Weblinks zu den Installationsanleitungen:
 - <https://docs.anaconda.com/anaconda/install>
 - <https://docs.conda.io/en/latest/miniconda.html>
 
-### Installation weiterer Libraries
+### Installation weiterer Packages
 
-Darüber hinaus werden noch weitere Libraries benötigt.
+Darüber hinaus werden noch weitere Packages benötigt.
 Für die Installation gibt es bei Anaconda den Kommandozeilen-Befehl `conda`,
 der ein sauberes Paket-Management beinhaltet. Er ist für das Basis-Setup dem Standard-Installer `pip`
 für Python vorzuziehen. Allerdings sind nicht alle Pakte über `conda` verfügbar,
@@ -117,6 +118,8 @@ Alter -> BGeschlecht -> CHaustiere -> Drogen
 ```
 
 Das ist nur ein unschöner Workaround, aber er funktioniert. 
+
+## Pipeline Deployment
 
 ## Probleme mit Timeout-Error
 

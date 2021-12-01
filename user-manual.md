@@ -1,6 +1,15 @@
 # Nutzerhandbuch
 
-Die "SCHLAUE-LISE" ist eine mit dem Rasa Framework entwickelte Chatbot-Anwendung. Mit Rasa ist es möglich personalisierte, automatisierte Interaktionen mit Anwender:innen in einem beliebig großen Umfang zu erstellen. Rasa stellt die Infrastruktur und die Werkzeuge bereit, die für die Entwicklung eines Machine-Learning-basierten Assistenten erforderlich sind.
+## Inhaltsverzeichnis
+1. [Überblick](#überblick)
+2. [Spenden](#spenden)
+3. [Hygiene](#hygiene)
+4. [Schlafen](#schlafen)
+5. [Medizin](#medizin)
+6. [URL](#url)
+
+## Überblick
+Die "SCHLAUE-LISE" ist eine mit dem [Rasa Framework](https://rasa.com/) entwickelte Chatbot-Anwendung. Mit Rasa ist es möglich personalisierte, automatisierte Interaktionen mit Anwender:innen in einem beliebig großen Umfang zu erstellen. Rasa stellt die Infrastruktur und die Werkzeuge bereit, die für die Entwicklung eines Machine-Learning-basierten Assistenten erforderlich sind.
 
 Die hier im Repository hinterlegte Anwendung stellt einen solchen digitalen Assistenten dar. Dieser Assistent ist eine prototypische Erweiterung zu einer bereits konzipierten mobilen Applikation, die im Rahmen des [SiWo-Projekts](https://www.e-beratungsinstitut.de/projekte/siwo/) des Instituts für E-Beratung Nürnberg entwickelt werden soll. Die Anwendung wurde im Rahmen des Studienprojekts als reine Konsolenanwendung entwickelt.
 
@@ -11,23 +20,20 @@ Die gesamte Kommunikation findet in deutscher Sprache statt. Während der Entwic
 
 ## Spenden
 
-Im Anwendungsfall "Spenden" hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der Einrichtungen ausgegeben.
+Im Anwendungsfall `Spenden` hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der Einrichtungen ausgegeben.
 
-### Beispieleingaben:
+### Mögliche Eingaben zum Thema Spenden
 
-#### Um zum Thema Spenden zu kommen:
+Folgende Eingaben sind für den allgemeinen Fall `Spenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden:
+
+| Spalte 1        | Spende erhalten  |
+| --------        | --------         |
+| Ich möchte  | [Spenden erhalten], [selbst spenden] |
+| Ich brauch ...  | ... Spenden <br> ... was <br> ... Kleidung <br> ... Jacke <br> ... einen Pullover <br> ... dringend Unterwäsche <br> ... nen Slip <br> ... nen Schlafsack <br> ... eine Decke <br> ... ein Kissen <br> ... was zu essen <br> ... Nahrungsmittel <br> | 
+| Ich benötige ...| eine Hose   | 
+| Ich hab was abzugeben | |
 
 ```
-Ich möchte Spenden erhalten
-Ich brauche Spenden
-ich brauch was
-Ich möchte selbst spenden
-Ich hab was abzugeben
-Ich brauch Kleidung
-ich brauch Jacke
-Ich benötige eine Hose
-Ich brauch einen Pullover
-ich brauch dringend Unterwäsche
 brauch nen BH
 ich brauch nen Slip
 ich brauch nen Schlafsack
@@ -56,21 +62,17 @@ Ich brauch Kohle.
 Bin pleite.
 brauch geld.
 ```
+### Beispiel Konversationen
 
 #### Beispiel 1 "Spende Hygieneartikel benötigt":
 
-```
+```sh
 Eingabe: Ich brauch was.
 Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
 Eingabe: Tampons.
 Chatbot: Tampons und andere Hygieneartikel findest du bei dieser Einrichtung (Deep Link).
 ```
-
-##### Zusammenfassung Beispiel 1:
-
-Die Person benötigt Tampons.
-
-#### Beispiel 2 "Eine Spende benötigen":
+#### Beispiel 2 "Eine Spende (Schlafsack) benötigen":
 
 ```
 Eingabe: Ich brauch was
@@ -80,12 +82,7 @@ Chatbot: Möchtest du diese Dinge: Schlafsack erhalten?
 Eingabe: Ja.
 Chatbot: Alles klar. Diese Artikel: Schlafsack findest du bei diesen Stellen: Obdachlosenhilfe.
 ```
-
-##### Zusammenfassung Beispiel 2:
-
-In diesem Beispiel sucht die Person nach einem Schlafsack.
-
-#### Beispiel 3 "Eine Spende tätigen":
+#### Beispiel 3 "Eine Spende (Schlafsack) tätigen":
 
 ```
 Eingabe: Ich hab was abzugeben
@@ -96,10 +93,6 @@ Eingabe: Nein
 Chatbot: Alles klar. Diese Artikel: Schlafsack kannst du bei diesen Stellen abgeben: Obdachlosenhilfe.
 ```
 
-##### Zusammenfassung Beispiel 3:
-
-Die Person möchte einen Schlafsack spenden.
-
 #### Beispiel 4 "Geldspende erhalten"
 
 ```
@@ -107,11 +100,7 @@ Eingabe: Ich brauch Geld.
 Chatbot: ...hier ist der Ansprechpartner im Sozialamt (Deep Link). Und hier verschiedene Stiftungen (Deep Link)
 ```
 
-##### Zusammenfassung Beispiel 4:
-
-Die Person benötigt Geld.
-
-## Hygieneartikel
+## Hygiene
 
 Hier können Anwender:innen beliebige Hygieneartikel anfragen und bekommt die entsprechenden Ausgabestellen angezeigt. Diese sind wieder mit einem `Deep Link` verbunden.
 
@@ -529,7 +518,7 @@ ich bin nicht versichert und es ist ein Notfall
 ich bin versichert und es ist ein Notfall
 ```
 
-## URL, die am Ende erzeugt wird
+## URL
 Am Ende jeder Story wird eine URL erzeugt, die alle befüllten Slots auflistet. Die befüllten Slots werden dabei nach dem Prinzip eines GET-Requests an die URL `www.schlaue-lise.de` gehängt. 
 Wenn man diese URL antippt, soll man dann auf die Seite mit den jeweiligen Infos geleitet werden. Diese Internetseite existiert noch nicht. 
 Damit die URL nach jeder Story ausgegeben wird, muss ans Ende jeder Story folgende Action hinzugefügt werden:
