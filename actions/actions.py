@@ -12,6 +12,50 @@ from rasa_sdk import Action, Tracker
 
 logger = logging.getLogger(__name__)
 
+class ActionProcessInformAll(Action):
+    def name(self) -> Text:
+        return "process_inform_all"
+    
+    def run(
+        self, 
+        dispatcher: "CollectingDispatcher", 
+        tracker: Tracker, 
+        domain: "DomainDict"
+    ) -> List[Dict[Text, Any]]:
+        drug_slot = tracker.get_slot("drogen")
+        no_drug_slot = tracker.get_slot("no_drogen")
+        pet_slot = tracker.get_slot("haustier")
+        no_pet_slot = tracker.get_slot("no_haustier")
+        shelter_slot = tracker.get_slot("unterkunft")
+        apartment_slot = tracker.get_slot("wohnung")
+
+        petowner = SlotSet("chaustierhalter", None)
+        drug_addict = SlotSet("drogenabhaengig", None)
+        shelter = SlotSet("unterkunft", None)
+
+        if drug_slot is not None:
+            if no_drug_slot is None:
+                drug_addict = SlotSet("drogenabhaengig", True)
+        else:
+            if no_drug_slot is not None:
+                drug_addict = SlotSet("drogenabhaengig", False)
+
+        if pet_slot is not None:
+            if no_pet_slot is None:
+                petowner = SlotSet("chaustierhalter", True)
+        else:
+            if no_pet_slot is not None:
+                petowner = SlotSet("chaustierhalter", False)
+
+        
+        if shelter_slot is not None:
+            if apartment_slot is None:
+                shelter = SlotSet("notunterkunft", True)
+        else:
+            if apartment_slot is not None:
+                shelter = SlotSet("notunterkunft", False)
+        
+        return [petowner, drug_addict, shelter]
 
 class ValidateMedicineForm(FormValidationAction):
 
@@ -27,7 +71,7 @@ class ValidateMedicineForm(FormValidationAction):
     ) -> Dict[Text, Any]:
 
         # zeigt beim nächsten mal slot_value-type an
-        text = f">>>>Slot emergency ist gesetzt auf '{slot_value}' und vom Typ {logger.info(type(slot_value))}"
+        text = f">>>>Slot emergency ist gesetzt auf '{slot_value}' und vom Typ {type(slot_value)}"
 
         intent = tracker.latest_message['intent'].get('name')
 
@@ -94,12 +138,9 @@ class ValidateInformation(FormValidationAction):
         tracker: Tracker,
         domain: DomainDict
     ) -> Dict[Text, Any]:
-        logger.info("Validating Geschlecht")
         if slot_value.lower() in ["männlich", "weiblich", "divers"]:
-            logger.info(f"Slot Value accepted")
             return {"bgeschlecht": slot_value.lower()}
         else:
-            logger.info(f"Slot Value rejected")
             dispatcher.utter_message(text="Es tut mir Leid, die Eingabe für dein >>Geschlecht<< wurde nicht erkannt. Bitte gib an, ob du dich als 'männlich', 'weiblich' oder 'divers' bezeichnen würdest.")
             return {"bgeschlecht": None}
 

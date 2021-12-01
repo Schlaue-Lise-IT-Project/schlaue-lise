@@ -11,14 +11,14 @@ nlu:
     - Ich brauche für heute Nacht was zum [pennen](unterkunft)
     - [Notunterkunft](unterkunft)
     - Ich suche eine [Notunterkunft](unterkunft)
-    - Ich suche eine [Wohnung](unterkunft)
-    - Ich brauche eine [Wohnung](unterkunft)
-    - Ich will eine [Wohnung](unterkunft)
+    - Ich suche eine [Wohnung](wohnung)
+    - Ich brauche eine [Wohnung](wohnung)
+    - Ich will eine [Wohnung](wohnung)
     - Ich suche nach einem [Heimplatz](unterkunft)
     - Ich möchte ins [Obdachlosenheim](unterkunft)
-    - Ich suche längerfistig einen [Schlafplatz](unterkunft)
-    - Ich möchte [weg von der Straße](unterkunft)
-    - [Wohnung](unterkunft)
+    - Ich suche [längerfistig einen Schlafplatz](wohnung)
+    - Ich möchte [weg von der Straße](wohnung)
+    - [Wohnung](wohnung)
     - [schlafen](unterkunft)
     - [Dach über dem Kopf](unterkunft)
     - [ratzen](unterkunft)
@@ -107,7 +107,18 @@ nlu:
     - [man](bgeschlecht)
     - [männer](bgeschlecht)
     - [Divers](bgeschlecht)
-    - Ich bin [28](alter) Jahre alt, [männlich](bgeschlecht), habe keinen [Hund](haustier) und nehme keine [Drogen](drogen)
+- intent: inform_all
+  examples: |
+    - ich bin [18](alter) jahre alt, bin eine [frau]{"entity": "bgeschlecht", "value": "weiblich"}, habe [keinen hund](no_haustier), nehme [keine drogen](no_drogen) und brauche einen [platz](unterkunft) zum [schlafen]{"entity": "unterkunft", "value": "unterkunft"}
+    - ich bin [14](alter), [weder mann noch frau](bgeschlecht), habe [keinen hund](no_haustier), nehme [drogen](drogen) und brauche was zum [pennen](unterkunft)
+    - Ich bin [45](alter) Jahre alt, [männlich](bgeschlecht), nehme [Drogen](drogen) und habe [keinen Hund](no_haustier)
+    - Ich bin [28](alter) Jahre alt, [männlich](bgeschlecht), nehme [keine Drogen](no_drogen) und habe auch [keinen Hund](no_haustier)
+    - ich bin [22](alter), [weiblich](bgeschlecht), nehme [drogen](drogen), habe einen [hund](haustier) und brauche was zum [pennen](unterkunft)
+    - Ich bin [65](alter), bin ein [Mann](bgeschlecht), habe einen [Hund](haustier), nehme [keine Drogen](no_drogen) und brauche einen Platz zum [Schlafen](unterkunft)
+    - Ich bin [28](alter) Jahre alt, [männlich](bgeschlecht), habe [keinen Hund](no_haustier) und nehme [keine Drogen](no_drogen)
+    - Ich bin [54](alter), [männlich](bgeschlecht), habe [keinen Hund](no_haustier), nehme [keine Drogen](no_drogen) und suche eine [Wohnung](wohnung)
+    - Ich bin [23](alter), [weiblich](bgeschlecht), habe [keinen Hund](no_haustier), nehme [keine Drogen](no_drogen) und suche was [langfristiges](wohnung)
+    - Ich bin [17](alter), [weder mann noch frau]{"entity": "bgeschlecht", "value": "divers"}, habe [keinen Hund](no_haustier), nehme [Drogen](drogen) und suche was zum [Pennen](unterkunft)
 - synonym: unterkunft
   examples: |
     - pennen
@@ -116,10 +127,8 @@ nlu:
     - Schlafplatz
     - Dach über dem Kopf
     - Notunterkunft
-    - Wohnung
     - Heimplatz
     - Obdachlosenheim
-    - weg von der Straße
     - ratzen
     - knacken
     - schlummern
@@ -146,8 +155,16 @@ nlu:
     - nicht binär
     - non-binary
     - non binary
+    - weder mann noch frau
     - keinem Geschlecht
     - weder noch
+- synonym: wohnung
+  examples: |
+    - Wohnung
+    - weg von der Straße
+    - langfristiges
+    - langfristig
+    - längerfistig
 - regex: alter
   examples: |
     - \d{1,3}

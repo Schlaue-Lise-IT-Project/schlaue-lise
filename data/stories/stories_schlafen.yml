@@ -772,24 +772,21 @@ stories:
 
   - story: M, 32, sucht Notunterkunft (shortcut)
     steps:
-      - or:
-          - intent: inform
-            entities:
-              - alter: "32"
-              - bgeschlecht: männlich
-              - unterkunft: unterkunft
-          - intent: suche_unterkunft
-            entities:
-              - alter: "32"
-              - bgeschlecht: männlich
-              - unterkunft: unterkunft
+      - intent: inform_all
+        entities:
+          - alter: "32"
+          - bgeschlecht: männlich
+          - unterkunft: unterkunft
+          - no_haustier: keinen Hund
+          - no_drogen: keine Drogen
+          - unterkunft: unterkunft
       - slot_was_set:
           - unterkunft: unterkunft
       - slot_was_set:
           - bgeschlecht: männlich
       - slot_was_set:
           - alter: "32"
-      - action: utter_informationen
+      - action: process_inform_all
       - action: informationen_form
       - active_loop: informationen_form
       - slot_was_set:
