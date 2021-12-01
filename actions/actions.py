@@ -231,12 +231,13 @@ class ActionAnswerSpende(Action):
         spende = list()
         spende_schlafen = list()
 
-        for item in spendenartikel:
-            temp = item.lower()
-            if temp == "decke" or temp == "schlafsack" or temp == "isomatte" or temp == "kissen" :
-                spende_schlafen.append(item)
-            else:
-                spende.append(item)
+        if spendenartikel:
+            for item in spendenartikel:
+                temp = item.lower()
+                if temp == "decke" or temp == "schlafsack" or temp == "isomatte" or temp == "kissen" :
+                    spende_schlafen.append(item)
+                else:
+                    spende.append(item)
         
         if len(spende_schlafen) != 0:
             answer += "Diese Artikel:\n"
@@ -256,7 +257,7 @@ class ActionAnswerSpende(Action):
             else: 
                 answer += f"\nKannst du bei diesen Stellen abgeben: (noch nicht im Prototyp hinterlegt)"
 
-        if len(hygiene_slot) != 0:
+        if hygiene_slot and len(hygiene_slot) != 0:
             answer += "\nDie Hygieneartikel:\n"
             for item in hygiene_slot:
                 answer += f"  - {item}\n"
