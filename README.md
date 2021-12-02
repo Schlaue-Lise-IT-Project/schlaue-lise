@@ -87,15 +87,27 @@ Dieser Schritt ist **IMMER AUSZUFÜHREN**:
 (env)> python -m spacy download de_core_news_md
 ```
 
-**Optional**, wenn mit Rasa X (Local Mode) gearbeitet wird:
+## Rasa X 
+### Fehlende Dependecy
+Wenn mit Rasa X (Local Mode) gearbeitet wird, wird noch folgende Dependency benötigt:
 
 ```sh
 (env)> pip install -U sanic-jwt==1.6.0
 ```
 
-## Rasa X 
+Rasa X ist ein Werkzeug, welches auf das Conversational Driven Development (CDD) zugeschnitten ist. 
+Es ist eine Web-Anwendung mit einem Adminbereich zum sichten und bearbeiten der gesammelten Daten und der Möglichkeit, den Bot frühzeitig an echte Nutzer:innen weiterzugeben, um möglichst realistische Daten zu sammeln. 
 
-http://34.159.228.55/login
+![Rasa X CDD Circle](https://rasa.com/docs/rasa-x/img/loop.png "Rasa X CDD Circle")
+
+Rasa X ist im Gegensatz zu Rasa ein Closed Source Tool, welches aber in einer freien Version allen Entwickler:innen zur Verfügung gestellt wird. 
+
+### Installation
+
+Die Installation ist in den [Rasa X Docs](https://rasa.com/docs/rasa-x/installation-and-setup/install/local-mode) sehr gut beschrieben. 
+Sollte man vorhaben, Rasa X auf einem Server laufen zu lassen, findet man ebenfalls dort einige Installationsanleitungen.
+
+### Bekannter Bug
 
 Rasa X formatiert automatisch die YAML-Files, das ist nicht weiter schlimm und führt nur in Forms zu Problemen. Es werden die Slots von Rasa X alphabetisch sortiert. Das ist ein bekannter Bug bei Rasa, der noch nicht behoben wurde. In diesem Projektfall ist es bspw. so:
 
@@ -119,7 +131,20 @@ Alter -> BGeschlecht -> CHaustiere -> Drogen
 
 Das ist nur ein unschöner Workaround, aber er funktioniert. 
 
-## Pipeline Deployment
+## CI / CD Pipeline
+
+In diesem Projekt wurde eine CI / CD Pipeline eingerichtet, genauer gesagt nur eine CI, also eine _Continous Integration_. Ein _Continous Deployment_ wäre etwas zu viel gewesen für das Projekt. 
+
+Über [Google Cloud](https://cloud.google.com/) läuft aktuell noch ein Rasa X Server, den wir zum Testen des Chatbots verwendet haben. Dieser Server wird nach Beendigung des Projekts nicht mehr weitergeführt werden, weswegen er hier nicht verlinkt wird. 
+
+Die CI läuft über [GitHub Actions](https://docs.github.com/en/actions) (Workflows sind im Verzueichnis `.github` hinterlegt) und nutzt außerdem den [Dockerfile](Dockerfile), um den [Rasa Action Server](https://rasa.com/docs/action-server/) zu aktualisieren. 
+
+Ausgelöst werden die Workflows wenn eines der beiden Ereignisse eintritt: 
+
+- Es wird auf `main` gepushed
+- Es wird auf `main` gepushed und die `actions.py` wurde verändert.
+
+Im ersten Fall wird ein aufgrund des veränderten Codes ein neues Model trainiert und auf den Google Cloud Server hochgeladen. Im anderen Fall wird ein neues Image auf [DockerHub](https://hub.docker.com/) gepushed, welches dann vom Rasa Action Server genutzt werden kann. 
 
 ## Probleme mit Timeout-Error
 
@@ -154,6 +179,11 @@ rasa shell # Chatbot auf der Konsole starten
 rasa interactive # trackt die gespeicherten Daten während der Konversation und ermöglicht einen Export des Dialogs als Stories etc.
 ```
 
-### Rasa Custom actions
-Um die Rasa Custom actions zu aktivieren muss in einem extra Terminal `rasa run actions` ausgeführt werden.
+### Rasa Action Server (local)
+Um lokal den [Rasa Action Server](https://rasa.com/docs/action-server/) zu aktivieren muss in einem extra Terminal folgender Befehl ausgeführt werden: 
+
+```sh
+# Im Projektverzeichnis
+(env)> rasa run actions
+```
 
