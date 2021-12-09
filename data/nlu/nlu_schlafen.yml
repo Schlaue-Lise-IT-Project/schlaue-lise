@@ -119,6 +119,10 @@ nlu:
     - Ich bin [54](alter), [männlich](bgeschlecht), habe [keinen Hund](no_haustier), nehme [keine Drogen](no_drogen) und suche eine [Wohnung](wohnung)
     - Ich bin [23](alter), [weiblich](bgeschlecht), habe [keinen Hund](no_haustier), nehme [keine Drogen](no_drogen) und suche was [langfristiges](wohnung)
     - Ich bin [17](alter), [weder mann noch frau]{"entity": "bgeschlecht", "value": "divers"}, habe [keinen Hund](no_haustier), nehme [Drogen](drogen) und suche was zum [Pennen](unterkunft)
+    - Ich bin [20](alter), [weiblich](bgeschlecht), habe [keinen Hund](no_haustier), bin [nicht drogensüchtig](no_drogen) und suche was [langfristiges](wohnung)
+    - Ich bin [32](alter), [männlich](bgeschlecht), habe einen [Hund](no_haustier), bin [nicht drogenabhängig](no_drogen) und suche eine [Wohnung](wohnung)
+    - Ich bin [45](alter), [weiblich](bgeschlecht), habe [keinen Hund](no_haustier), bin [drogensüchtig](drogen) und suche was [langfristiges](wohnung)
+    - Ich bin [56](alter), [männlich](bgeschlecht), habe einen [Hund](no_haustier), bin [drogenabhängig](drogen) und suche eine [Wohnung](wohnung)
 - synonym: unterkunft
   examples: |
     - pennen
