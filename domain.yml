@@ -45,6 +45,8 @@ intents:
     use_entities: true
 - inform:
     use_entities: true
+- inform_all:
+    use_entities: true
 - out_of_scope:
     use_entities: true
 - nlu_fallback:
@@ -52,18 +54,21 @@ intents:
 entities:
 - alter
 - drogen
+- no_drogen
 - drogenabhaengig
 - bgeschlecht
 - medicine
 - emergency
 - insurancestatus
 - haustier
+- no_haustier
 - chaustierhalter
 - hygieneartikel
 - volljaehrig
 - jugendlich
 - notunterkunft
 - unterkunft
+- wohnung
 - spendenartikel
 - spendeErhalten
 - geld
@@ -73,6 +78,11 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
+  wohnung:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
   notunterkunft:
     type: rasa.shared.core.slots.BooleanSlot
     initial_value: null
@@ -127,12 +137,22 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  no_haustier:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
   hygieneartikel:
     type: rasa.shared.core.slots.ListSlot
     initial_value: null
     auto_fill: true
     influence_conversation: false
   drogen:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  no_drogen:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -173,6 +193,7 @@ actions:
 - validate_spendeErhalten_form
 - action_answer_url
 - validate_medicine_form
+- process_inform_all
 forms:
   informationen_form:
     required_slots:

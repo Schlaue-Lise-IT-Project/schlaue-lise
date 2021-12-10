@@ -460,6 +460,26 @@ Chatbot: Hier kannst du eine Notunterkunft (Deep Link) für Menschen mit Drogenp
 
 In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. Er nimmt Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die Menschen ohne Haustier aber mit Drogenproblemen aufnehmen. Hat ein Hilfesuchender ein Haustier und ein Drogenproblem wird bei der Auswahl der Notunterkünfte das Haustier priorisiert.
 
+#### Beispiel 9 "Notunterkunft ohne Drogen und ohne Haustier (Shortcut)"
+
+```
+Eingabe: Ich bin 37, ein Mann, habe keinen Hund, nehme keine Drogen und brauche einen Platz zum Schlafen
+Chatbot: Folgende Informationen wurden erfasst (werden nicht abgespeichert):
+        - Alter: 37
+        - Geschlecht: nännlich
+        - Haustier: nein
+        - Drogen: nein
+        - Volljährig: ja
+        - Unter 22 (jugendlich): nein
+Chatbot: Hier kannst du Notunterkünfte (Deep Link) für Männer finden.
+```
+
+##### Zusammenfassung Beispiel 9:
+
+In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. 
+Er nimmt keine Drogen und hat kein Haustier. 
+Diese Informationen sind alle in seiner ersten Eingabe enthalten und werden vom Bot entsprechend extrahiert. So ist ein direkter Sprung (Shortcut) zum Endpunkt möglich. 
+
 ## Medizin
 
 In dem Fall, dass man medizinsiche Hilfe braucht, können hier Adressen und Kontaktdaten zu medizinischen Hilfsstellen entsprechend des Versicherungsstatuses der/des Anwender:in abgefragt werden. Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden.
