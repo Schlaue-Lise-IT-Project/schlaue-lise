@@ -4,9 +4,9 @@
 
 1. [Anaconda Installation](#anaconda-installation)
 2. [Rasa X](#rasa-x)
-3. [Pipeline Deployment](#pipeline-deployment)
-3. [Probleme mit Timeout Error](#Probleme-mit-Timeout-Error)
-4. [Rasa Befehle](#rasa-befehle)
+3. [CI / CD Pipeline](#ci--cd-pipeline)
+4. [Probleme mit Timeout-Error](#probleme-mit-timeout-error)
+5. [Rasa Befehle](#rasa-befehle)
 
 ## Anaconda Installation
 
