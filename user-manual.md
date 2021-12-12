@@ -22,50 +22,43 @@ Die gesamte Kommunikation findet in deutscher Sprache statt. Während der Entwic
 
 Im Anwendungsfall `Spenden` hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der Einrichtungen ausgegeben.
 
-### Mögliche Eingaben zum Thema Spenden
+### Mögliche Eingaben zum Thema Spenden allgemein
 
-Folgende Eingaben sind für den allgemeinen Fall `Spenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden:
+Folgende Beispieleingaben sind für den allgemeinen Fall `Spenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden:
 
-| Spalte 1        | Spende erhalten  |
+| Satzbeginn        | benötigtes Spendengut etc.  |
 | --------        | --------         |
-| Ich möchte  | [Spenden erhalten], [selbst spenden] |
-| Ich brauch ...  | ... Spenden <br> ... was <br> ... Kleidung <br> ... Jacke <br> ... einen Pullover <br> ... dringend Unterwäsche <br> ... nen Slip <br> ... nen Schlafsack <br> ... eine Decke <br> ... ein Kissen <br> ... was zu essen <br> ... Nahrungsmittel <br> | 
-| Ich benötige ...| eine Hose   | 
-| Ich hab was abzugeben | |
+| Ich möchte  | [ Spenden erhalten ], [ selbst spenden ] |
+| Ich brauch  | [ Spenden ], [ was ], [ Kleidung ], [ Jacke ], [ einen Pullover ], [ dringend Unterwäsche ], [ nen Slip ], [ nen Schlafsack ], [ eine Decke ],  [ ein Kissen ], [ was zu essen ], <br> [ Nahrungsmittel ], [ nen BH ], [ nen Slip ], [ Nahrungsmittel ], [ nen Topf ], [ eine Pfanne ], [ Technik ], [ ein neues Handy ], [ Kopfhörer ], [ was zur Bildung ], [ Freizeitartikel ] | 
+| Ich benötige | [ eine Hose ], [ eine Isomatte ], [ Kochzubehör ], [ nen Campingkocher ] | 
+| Ich hab was abzugeben | ---|
+| Ich will | nen Laptop|
+|||
 
-```
-brauch nen BH
-ich brauch nen Slip
-ich brauch nen Schlafsack
-benötige eine Isomatte
-ich brauch eine Decke
-ich brauch ein Kissen
-ich brauch was zu essen
-ich brauch Nahrungsmittel
-ich benötige Kochzubehör
-ich brauch nen Topf
-ich brauch eine Pfanne
-benötige nen Campingkocher
-ich brauch Technik
-ich brauch ein neues Handy
-ich brauch Kopfhörer
-ich will nen Laptop
-ich brauch Freizeitartikel
-ich brauch was zur Bildung
-```
+Aktuell sind folgende `Spendenartikel` im Code hinterlegt und werden vom Chatbot als solche erkannt:
 
-#### Geldspende benötigen:
+|               |                  |               |                    |               |               |
+| --------      | --------         | -------       | ------------       | -----         | -             |
+| Kleidung      | Jacke            | Hose          | Pullover           | Unterwäsche   | BH            |
+| Slip          | Schlafsack       | Isomatte      | Decke              | Kissen        | Nahrungsmittel|
+| Essen         | Kochzubehör      | Topf          | Pfanne             | Campingkocher | Technik       |
+| Handy         | Kopfhörer        | Laptop        | Freizeitartikel    | Bildung       | |
+|               |                  |               |                    |               | |
 
-```
-Ich brauch Geld.
-Ich brauch Kohle.
-Bin pleite.
-brauch geld.
-```
+### Mögliche Eingaben zum Thema Geldspende
+
+Folgende Beispieleingaben sind für den Fall `Geldspenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden:
+
+| Satzbeginn        | benötigtes Spendengut etc.  |
+| --------        | --------         |
+| Ich brauch  | [ Geld ], [ Kohle ] |
+| Bin pleite. | --- |
+| brauch Geld | --- |
+|||
+
 ### Beispiel Konversationen
 
-#### Beispiel 1 "Spende Hygieneartikel benötigt":
-
+#### Beispiel 1 "Allgemeine Anfrage nach einer Spende (Hygieneartikel)":
 ```sh
 Eingabe: Ich brauch was.
 Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
@@ -93,7 +86,7 @@ Eingabe: Nein
 Chatbot: Alles klar. Diese Artikel: Schlafsack kannst du bei diesen Stellen abgeben: Obdachlosenhilfe.
 ```
 
-#### Beispiel 4 "Geldspende erhalten"
+#### Beispiel 4 "Eine Geldspende erhalten"
 
 ```
 Eingabe: Ich brauch Geld.
@@ -102,18 +95,18 @@ Chatbot: ...hier ist der Ansprechpartner im Sozialamt (Deep Link). Und hier vers
 
 ## Hygiene
 
-Hier können Anwender:innen beliebige Hygieneartikel anfragen und bekommt die entsprechenden Ausgabestellen angezeigt. Diese sind wieder mit einem `Deep Link` verbunden.
+Im Anwendungsfall `Hygiene` hat man die Möglichkeit, beliebige Hygieneartikel anzufragen. Dabei kann man entweder allgemein nach Hygieneartikeln fragen und bekommt dann eine Rückfrage, nach genaueren Informationen oder man kann direkt nach einem konkreten Hygieneartikel fragen. Bei erfolgreicher Anfrage werden jeweils die entsprechenden Ausgabestellen angezeigt. 
 
-### Beispieleingaben:
+### Mögliche Eingaben zum Thema Hygieneartikel
 
-#### Allgemein Hygieneartikel benötigt:
+#### Allgemein Anfrage nach Hygieneartikeln
 
 ```
 Ich brauche Hygieneartikel.
 Wo bekomme ich Hygieneartikel her?
 ```
 
-#### Spezifische Suche:
+#### Spezifische Suche nach einem bestimmten Hygieneartikel
 
 ```
 Ich brauche Binden
@@ -133,27 +126,18 @@ Ich brauche dringend Reinigungstücher
 Ich brauche unbedingt Feuchttücher]
 ```
 
-#### Mögliche Hygieneartikel:
+Aktuell sind folgende `Hygieneartikel` im Code hinterlegt und werden vom Chatbot als solche erkannt:
 
-```
-Seife
-Binden
-Tampons
-OB
-Watte
-Shampoo
-Duschgel
-Klopapier
-Windeln
-Küchenrollen
-Zewa
-Tempos
-Taschentücher
-Reinigungstücher
-Feuchttücher
-```
+|               |                 |                  |               |         |             |
+----            |----             | --------         | --------      | ------- | -------     |
+| Seife         | Binden          | Tampons          | OB            | Watte   | Shampoo     |
+| Duschgel      | Klopapier       | Windeln          | Küchenrollen  | Zewa    | Tempos      |
+| Taschentücher | Reinigungstücher| Feuchttücher     |               |         |             |
+|               |                 |                  |               |         |             |
 
-#### Beispiel 1 "Seife benötigt"
+### Beispiel Konversationen
+
+#### Beispiel 1 "Allgemeine Anfrage nach einem Hygieneartikel mit anschließender Spezifizierung (Seife)"
 
 ```
 Eingabe: Ich brauch Hygieneartikel.
@@ -161,21 +145,12 @@ Chatbot: Welchen Hygieneartikel benötigst du?
 Eingabe: Ich benötige Seife.
 Chatbot: Seife bekommst du bei dieser Einrichtung (Deep Link)
 ```
-
-##### Zusammenfassug Beispiel 1:
-
-In diesem Beispiel sucht eine Person zunächst allgemein nach Hygieneartikel. Nach der Aufforderung den gesuchten Artikel einzugeben, wird eine Liste mit Ausgabestellen angezeit. Es besteht die Möglichkeit über einen Deep Link die Ausgabestellen aufzurufen.
-
-#### Beispiel 2 "Brauche Taschentücher":
+#### Beispiel 2 "Direkte Anfrage nach benötigtem Hygieneartikel (Taschentücher)":
 
 ```
 Eingabe: Ich will Taschentücher .
 Chatbot: Taschentücher bekommst du bei dieser Einrichtung (Deep Link)
 ```
-
-##### Zusammenfassung Beispiel 2:
-
-In diesem Beispiel sucht eine Person direkt nach einem Hygieneartikel, dem Taschentuch. Es wird eine Liste mit Ausgabestellen angezeit. Es besteht die Möglichkeit über einen Deep Link die Ausgabestellen aufzurufen.
 
 ## Schlafen
 
@@ -523,4 +498,4 @@ Am Ende jeder Story wird eine URL erzeugt, die alle befüllten Slots auflistet. 
 Wenn man diese URL antippt, soll man dann auf die Seite mit den jeweiligen Infos geleitet werden. Diese Internetseite existiert noch nicht. 
 Damit die URL nach jeder Story ausgegeben wird, muss ans Ende jeder Story folgende Action hinzugefügt werden:
 `action: action_answer_url`.
-Hier kann es zu Timeout Errors kommen, wenn der Computer zu langsam ist. In der README.md ist beschrieben, wie dieser behoben werden kann.
+Hier kann es zu Timeout Errors kommen, wenn der Computer zu langsam ist. In der [README.md](README#probleme-mit-timeout-error) ist beschrieben, wie dieser behoben werden kann.
