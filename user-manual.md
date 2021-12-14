@@ -427,6 +427,26 @@ Chatbot: Hier kannst du eine Notunterkunft (Deep Link) für Menschen mit Drogenp
 
 In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. Er nimmt Drogen und hat kein Haustier. Der Endpunkt ist eine Auflistung von Notunterkünften die Menschen ohne Haustier aber mit Drogenproblemen aufnehmen. Hat ein Hilfesuchender ein Haustier und ein Drogenproblem wird bei der Auswahl der Notunterkünfte das Haustier priorisiert.
 
+#### Beispiel 9 "Notunterkunft ohne Drogen und ohne Haustier (Shortcut)"
+
+```
+Eingabe: Ich bin 37, ein Mann, habe keinen Hund, nehme keine Drogen und brauche einen Platz zum Schlafen
+Chatbot: Folgende Informationen wurden erfasst (werden nicht abgespeichert):
+        - Alter: 37
+        - Geschlecht: nännlich
+        - Haustier: nein
+        - Drogen: nein
+        - Volljährig: ja
+        - Unter 22 (jugendlich): nein
+Chatbot: Hier kannst du Notunterkünfte (Deep Link) für Männer finden.
+```
+
+##### Zusammenfassung Beispiel 9:
+
+In diesem Beispiel sucht ein erwachsener Mann eine Notunterkunft. 
+Er nimmt keine Drogen und hat kein Haustier. 
+Diese Informationen sind alle in seiner ersten Eingabe enthalten und werden vom Bot entsprechend extrahiert. So ist ein direkter Sprung (Shortcut) zum Endpunkt möglich. 
+
 ## Medizin
 
 In dem Fall, dass man medizinsiche Hilfe braucht, können hier Adressen und Kontaktdaten zu medizinischen Hilfsstellen entsprechend des Versicherungsstatuses der/des Anwender:in abgefragt werden. Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden.
@@ -445,6 +465,8 @@ Ich habe mich geschnitten
 Ich habe mich verbrannt
 Ich hatte einen Unfall
 Ich fühle mich nicht gut
+Ich brauche Hilfe 
+Unfall 
 ```
 
 Auch gibt es die Möglichkeit über direkte Informationseingabe über Notfallstatus oder Versicherungsstatus ins Medizin-Menü zu gelangen.
@@ -496,7 +518,85 @@ ich bin nicht versichert und es ist ein Notfall
 ich bin versichert und es ist ein Notfall
 ```
 
-## URL
+#### Beispiel 1 "Ärztliche Hilfe benötigt":
+In diesem Beispiel gibt die Person an, dass sie einen Arzt benötigt. Es wird die Information eingeholt, ob es sich um einen Notfall handelt, sowie der Versicherungsstatus abgefragt. 
+```
+Eingabe: Ich brauche einen Arzt 
+Chatbot: Handelt es sich um einen Notfall und du brauchst sofort einen Notarzt? 
+Eingabe: Nein 
+Chatbot: Bist du krankenversichert? 
+Eingabe: Nein 
+Chatbot: > Deine erkannten Informationen sind: 
+           - Notfall: False 
+           - Versicherungsstatus: False 
+           Folgende Hilfestellen haben wir für deine Anfrage gefunden:
+           ___________________________________________
+           Ambulanz Klinikum Nord
+           Prof.-Ernst-Nathan-Str. 1 90419 Nürnberg
+           0911 3980
+           Geöffnet 0:00 - 24:00
+           ___________________________________________
+           Caritas Straßenambulanz - Franz von Assisi
+           Straßburger Str. 14
+           90443 Nürnberg
+           0911 47 49 48 60
+           Ärztliche Sprechstunde: 
+           Mo 9:00 - 12:30 + 14:00 - 17:00
+           Di 9:00 - 12:30 + 15:30 - 17:00
+           Mi 9:00 - 12:30 + 14:00 - 16:00
+           Do 9:00 - 11:00 + 14:00 - 17:00
+           Fr 9:00 - 12:30
+           Chirurgische Sprechstunde: Do 14:00 - 16:00
+           Vorsorgeuntersuchung von nicht krankenver- 
+           sicherten Kindern: Mo 14:00 - 17:00
+
+           Substitutionssprechstunden:
+           ausschließlich nach Terminvereinbaung
+           ___________________________________________
+           Bitte hier klicken, um direkt zur Antwort zu springen:
+           www.schlaue-lise.de/?insurancestatus=False&emergency=False
+```
+#### Beispiel 2 "Medizinische Informationen in der Eingabe mitteilen - Versicherungsstatuses"
+In diesem Beispiel teilt die Person ihren Versicherungsstatus mit. Es wird erkannt, dass es sich um ein medizinisches Anliegen handelt und im Folgenden abgefragt, ob es sich um einen Notfall handelt oder nicht. 
+```
+Eingabe: Ich bin versichert 
+Chatbot: Handelt es sich um einen Notfall und du brauchst sofort einen Notarzt? 
+Eingabe: Nein 
+Chatbot: > Deine erkannten Informationen sind: 
+           - Notfall: False
+           - Versicherungsstatus: True
+           Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
+           - ...
+            
+           Bitte hier klicken, um direkt zur Antwort zu springen:
+           www.schlaue-lise.de/?insurancestatus=True&emergency=False
+```
+
+#### Beispiel 3: "Medizinische Informationen in der Eingabe mitteilen - Notfall"
+In diesem Beispiel teilt die Person mit, dass ein Krankenwagen benötigt wird. Es wird erhaknnt, dass es sich um einen Notfall handelt. 
+```
+Eingabe: ich brauche einen Notartz 
+Chatbot: Bist du krankenversichert? 
+Eingabe: Nein 
+Chatbot: > Notfall registriert! 
+           Öffne Notrufinformationen ...
+           
+           Bitte hier klicken, um direkt zur Antwort zu springen:
+           www.schlaue-lise.de/?insurancestatus=False&emergency=True
+```
+
+#### Beispiel 4: "Medizinische Informationen in der Eingabe mitteilen - Versicherungsstatus und Notfall"
+Es  ist auch möglich in einem Satz den Versicherungsstatus zusammen mit der Information, dass es sich um einen Notfall handelt mitzuteilen. Es wird somit gleich zur entsprechenden Ausgabe gesprungen. 
+```
+Eingabe: Ich bin versichert und es ist ein Notfall 
+Chatbot: > Notfall registriert! 
+           Öffne Notrufinformationen ...
+           
+           Bitte hier klicken, um direkt zur Antwort zu springen:
+           www.schlaue-lise.de/?insurancestatus=True&emergency=True
+```
+
+## URL, die am Ende erzeugt wird
 Am Ende jeder Story wird eine URL erzeugt, die alle befüllten Slots auflistet. Die befüllten Slots werden dabei nach dem Prinzip eines GET-Requests an die URL `www.schlaue-lise.de` gehängt. 
 Wenn man diese URL antippt, soll man dann auf die Seite mit den jeweiligen Infos geleitet werden. Diese Internetseite existiert noch nicht. 
 Damit die URL nach jeder Story ausgegeben wird, muss ans Ende jeder Story folgende Action hinzugefügt werden:

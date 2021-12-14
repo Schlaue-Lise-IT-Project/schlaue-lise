@@ -3,19 +3,28 @@ nlu:
 - intent: medicine_requested
   examples: |
     - Ich brauche einen Arzt
+    - ich brauche einen arzt
     - Ich brauche Medizin
+    - ich brauche medizin
     - Ich brauche medizinische Hilfe
+    - ich brauche Medizinische hilfe
     - Ich suche einen Arzt
+    - ich suche einen arzt
     - Ich habe mich verletzt
+    - ich habe mich Verletzt
     - Ich habe mich geschnitten
+    - ich habe mich Geschnitten
     - Ich habe mich verbrannt
+    - ich habe mich Verbrannt
     - Ich hatte einen Unfall
+    - ich hatte einen unfall
     - Ich fühle mich nicht gut
     - ich brauche hilfe
     - Ich brauche Hilfe
     - ich brauch nen Arzt
     - ich brauch ein arzt
     - unfall
+    - Unfall
 - intent: medicine_specific_insurancestatus
   examples: |
     - bin [versichert]{"entity": "insurancestatus", "value": "True"}
@@ -27,29 +36,45 @@ nlu:
     - [Versicherung]{"entity": "insurancestatus", "value": "True"}
     - [keine Versicherung]{"entity": "insurancestatus", "value": "False"}
     - ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
+    - Ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
 - intent: medicine_specific_emergency
   examples: |
     - ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"}
+    - Ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"}
     - ich brauche einen [Sanitäter]{"entity": "emergency", "value": "True"}
+    - Ich brauche einen [Sanitäter]{"entity": "emergency", "value": "True"}
     - ich brauche einen [Sanni]{"entity": "emergency", "value": "True"}
+    - Ich brauche einen [Sanni]{"entity": "emergency", "value": "True"}
     - ich brauche einen [Sanker]{"entity": "emergency", "value": "True"}
+    - Ich brauche einen [Sanker]{"entity": "emergency", "value": "True"}
     - ich brauche einen [Krankenwagen]{"entity": "emergency", "value": "True"}
+    - Ich brauche einen [Krankenwagen]{"entity": "emergency", "value": "True"}
     - es ist ein [Notfall]{"entity": "emergency", "value": "True"}
+    - Es ist ein [Notfall]{"entity": "emergency", "value": "True"}
     - [Notarzt]{"entity": "emergency", "value": "True"}
     - suche einen Artz
     - brauche einen arzt
 - intent: medicine_all_information
   examples: |
     - ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"} und ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"}
+    - Ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"} und ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"}
     - ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"} und ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
+    - Ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"} und ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
     - ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"}
     - ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"}
+    - Ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"}
+    - Ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und ich brauche einen [Notarzt]{"entity": "emergency", "value": "True"}
     - es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"}
     - es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
+    - Es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"}
+    - Es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
     - ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
-    - ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
-    - [notarzt]{"entity": "emergency", "value": "True"}
+    - ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
+    - Ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
+    - Ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
+    - [Notarzt]{"entity": "emergency", "value": "True"}
     - ich brauche einen Arzt und bin [versichert]{"entity": "insurancestatus", "value": "True"}
+    - Ich brauche einen Arzt und bin [versichert]{"entity": "insurancestatus", "value": "True"}
 - synonym: 'False'
   examples: |
     - nicht versichert

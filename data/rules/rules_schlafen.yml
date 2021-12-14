@@ -129,7 +129,7 @@ rules:
       - action: utter_answer_notunterkunft_divers
       - action: action_answer_url
   
-  - rule: Nach inform immer Schlafen ausführen
+  - rule: Nach inform oder suche_unterkunft immer Schlafen ausführen
     steps:
       - or:
         - intent: inform
