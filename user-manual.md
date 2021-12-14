@@ -20,18 +20,27 @@ Die gesamte Kommunikation findet in deutscher Sprache statt. Während der Entwic
 
 ## Spenden
 
-Im Anwendungsfall `Spenden` hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der Einrichtungen ausgegeben.
+Im Anwendungsfall `Spenden` hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Dabei kann man entweder allgemein nach einer Spende fragen und bekommt dann eine Rückfrage, nach genaueren Informationen oder man kann direkt nach einem oder mehreren Spendenartikeln fragen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der möglichen Einrichtungen ausgegeben, welche die gewünschten Artikel anbieten. 
 
-### Mögliche Eingaben zum Thema Spenden allgemein
+### Mögliche Eingaben um allgemein das Thema Spenden aufzurufen
 
 Folgende Beispieleingaben sind für den allgemeinen Fall `Spenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Spenden mitzuteilen:
 
-| Satzbeginn        | benötigtes Spendengut etc.  |
+|                       | |
+| --------              | --------    |
+| Ich möchte ...        | [ Spenden erhalten ], [ selbst spenden ] |
+| Ich brauche ...        | [ Spenden ], [ was ] | 
+| Ich hab was abzugeben.| |
+| Bin pleite.           | |
+| Brauch Geld.          | |
+|||
+
+### Mögliche Eingabe um ein (oder mehrere) spezifische Spendenartikel anzufragen
+
+|         |  |
 | --------        | --------         |
-| Ich möchte  | [ Spenden erhalten ], [ selbst spenden ] |
-| Ich brauch  | [ Spenden ], [ was ], [ Kleidung ], [ Jacke ], [ einen Pullover ], [ dringend Unterwäsche ], [ nen Slip ], [ nen Schlafsack ], [ eine Decke ],  [ ein Kissen ], [ was zu essen ], <br> [ Nahrungsmittel ], [ nen BH ], [ nen Slip ], [ Nahrungsmittel ], [ nen Topf ], [ eine Pfanne ], [ Technik ], [ ein neues Handy ], [ Kopfhörer ], [ was zur Bildung ], [ Freizeitartikel ] | 
+| Ich brauch  | [ Kleidung ], [ Jacke ], [ einen Pullover ], [ dringend Unterwäsche ], [ nen Slip ], [ nen Schlafsack ], [ eine Decke ],  [ ein Kissen ], [ was zu essen ], [ Nahrungsmittel ], [ nen BH ], <br> [ nen Slip ], [ Nahrungsmittel ], [ nen Topf ], [ eine Pfanne ], [ Technik ], [ ein neues Handy ], [ Kopfhörer ], [ was zur Bildung ], [ Freizeitartikel ], [ Geld ], [ Kohle ] | 
 | Ich benötige | [ eine Hose ], [ eine Isomatte ], [ Kochzubehör ], [ nen Campingkocher ] | 
-| Ich hab was abzugeben. | --- |
 | Ich will | nen Laptop|
 |||
 
@@ -45,89 +54,85 @@ Aktuell sind folgende `Spendenartikel` im Code hinterlegt und werden vom Chatbot
 | Handy         | Kopfhörer        | Laptop        | Freizeitartikel    | Bildung       | |
 |               |                  |               |                    |               | |
 
-### Mögliche Eingaben zum Thema Geldspende
-
-Folgende Beispieleingaben sind für den Fall `Geldspenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden:
-
-| Satzbeginn        | benötigtes Spendengut etc.  |
-| --------        | --------         |
-| Ich brauch  | [ Geld ], [ Kohle ] |
-| Bin pleite. | --- |
-| brauch Geld | --- |
-|||
-
 ### Beispiel Konversationen
 
-#### Beispiel 1 "Allgemeine Anfrage nach einer Spende (Hygieneartikel)":
-```sh
-Eingabe: Ich brauch was.
-Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
-Eingabe: Tampons.
-Chatbot: Tampons und andere Hygieneartikel findest du bei dieser Einrichtung (Deep Link).
-```
-#### Beispiel 2 "Allgemeine Anfrage nach einer Spende mit anschließender Spezifizierung (Schlafsack)":
+#### Beispiel 1 "Allgemeine Anfrage nach einer Spende mit anschließender Spezifizierung (Schlafsack)":
 ```sh
 Eingabe: Ich brauch was
 Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
 Eingabe: Schlafsack.
-Chatbot: Möchtest du diese Dinge: Schlafsack erhalten?
+Chatbot: Möchtest du diese Dinge: ['Schlafsack'] erhalten?
 Eingabe: Ja.
-Chatbot: Alles klar. Diese Artikel: Schlafsack findest du bei diesen Stellen: Obdachlosenhilfe.
+Chatbot: Diese Artikel: 
+        - Schlafsack 
+        Findest du bei diesen Stellen: Obdachlosenhilfe.
+        (Deep Link)
 ```
-#### Beispiel 3 "Direkte Anfrage nach benötigtem Spendenartikel (Hose)":
+#### Beispiel 2 "Direkte Anfrage nach benötigtem Spendenartikel (Hose)":
 ```sh
-Eingabe: Ich brauche eine Hose
-Chatbot: Möchtest du diese Dinge: Hose erhalten?
+Eingabe: Ich brauche eine Isomatte
+Chatbot: Möchtest du diese Dinge: ['Isomatte'] erhalten?
 Eingabe: Ja.
-Chatbot: Alles klar. Diese Artikel: Hose findest du bei diesen Stellen: (noch nicht im Prototyp hinterlegt). (Deep Link)
+Chatbot: Diese Artikel: 
+        - Isomatte 
+        Findest du bei diesen Stellen: Obdachlosenhilfe. 
+        (Deep Link)
 ```
-#### Beispiel 4 "Eine Spende (Schlafsack) tätigen":
+#### Beispiel 3 "Eine Spende (Schlafsack) tätigen":
 ```sh
 Eingabe: Ich hab was abzugeben
 Chatbot: Ich habe verstanden, dass es um das Thema Spenden geht. Um welche Spendenartikel handelt es sich?
 Eingabe: Schlafsack.
-Chatbot: Möchtest du diese Dinge: Schlafsack erhalten?
+Chatbot: Möchtest du diese Dinge: ['Schlafsack'] erhalten?
 Eingabe: Nein
 Chatbot: Alles klar. Diese Artikel: Schlafsack kannst du bei diesen Stellen abgeben: Obdachlosenhilfe.
 ```
-#### Beispiel 5 "Eine Geldspende erhalten"
+#### Beispiel 4 "Eine Geldspende erhalten"
 ```sh
 Eingabe: Ich brauch Geld.
-Chatbot: ...hier ist der Ansprechpartner im Sozialamt (Deep Link). Und hier verschiedene Stiftungen (Deep Link)
+Chatbot: Hier ist der Ansprechpartner im Sozialamt: Ralph Wägner (0911 231 - 29 03)
+        Und hier verschiedene Stiftungen: 
+        ...
+        (Deep Link)
+```
+#### Beispiel 5 "Direkte Anfrage nach mehreren Spendenartikeln (Hose, Jacke, Essen)"
+```sh
+Eingabe: Ich brauche eine Hose, Jacke, Essen.
+Chatbot: Möchtest du diese Dinge: ['Hose', 'Jacke', 'Essen'] erhalten?
+Eingabe: Ja 
+Chatbot: Diese Artikel: 
+        - Hose
+        - Jacke
+        - Essen
+        Findest du bei diesen Stellen: (noch nicht im Prototyp hinterlegt)
+        (Deep Link)
 ```
 
 ## Hygiene
 
 Im Anwendungsfall `Hygiene` hat man die Möglichkeit, beliebige Hygieneartikel anzufragen. Dabei kann man entweder allgemein nach Hygieneartikeln fragen und bekommt dann eine Rückfrage, nach genaueren Informationen oder man kann direkt nach einem konkreten Hygieneartikel fragen. Bei erfolgreicher Anfrage werden jeweils die entsprechenden Ausgabestellen angezeigt. 
 
-### Mögliche Eingaben zum Thema Hygieneartikel
+### Mögliche Eingaben um allgemein das Thema Hygieneartikel aufzurufen
 
-#### Allgemein Anfrage nach Hygieneartikeln
+Folgende Beispieleingaben sind für den allgemeinen Fall `Hygiene` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Spenden mitzuteilen:
 
-```
-Ich brauche Hygieneartikel.
-Wo bekomme ich Hygieneartikel her?
-```
+|||
+|--- |--- |
+| Ich brauche Hygieneartikel.||
+| Wo bekomme ich Hygieneartikel her? ||
+|||
 
-#### Spezifische Suche nach einem bestimmten Hygieneartikel
+### Mögliche Eingaben um ein (oder mehrere) spezifische Hygieneartikel anzufragen.
 
-```
-Ich brauche Binden
-Ich will Kondome
-Ich brauche dringend ein OB
-Brauch eine Packung Watte
-Ein Stück Seife
-Ich benötige Tampons
-Ich brauche Shampoo
-Ich möchte Duschgel
-Brauche dringend Klopapier
-Ich brauche Windeln
-Ich benötige Küchenrollen oder Zewa
-Ich brauche Tempos
-Brauche Taschentücher
-Ich brauche dringend Reinigungstücher
-Ich brauche unbedingt Feuchttücher]
-```
+|||
+|--- |--- |
+| Ich brauche ... | [ Binden ], [ dringend ein OB], [ Shampoo ], [ Windeln ], [ Tempos ], [ dringend Reinigungstücher ], [ unbedingt Feuchttücher ]|
+| Ich benötige ... | [ Tampons ], [ Küchenrollen oder Zewa ]|
+| Brauche ... | [ eine Packung Watte ], [dringend Klopapier ], [ Taschentücher ]|
+| Ich will | [ Kondome ]|
+| Ich möchte | [ Duschgel ] |
+| Ein Stück Seife ||
+|||
 
 Aktuell sind folgende `Hygieneartikel` im Code hinterlegt und werden vom Chatbot als solche erkannt:
 
@@ -146,13 +151,31 @@ Aktuell sind folgende `Hygieneartikel` im Code hinterlegt und werden vom Chatbot
 Eingabe: Ich brauch Hygieneartikel.
 Chatbot: Welchen Hygieneartikel benötigst du?
 Eingabe: Ich benötige Seife.
-Chatbot: Seife bekommst du bei dieser Einrichtung (Deep Link)
+Chatbot: Alles klar. Diese Artikel:
+        - Seife 
+        Findest du bei diesen Stellen:
+        ...
+        (Deep Link)
 ```
 #### Beispiel 2 "Direkte Anfrage nach benötigtem Hygieneartikel (Taschentücher)":
 
 ```
-Eingabe: Ich will Taschentücher .
-Chatbot: Taschentücher bekommst du bei dieser Einrichtung (Deep Link)
+Eingabe: Ich will Taschentücher.
+Chatbot: Alles klar. Diese Artikel: 
+        - Taschentücher 
+        Findes du bei diesen Stellen:
+        ...
+        (Deep Link)
+```
+#### Beispiel 3 "Direkte Anfrage nach mehreren benötigten Hygieneartikeln (Tampons, Klopapier)
+```
+Eingabe: Ich brauche Tampons und Klopapier.
+Chatbot: Alles klar. Diese Artikel:
+        - Tampons
+        - Klopapier
+        Findest du bei diesen Stellen:
+        ...
+        (Deep Link)
 ```
 
 ## Schlafen
