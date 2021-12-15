@@ -20,11 +20,11 @@ Die gesamte Kommunikation findet in deutscher Sprache statt. Während der Entwic
 
 ## Spenden
 
-Im Anwendungsfall `Spenden` hat man die Möglichkeit, Spenden zu erhalten oder zu tätigen. Dabei kann man entweder allgemein nach einer Spende fragen und bekommt dann eine Rückfrage, nach genaueren Informationen oder man kann direkt nach einem oder mehreren Spendenartikeln fragen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der möglichen Einrichtungen ausgegeben, welche die gewünschten Artikel anbieten. 
+Im Anwendungsfall `Spenden` hat man die Möglichkeit, sich die Einrichtungen und Adressen anzeigen zu lassen, bei denen man Spenden erhalten oder tätigen kann. Dabei kann man entweder allgemein nach einer Spende fragen und bekommt dann eine Rückfrage, nach genaueren Informationen über den Spendenartikel oder man kann direkt nach einem bzw. mehreren konkreten Spendenartikeln fragen. Zudem kann man eine Geldspende anfragen. Dafür wird die anwendende Person vom Chatbot aufgefordert, eine entsprechende Eingabe zu tätigen. Anschließend kann die Person auswählen, ob sie die eingegebenen Artikel benötigt oder spenden möchte. Nach dieser Eingabe, wird eine Auflistung der möglichen Einrichtungen ausgegeben, welche die gewünschten Artikel anbieten. 
 
 ### Mögliche Eingaben um allgemein das Thema Spenden aufzurufen
 
-Folgende Beispieleingaben sind für den allgemeinen Fall `Spenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Spenden mitzuteilen:
+Folgende Beispieleingaben sind für den allgemeinen Fall `Spenden` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden, um dem Chatbot das Interesse am Thema Spenden mitzuteilen:
 
 |                       | |
 | --------              | --------    |
@@ -35,7 +35,9 @@ Folgende Beispieleingaben sind für den allgemeinen Fall `Spenden` aktuell imple
 | Brauch Geld.          | |
 |||
 
-### Mögliche Eingabe um ein (oder mehrere) spezifische Spendenartikel anzufragen
+### Mögliche Eingabe um direkt ein (oder mehrere) spezifische Spendenartikel anzufragen
+
+Es besteht die Möglichkeit auch direkt nach einem oder mehreren Spendenartikeln zu fragen. Folgende Beispieleingaben sind hierfür aktuell implementiert und können problemlos eingesetzt werden. Dadurch kann man den ersten Schritt durch die Konversation abkürzen.
 
 |         |  |
 | --------        | --------         |
@@ -110,19 +112,24 @@ Chatbot: Diese Artikel:
 
 ## Hygiene
 
-Im Anwendungsfall `Hygiene` hat man die Möglichkeit, beliebige Hygieneartikel anzufragen. Dabei kann man entweder allgemein nach Hygieneartikeln fragen und bekommt dann eine Rückfrage, nach genaueren Informationen oder man kann direkt nach einem konkreten Hygieneartikel fragen. Bei erfolgreicher Anfrage werden jeweils die entsprechenden Ausgabestellen angezeigt. 
+Im Anwendungsfall `Hygiene` hat man die Möglichkeit, sich die Adressen und Einrichtungen anzeigen zu lassen, bei denen man beliebige Hygieneartikel erhalten kann. Dabei kann man entweder allgemein nach Hygieneartikeln fragen und bekommt dann eine Rückfrage, nach genaueren Informationen oder man kann direkt nach einem konkreten Hygieneartikel fragen. Bei erfolgreicher Anfrage werden jeweils die entsprechenden Ausgabestellen angezeigt. 
 
 ### Mögliche Eingaben um allgemein das Thema Hygieneartikel aufzurufen
 
-Folgende Beispieleingaben sind für den allgemeinen Fall `Hygiene` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Spenden mitzuteilen:
+Folgende Beispieleingaben sind für den allgemeinen Fall `Hygiene` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Hygiene mitzuteilen:
 
 |||
 |--- |--- |
 | Ich brauche Hygieneartikel.||
+| Ich benötige ... | [ ein Körperpflegeprodukt ], [ Hygieneartikel ] |
 | Wo bekomme ich Hygieneartikel her? ||
+| Wo gibt es Körperfplegeartikel ||
+| Welche Einrichtung verteilt Hygienebedarf? ||
 |||
 
-### Mögliche Eingaben um ein (oder mehrere) spezifische Hygieneartikel anzufragen.
+### Mögliche Eingaben um direkt ein (oder mehrere) spezifische Hygieneartikel anzufragen.
+
+Es besteht die Möglichkeit auch direkt nach einem oder mehreren Hygieneartikeln zu fragen. Hierfür sind folgende Beispieleingaben aktuell implementiert und können problemlos eingesetzt werden. Durch den direkten Einstieg kann der erste Schritt durch die Konversation abgekürzt werden.
 
 |||
 |--- |--- |
@@ -472,77 +479,73 @@ Diese Informationen sind alle in seiner ersten Eingabe enthalten und werden vom 
 
 ## Medizin
 
-In dem Fall, dass man medizinsiche Hilfe braucht, können hier Adressen und Kontaktdaten zu medizinischen Hilfsstellen entsprechend des Versicherungsstatuses der/des Anwender:in abgefragt werden. Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden.
+Im Anwendungsfall `Medizin` kann man sich die Adressen und Kontaktdaten zu medizinischen Hilfestellen entsprechend dem Versicherungsstatuses der/des Anwender:in anzeigen lassen.
+Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden.
 
-### Beispieleingaben:
+### Mögliche Eingaben um allgemein das Thema Medizin aufzurufen
 
-#### Um in das Medizin-Menü zu kommen:
+Folgende Beispieleingaben sind für den allgemeinen Fall `Medizin` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Medizin mitzuteilen:
+
+|||
+|--- |--- |
+| Ich brauche ... | [ einen Arzt ], [ Medizin ], [ medizinische Hilfe ], [ Hilfe ]|
+| Ich habe mich ... | [ verletzt ], [ geschnitten ], [ verbrannt ]|
+| Ich suche einen Arzt ||
+| Ich hatte einen Unfall ||
+| Ich fühle mich nicht gut ||
+| Unfall ||
+|||
+
+Nach einer solchen Eingabe erfolgt anschließend die Nachfrage nach dem Versicherungsstatus und ob es sich um eine Notfallsituation handelt.
+
+#### Mögliche Eingaben um direkt eine Notfallsituation anzugeben
+
+Auch gibt es die Möglichkeit über direkte Informationseingabe eines Notfallstatus in das Medizin-Menü zu gelangen. Hierzu sind folgende Beispieleingaben aktuell implementiert.
+
+|||
+|--- |--- |
+| Ich brauche einen ... | [ Notartzt ], [ Sanitäter ], [ Sanni ], [ Sanka ], [ Krankenwagen ]|
+| Es ist ein Notfall ||
+| Notarzt ||
+| Notfall ||
+
+Nach einer solchen Eingabe wird danach nur noch der Versicherungsstatus abgefragt.
+
+#### Mögliche Eingabe um direkt den Versicherungsstatus anzugeben
+
+Es gäbe auch die Möglichkeit direkt den Versichungsstatus anzugeben um eine Medizin-Konversation zu beginnen. Folgende Beispieleingaben sind aktuell implementiert und führen ebenfalls zu einem Aufruf des Themas Medizin.
+
+|||
+|--- |--- |
+| Ich bin ... | [ versichert ], [ nicht versichert ]|
+| Habe ... | [ eine Versicherung ], [ keine Versicherung ]|
+| Bin ... | [ versichert ], [ nicht versichert ]|
+| versichert ||
+| nicht versichert ||
+| Versicherung
+| keine Versicherung ||
+|||
+
+Nach einer solchen Eingabe wird danach nur noch nachgefragt ob es sich um eine Notfallsituation handelt und sofort ein Krankenwagen benötigt wird.
+
+#### Mögliche Eingaben um direkt Versicherungsstatus und Notfallsituation anzugeben
+
+Man kann auch direkt in einem Satz den Versicherungsstatus und die Notfallinformation eingeben und gelangt dadurch direkt zur Ausgabe der entsprechenden Einrichtungen und Adressen. Dadurch werden in der Konversation zwei Schritte abgekürzt.
+
+|||||
+|--- |--- |--- |--- |
+| Ich brauche ... | [ einen Notarzt ] | und ich bin | [ nicht versichert ], [ versichert ]|
+| Ich bin ... | [ nicht versichert ], [ versichert ] | und ich brauche | [ einen Sanitäter ], [ einen Arzt ] |
+| Es ist ein Notfall und ich bin | [ nicht versichert ], [ versichert ] |
+|||
 
 ```
-Ich brauche einen Arzt
-Ich brauche Medizin
-Ich brauche medizinische Hilfe
-Ich suche einen Arzt
-Ich habe mich verletzt
-Ich habe mich geschnitten
-Ich habe mich verbrannt
-Ich hatte einen Unfall
-Ich fühle mich nicht gut
-Ich brauche Hilfe 
-Unfall 
-```
-
-Auch gibt es die Möglichkeit über direkte Informationseingabe über Notfallstatus oder Versicherungsstatus ins Medizin-Menü zu gelangen.
-
-#### Angabe von Notfallsituation:
-
-In diesem Fall wird danach noch der Versicherungsstatus abgefragt.
-
-```
-Ich brauche einen Notarzt
-Ich brauche einen Sanitäter
-Ich brauche einen Sanni
-Ich brauche einen Sanka
-Ich brauche einen Krankenwagen
-Es ist ein Notfall
-Notarzt
-Notfall
-```
-
-#### Angabe von Versicherungsstatus:
-
-Nachdem der Versicherungsstatus mitgeteilt wurde wird danach noch die Information eingeholt, ob es sich um einen Notfall handelt und ein Krankenwagen benötgit wird, oder nicht.
-
-```
-Ich bin versichert
-bin versichert
-Ich bin nicht versichert
-bin nicht versichert
-versichert
-nicht versichert
-Habe eine Versicherung
-Habe keine Versicherung
-Versicherung
-keine Versicherung
-```
-
-#### Angabe von Versicherungsstatus und Notfallinformation:
-
-Auch können Versicherungsstatus und Notfallinformation zusammen in einen Satz weitergegeben werden. Somit kann auch gleich entsprechend in das richtige Medizin-Menü gelangt werden.
-
-```
-ich brauche einen Notarzt und ich bin nicht versichert
-Ich brauche einen Notart und ich bin versichert
-ich bin nicht versichert und ich brauche einen Sanitäter
-ich bin versichert und ich brauche einen Sanitäter
-Es ist ein Notfall und ich bin nicht versichert
-Es ist ein Notfall und ich bin versichert
 ich bin nicht versichert und es ist ein Notfall
 ich bin versichert und es ist ein Notfall
 ```
 
-#### Beispiel 1 "Ärztliche Hilfe benötigt":
-In diesem Beispiel gibt die Person an, dass sie einen Arzt benötigt. Es wird die Information eingeholt, ob es sich um einen Notfall handelt, sowie der Versicherungsstatus abgefragt. 
+#### Beispiel 1 "Allgemeine Anfrage nach ärztlicher Hilfe":
+ 
 ```
 Eingabe: Ich brauche einen Arzt 
 Chatbot: Handelt es sich um einen Notfall und du brauchst sofort einen Notarzt? 
@@ -550,73 +553,38 @@ Eingabe: Nein
 Chatbot: Bist du krankenversichert? 
 Eingabe: Nein 
 Chatbot: > Deine erkannten Informationen sind: 
-           - Notfall: False 
-           - Versicherungsstatus: False 
-           Folgende Hilfestellen haben wir für deine Anfrage gefunden:
-           ___________________________________________
-           Ambulanz Klinikum Nord
-           Prof.-Ernst-Nathan-Str. 1 90419 Nürnberg
-           0911 3980
-           Geöffnet 0:00 - 24:00
-           ___________________________________________
-           Caritas Straßenambulanz - Franz von Assisi
-           Straßburger Str. 14
-           90443 Nürnberg
-           0911 47 49 48 60
-           Ärztliche Sprechstunde: 
-           Mo 9:00 - 12:30 + 14:00 - 17:00
-           Di 9:00 - 12:30 + 15:30 - 17:00
-           Mi 9:00 - 12:30 + 14:00 - 16:00
-           Do 9:00 - 11:00 + 14:00 - 17:00
-           Fr 9:00 - 12:30
-           Chirurgische Sprechstunde: Do 14:00 - 16:00
-           Vorsorgeuntersuchung von nicht krankenver- 
-           sicherten Kindern: Mo 14:00 - 17:00
-
-           Substitutionssprechstunden:
-           ausschließlich nach Terminvereinbaung
-           ___________________________________________
-           Bitte hier klicken, um direkt zur Antwort zu springen:
-           www.schlaue-lise.de/?insurancestatus=False&emergency=False
+        ...
+        (Deep Link)
 ```
 #### Beispiel 2 "Medizinische Informationen in der Eingabe mitteilen - Versicherungsstatuses"
-In diesem Beispiel teilt die Person ihren Versicherungsstatus mit. Es wird erkannt, dass es sich um ein medizinisches Anliegen handelt und im Folgenden abgefragt, ob es sich um einen Notfall handelt oder nicht. 
+
 ```
 Eingabe: Ich bin versichert 
 Chatbot: Handelt es sich um einen Notfall und du brauchst sofort einen Notarzt? 
 Eingabe: Nein 
 Chatbot: > Deine erkannten Informationen sind: 
-           - Notfall: False
-           - Versicherungsstatus: True
-           Folgende Hilfestellen haben wir für deine Anfrage gefunden: 
-           - ...
-            
-           Bitte hier klicken, um direkt zur Antwort zu springen:
-           www.schlaue-lise.de/?insurancestatus=True&emergency=False
+        ...
+        (Deep Link)
 ```
 
 #### Beispiel 3: "Medizinische Informationen in der Eingabe mitteilen - Notfall"
-In diesem Beispiel teilt die Person mit, dass ein Krankenwagen benötigt wird. Es wird erhaknnt, dass es sich um einen Notfall handelt. 
+
 ```
 Eingabe: ich brauche einen Notartz 
 Chatbot: Bist du krankenversichert? 
 Eingabe: Nein 
 Chatbot: > Notfall registriert! 
            Öffne Notrufinformationen ...
-           
-           Bitte hier klicken, um direkt zur Antwort zu springen:
-           www.schlaue-lise.de/?insurancestatus=False&emergency=True
+           (Deep Link)
 ```
 
 #### Beispiel 4: "Medizinische Informationen in der Eingabe mitteilen - Versicherungsstatus und Notfall"
-Es  ist auch möglich in einem Satz den Versicherungsstatus zusammen mit der Information, dass es sich um einen Notfall handelt mitzuteilen. Es wird somit gleich zur entsprechenden Ausgabe gesprungen. 
+
 ```
 Eingabe: Ich bin versichert und es ist ein Notfall 
 Chatbot: > Notfall registriert! 
            Öffne Notrufinformationen ...
-           
-           Bitte hier klicken, um direkt zur Antwort zu springen:
-           www.schlaue-lise.de/?insurancestatus=True&emergency=True
+           (Deep Link)
 ```
 
 ## URL, die am Ende erzeugt wird
