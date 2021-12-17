@@ -116,7 +116,7 @@ Im Anwendungsfall `Hygiene` hat man die Möglichkeit, sich die Adressen und Einr
 
 ### Mögliche Eingaben um allgemein das Thema Hygieneartikel aufzurufen
 
-Folgende Beispieleingaben sind für den allgemeinen Fall `Hygiene` aktuell implementiert und können in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Hygiene mitzuteilen:
+Folgende Beispieleingaben sind für den allgemeinen Fall `Hygiene` aktuell implementiert und können so oder in leichter Abwandlung in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Hygiene mitzuteilen:
 
 |||
 |--- |--- |
@@ -127,7 +127,7 @@ Folgende Beispieleingaben sind für den allgemeinen Fall `Hygiene` aktuell imple
 | Welche Einrichtung verteilt Hygienebedarf? ||
 |||
 
-### Mögliche Eingaben um direkt ein (oder mehrere) spezifische Hygieneartikel anzufragen.
+### Mögliche Eingaben um direkt ein (oder mehrere) spezifische Hygieneartikel anzufragen
 
 Es besteht die Möglichkeit auch direkt nach einem oder mehreren Hygieneartikeln zu fragen. Hierfür sind folgende Beispieleingaben aktuell implementiert und können problemlos eingesetzt werden. Durch den direkten Einstieg kann der erste Schritt durch die Konversation abgekürzt werden.
 
@@ -193,38 +193,55 @@ Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönlic
 
 Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterkunftsmöglichkeiten angezeigt. Aufgrund der Vielzahl an möglichen Eingaben werden alle acht Endpunkte nachfolgend in Beispielen aufgelistet.
 
-### Beispieleingaben:
+### Mögliche Eingaben um allgemeine das Thema Schlafen aufzurufen:
 
-#### Unterkunft benötigt:
+Folgende Beispieleingaben sind für den allgemeinen Fall `Schlafen` aktuell implementiert und können so oder in leichter Abwandlung in einer Konversation problemlos eingesetzt werden um dem Chatbot das Interesse am Thema Schlafen mitzuteilen:
 
-```
-Ich suche einen Schlafplatz für heute Nacht
-Ich suche eine Notunterkunft
-Ich suche eine Wohnung
-Ich suche nach einem Heimplatz
-Ich suche längerfistig einen Schlafplatz
-Ich brauche heute ein Dach über dem Kopf
-Ich brauche heute was zum pennen
-Ich brauche für heute Nacht was zum pennen
-Ich brauche eine Wohnung
-Ich brauche einen Ort zum Pennen
-Ich möchte einen Schlafplatz für heute Nacht
-Ich möchte ins Obdachlosenheim
-Ich möchte weg von der Straße
-Ich will heute Nacht einen Schlafplatz
-Ich will eine Wohnung
-Ich benötige einen Schlafplatz für heute
-Notunterkunft
-Wohnung
-schlafen
-Dach über dem Kopf
-ratzen
-knacken
-schlummern
-pennen
-```
+| | |
+| ---- | ---- |
+| Ich suche ... | [ einen Schlafplatz für heute Nacht ], [ eine Notunterkunft ], [ eine Wohnung ], [ nach einem Heimplatz ], [ längerfistig einen Schlafplatz ], [ einen Ort zum schlafen ], [ was zu pennen ], [ eine unterkunft ], [ eine Bleibe ]|
+| Ich brauche ... | [ heute ein Dach über dem Kopf ], [ heute was zum pennen ], [ für heute Nacht was zum pennen ],  [ eine Wohnung ], [ einen Ort zum Pennen ], [ einen Platz zum Schlafen ], [ unterkunft ], [ einen platz zum pennen ], [ einen Schlafplatz ], [ einen Ort zum Schlafen ], [ einen Platz zum schlafen ], [ einen Platz zum pennen ], [ etwas zum schlafen ], [ eine unterkunft ]|
+| Brauche was zum ... | [ pennen ], [ schlafen ]|
+| Ich möchte ... | [einen Schlafplatz für heute Nacht ], [ ins Obdachlosenheim ], [ weg von der Straße ] |
+| Ich will ... | [ heute Nacht einen Schlafplatz ], [ eine Wohnung ], [ pennen ] |
+| Ich benötige | einen Schlafplatz für heute |
+| Dach über | dem Kopf |
+| Notunterkunft ||
+| Wohnung ||
+| schlafen ||
+| ratzen ||
+| knacken ||
+| schlummern ||
+| pennen ||
 
-#### Beispiel 1 "Langfristig Erwachsener":
+Nach einer solchen Eingabe erfrägt der Bot danach sukzessive die noch fehlenden Informationen über das Alter, Geschlecht, Haustier und Drogenabhängigkeit.
+
+### Mögliche Eingaben um direkt benötigte Informationen mitzuteilen bei einer Schlafenanfrage
+
+Es besteht die Möglichkeit auch direkt die gefordertet Informationen in einer Anfrage mit zuformulieren. Hierfür ist die folgende kombinierte Beispieleingabe aktuell implementiert und kann problemlos eingesetzt werden. Durch den direkten Einstieg kann die Konversation je nach den angegeben Informationen erheblich abgekürzt werden. Man kann auch nur einen Teil der Informationen eingeben, der Chatbot erfrägt am Ende dann nur noch die fehlenden Informationen. 
+
+|||||||||||
+|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
+| Ich bin xx Jahre alt, ... | [ bin eine Frau ], [ männlich ], [ weder mann noch frau ] | habe | [ einen ], [ keinen ] | Hund, | nehme | [ keine ] | Drogen | und brauche einen Platz zum Schlafen |
+| Ich bin ... | [ männlich ], [ weiblich ] | habe | [ einen ], [ keinen ] | Hund, | bin | [ drogensüchtig ], [ nicht drogenabhängig ] | und suche was langfristiges |
+
+
+ich bin [18] jahre alt, bin eine frau, habe keinen hund, nehme keine drogen und brauche einen platz zum schlafen
+ich bin [14], [weder mann noch frau], habe keinen hund, nehme drogen und brauche was zum pennen
+Ich bin [45] Jahre alt, männlich, nehme Drogen und habe keinen Hund
+Ich bin [28] Jahre alt, männlich, nehme keine Drogen und habe auch keinen Hund
+ich bin , weiblich, nehme drogen, habe einen hundund brauche was zum pennen
+Ich bin [65], bin ein Mann, habe einen Hund, nehme keine Drogen und brauche einen Platz zum Schlafen
+Ich bin  Jahre alt, männlich, habe keinen Hund und nehme keine Drogen
+Ich bin , männlich, habe keinen Hund, nehme keine Drogen und suche eine Wohnung
+Ich bin , weiblich, habe keinen Hund, nehme keine Drogen und suche was langfristiges
+Ich bin [17], weder mann noch frau, habe keinen Hund, nehme Drogen und suche was zum Pennen
+Ich bin [20], weiblich, habe keinen Hund, bin nicht drogensüchtig und suche was langfristiges
+Ich bin [32], männlich, habe einen Hund, bin nicht drogenabhängig und suche eine Wohnung
+Ich bin, weiblich, habe keinen Hund, bin drogensüchtig und suche was langfristiges
+Ich bin , männlich, habe einen Hund, bin drogenabhängig und suche eine Wohnung
+
+#### Beispiel 1 "Allgemeine Anfrage nach einer Unterkunft (Langfristig Erwachsener)":
 
 ```
 Eingabe: Ich suche eine Unterkunft.
@@ -239,7 +256,7 @@ Chatbot: Nimmst du Drogen?
 Eingabe: Nein.
 Chatbot: Folgende Informationen wurden erfasst (werden nicht abgespeichert):
         - Alter: 32
-        - Geschlecht: nännlich
+        - Geschlecht: männlich
         - Haustier: nein
         - Drogen: nein
         - Volljährig: ja
