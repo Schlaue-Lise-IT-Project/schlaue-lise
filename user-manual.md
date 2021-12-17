@@ -199,21 +199,22 @@ Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterku
 
 ```
 Ich suche einen Schlafplatz für heute Nacht
-Ich benötige einen Schlafplatz für heute
-Ich will heute Nacht einen Schlafplatz
-Ich möchte einen Schlafplatz für heute Nacht
+Ich suche eine Notunterkunft
+Ich suche eine Wohnung
+Ich suche nach einem Heimplatz
+Ich suche längerfistig einen Schlafplatz
 Ich brauche heute ein Dach über dem Kopf
 Ich brauche heute was zum pennen
 Ich brauche für heute Nacht was zum pennen
-Notunterkunft
-Ich suche eine Notunterkunft
-Ich suche eine Wohnung
 Ich brauche eine Wohnung
-Ich will eine Wohnung
-Ich suche nach einem Heimplatz
+Ich brauche einen Ort zum Pennen
+Ich möchte einen Schlafplatz für heute Nacht
 Ich möchte ins Obdachlosenheim
-Ich suche längerfistig einen Schlafplatz
 Ich möchte weg von der Straße
+Ich will heute Nacht einen Schlafplatz
+Ich will eine Wohnung
+Ich benötige einen Schlafplatz für heute
+Notunterkunft
 Wohnung
 schlafen
 Dach über dem Kopf
@@ -221,7 +222,6 @@ ratzen
 knacken
 schlummern
 pennen
-Ich brauche einen Ort zum Pennen
 ```
 
 #### Beispiel 1 "Langfristig Erwachsener":
@@ -535,14 +535,9 @@ Man kann auch direkt in einem Satz den Versicherungsstatus und die Notfallinform
 |||||
 |--- |--- |--- |--- |
 | Ich brauche ... | [ einen Notarzt ] | und ich bin | [ nicht versichert ], [ versichert ]|
-| Ich bin ... | [ nicht versichert ], [ versichert ] | und ich brauche | [ einen Sanitäter ], [ einen Arzt ] |
-| Es ist ein Notfall und ich bin | [ nicht versichert ], [ versichert ] |
+| Ich bin ... | [ nicht versichert ], [ versichert ] | und | [ ich brauche einen Sanitäter ], [ ich brauche einen Arzt ], [ es ist ein Notfall ], [ es ist kein Notfall ] |
+| Es ist | [ ein ], [ kein ] | Notfall und ich bin | [ nicht versichert ], [ versichert ] |
 |||
-
-```
-ich bin nicht versichert und es ist ein Notfall
-ich bin versichert und es ist ein Notfall
-```
 
 #### Beispiel 1 "Allgemeine Anfrage nach ärztlicher Hilfe":
  
