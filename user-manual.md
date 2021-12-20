@@ -88,6 +88,7 @@ Eingabe: Schlafsack.
 Chatbot: Möchtest du diese Dinge: ['Schlafsack'] erhalten?
 Eingabe: Nein
 Chatbot: Alles klar. Diese Artikel: Schlafsack kannst du bei diesen Stellen abgeben: Obdachlosenhilfe.
+        (Deep Link)
 ```
 #### Beispiel 4 "Eine Geldspende erhalten"
 ```sh
@@ -267,10 +268,10 @@ Chatbot: Folgende Informationen wurden erfasst (werden nicht abgespeichert):
 Chatbot: Hier kannst du Notunterkünfte (Deep Link) für Männer finden.
 ```
 
-#### Beispiel 3 "Anfrage nach einer Unterkunft mit direkter Eingabe eines Teils der benötigten Informationen (männlich, volljährig)"
+#### Beispiel 3 "Anfrage nach einer Unterkunft mit direkter Eingabe eines Teils der benötigten Informationen (weiblich, volljährig)"
 
 ```
-Eingabe: Ich bin männlich, 32 und suche einen Platz zum schlafen
+Eingabe: Ich bin weiblich, 32 und suche einen Platz zum schlafen
 Chatbot: Ok, zum Thema 'Unterkunft' benötige ich noch einige allgemeine Informationen von dir. Diese werden nach dieser Unterhaltung nicht gespeichert.
 Hast du ein Haustier?
 Eingabe: Nein
