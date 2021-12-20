@@ -10,9 +10,7 @@
 
 ## Anaconda Installation
 
-Eine benutzerfreundliche Python-Distribution ist Anaconda.
-Hier die Anleitung dazu von Herrn Prof. Dr.
-Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_.
+Hier die Anleitung zum Installieren von Python und den notwendigen Package Mangern von Herrn Prof. Dr. Albrecht von der TH Nürnberg aus der Vorlesung _Text Analytics_.
 
 ### Lokale Installation
 
@@ -29,7 +27,7 @@ Zunächst muss allerdings erst Anaconda installiert sein, siehe nächster Schrit
 
 ### Installation
 
-Eine populäre Python-Distribution ist [Anaconda](https://www.anaconda.com/).
+[Anaconda](https://www.anaconda.com/) ist eine populäre Python-Distribution ist .
 Wenn diese Distribution installiert wird, werden automatisch eine Vielzahl an Werkzeugen und Bibliotheken für Data Science mit installiert.
 Entweder installiert man Anaconda (inklusive GUI für die Verwaltung), oder wenn man volle Kontrolle über alles haben will und sich auf der Kommandozeile zu Hause fühlt, kann man stattdessen [Miniconda](https://docs.conda.io/en/latest/miniconda.html) installieren.
 
@@ -96,7 +94,7 @@ Wenn mit Rasa X (Local Mode) gearbeitet wird, wird noch folgende Dependency ben�
 ```
 
 Rasa X ist ein Werkzeug, welches auf das Conversational Driven Development (CDD) zugeschnitten ist. 
-Es ist eine Web-Anwendung mit einem Adminbereich zum sichten und bearbeiten der gesammelten Daten und der Möglichkeit, den Bot frühzeitig an echte Nutzer:innen weiterzugeben, um möglichst realistische Daten zu sammeln. 
+Es ist eine Web-Anwendung mit einem Adminbereich zum Sichten und Bearbeiten der gesammelten Daten und der Möglichkeit, den Bot frühzeitig an echte Nutzer:innen weiterzugeben, um möglichst realistische Daten zu sammeln. 
 
 ![Rasa X CDD Circle](https://rasa.com/docs/rasa-x/img/loop.png "Rasa X CDD Circle")
 
@@ -133,16 +131,16 @@ Das ist nur ein unschöner Workaround, aber er funktioniert.
 
 ## CI / CD Pipeline
 
-In diesem Projekt wurde eine CI / CD Pipeline eingerichtet, genauer gesagt nur eine CI, also eine _Continous Integration_. Ein _Continous Deployment_ wäre etwas zu viel gewesen für das Projekt. 
+In diesem Projekt wurde eine CI / CD Pipeline (_Continous Integration_ / _Continous Deployment_) eingerichtet. 
 
 Über [Google Cloud](https://cloud.google.com/) läuft aktuell noch ein Rasa X Server, den wir zum Testen des Chatbots verwendet haben. Dieser Server wird nach Beendigung des Projekts nicht mehr weitergeführt werden, weswegen er hier nicht verlinkt wird. 
 
-Die CI läuft über [GitHub Actions](https://docs.github.com/en/actions) (Workflows sind im Verzueichnis `.github` hinterlegt) und nutzt außerdem den [Dockerfile](Dockerfile), um den [Rasa Action Server](https://rasa.com/docs/action-server/) zu aktualisieren. 
+Die CI/CD läuft über [GitHub Actions](https://docs.github.com/en/actions) (Workflows sind im Verzueichnis `.github` hinterlegt) und nutzt außerdem den [Dockerfile](Dockerfile), um den [Rasa Action Server](https://rasa.com/docs/action-server/) zu aktualisieren. 
 
 Ausgelöst werden die Workflows wenn eines der beiden Ereignisse eintritt: 
 
 - Es wird auf `main` gepushed
-- Es wird auf `main` gepushed und die `actions.py` wurde verändert.
+- Es wird auf `main` gepushed und es gab Änderungen in `actions`.
 
 Im ersten Fall wird ein aufgrund des veränderten Codes ein neues Model trainiert und auf den Google Cloud Server hochgeladen. Im anderen Fall wird ein neues Image auf [DockerHub](https://hub.docker.com/) gepushed, welches dann vom Rasa Action Server genutzt werden kann. 
 
@@ -167,7 +165,7 @@ Um den Chatbot während der Implementierung zu testen, werden einige gängige Be
 Für das Testen und ausführen des Chatbots muss das entsprechende Environment aktiviert werden.
 
 ```sh
-conda info --env # anzeige aller möglichen Environments
+conda info --env # Anzeige aller möglichen Environments
 conda activate ./env # aktivieren des Environments
 ```
 ### Chatbot trainieren
@@ -177,6 +175,8 @@ rasa train # Modell trainieren
 rasa shell # Chatbot auf der Konsole starten
 # oder
 rasa interactive # trackt die gespeicherten Daten während der Konversation und ermöglicht einen Export des Dialogs als Stories etc.
+# Alternativ Rasa X (Local) starten
+rasa x
 ```
 
 ### Rasa Action Server (local)

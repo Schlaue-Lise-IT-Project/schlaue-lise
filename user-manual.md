@@ -11,7 +11,7 @@
 ## Überblick
 Die "SCHLAUE-LISE" ist eine mit dem [Rasa Framework](https://rasa.com/) entwickelte Chatbot-Anwendung. Mit Rasa ist es möglich personalisierte, automatisierte Interaktionen mit Anwender:innen in einem beliebig großen Umfang zu erstellen. Rasa stellt die Infrastruktur und die Werkzeuge bereit, die für die Entwicklung eines Machine-Learning-basierten Assistenten erforderlich sind.
 
-Die hier im Repository hinterlegte Anwendung stellt einen solchen digitalen Assistenten dar. Dieser Assistent ist eine prototypische Erweiterung zu einer bereits konzipierten mobilen Applikation, die im Rahmen des [SiWo-Projekts](https://www.e-beratungsinstitut.de/projekte/siwo/) des Instituts für E-Beratung Nürnberg entwickelt werden soll. Die Anwendung wurde im Rahmen des Studienprojekts als reine Konsolenanwendung entwickelt.
+Die hier im Repository hinterlegte Anwendung stellt einen solchen digitalen Assistenten dar. Dieser Assistent ist eine prototypische Erweiterung zu einer bereits konzipierten mobilen Applikation, die im Rahmen des [SIWo-Projekts](https://www.e-beratungsinstitut.de/projekte/siwo/) des Instituts für E-Beratung Nürnberg entwickelt werden soll. Die Anwendung wurde im Rahmen des Studienprojekts als reine Konsolenanwendung entwickelt.
 
 Im Kern wurden die Anwendungsfälle für die Kategorien `Schlafen`, `Spenden`, `Hygiene` und `Medizin` implementiert. Diese sind nur ein Teil der künftig nutzbaren Anwendung und wurden zur Erstellung dieses Prototyps ausgewählt.
 Die Pfade für die oben genannten Anwendungsfälle werden im Anschluss aufgelistet und erklärt. Am Ende jedes Pfades wird ein sogenannter `Deep Link`, der in der finalen Version der mobile Applikation dazu genutzt werden kann, direkt zu der entsprechenden View zu springen.
@@ -70,7 +70,7 @@ Chatbot: Diese Artikel:
         Findest du bei diesen Stellen: Obdachlosenhilfe.
         (Deep Link)
 ```
-#### Beispiel 2 "Direkte Anfrage nach benötigtem Spendenartikel (Hose)":
+#### Beispiel 2 "Direkte Anfrage nach benötigtem Spendenartikel (Isomatte)":
 ```sh
 Eingabe: Ich brauche eine Isomatte
 Chatbot: Möchtest du diese Dinge: ['Isomatte'] erhalten?
@@ -191,7 +191,7 @@ Im Anwendungfall `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der ode
 
 Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönliche Daten von der Anwendung abgefragt. Die persönlichen Daten sind das Alter, das Geschlecht, die Frage nach einem Haustier und Drogenabhängigkeit. Danach wird nach der Art der Unterkunft gefragt. Diese teilen sich grundsätzlich in zwei Kategorien ein, nämlich in (kurzfristige) Notunterkunft und längerfristige Unterkunft.
 
-Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterkunftsmöglichkeiten angezeigt. Aufgrund der Vielzahl an möglichen Eingaben werden alle acht Endpunkte nachfolgend in Beispielen aufgelistet.
+Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterkunftsmöglichkeiten angezeigt.
 
 ### Mögliche Eingaben um allgemeine das Thema Schlafen aufzurufen:
 
@@ -214,11 +214,11 @@ Folgende Beispieleingaben sind für den allgemeinen Fall `Schlafen` aktuell impl
 | schlummern ||
 | pennen ||
 
-Nach einer solchen Eingabe erfrägt der Bot danach sukzessive die noch fehlenden Informationen über das Alter, Geschlecht, Haustier und Drogenabhängigkeit.
+Nach einer solchen Eingabe fragt der Bot danach sukzessive die noch fehlenden Informationen über das Alter, Geschlecht, Haustier und Drogenabhängigkeit.
 
-### Mögliche Eingaben um direkt benötigte Informationen mitzuteilen bei einer Schlafenanfrage
+### Mögliche Eingaben um direkt benötigte Informationen bei einer Schlafenanfrage mitzuteilen
 
-Es besteht die Möglichkeit auch direkt die geforderten Informationen in einer Anfrage mit zuformulieren. Hierfür ist die folgende kombinierte Beispieleingabe aktuell implementiert und kann problemlos eingesetzt werden. Durch den direkten Einstieg kann die Konversation je nach den angegeben Informationen erheblich abgekürzt werden. Man kann auch nur einen Teil der Informationen eingeben, der Chatbot erfrägt am Ende dann nur noch die fehlenden Informationen. 
+Es besteht die Möglichkeit auch direkt die geforderten Informationen in einer Anfrage mit zuformulieren. Hierfür ist die folgende kombinierte Beispieleingabe aktuell implementiert und kann problemlos eingesetzt werden. Durch den direkten Einstieg kann die Konversation je nach den angegeben Informationen erheblich abgekürzt werden. Man kann auch nur einen Teil der Informationen eingeben, der Chatbot fragt am Ende dann nur noch die fehlenden Informationen. 
 
 ||||||
 |--- |--- |--- |--- |--- |
@@ -291,7 +291,7 @@ Chatbot: Folgende Informationen wurden erfasst (werden nicht abgespeichert):
 ## Medizin
 
 Im Anwendungsfall `Medizin` kann man sich die Adressen und Kontaktdaten zu medizinischen Hilfestellen entsprechend dem Versicherungsstatuses der/des Anwender:in anzeigen lassen.
-Im Falle eines Notfalles, können im Medizin-Menü auch Notruf-Informationen abgefragt werden.
+Im Falle eines Notfalles, können im auch Notruf-Informationen abgefragt werden.
 
 ### Mögliche Eingaben um allgemein das Thema Medizin aufzurufen
 
@@ -311,7 +311,7 @@ Nach einer solchen Eingabe erfolgt anschließend die Nachfrage nach dem Versiche
 
 ### Mögliche Eingaben um direkt eine Notfallsituation anzugeben
 
-Auch gibt es die Möglichkeit über direkte Informationseingabe eines Notfallstatus in das Medizin-Menü zu gelangen. Hierzu sind folgende Beispieleingaben aktuell implementiert.
+Auch gibt es die Möglichkeit über direkte Informationseingabe eines Notfallstatus dem Chatbot das Interesse am Thema Medizin mitzuteilen. Hierzu sind folgende Beispieleingaben aktuell implementiert.
 
 |||
 |--- |--- |
@@ -324,7 +324,7 @@ Nach einer solchen Eingabe wird danach nur noch der Versicherungsstatus abgefrag
 
 ### Mögliche Eingabe um direkt den Versicherungsstatus anzugeben
 
-Es gäbe auch die Möglichkeit direkt den Versichungsstatus anzugeben um eine Medizin-Konversation zu beginnen. Folgende Beispieleingaben sind aktuell implementiert und führen ebenfalls zu einem Aufruf des Themas Medizin.
+Es gibt auch die Möglichkeit direkt den Versichungsstatus anzugeben um eine Medizin-Konversation zu beginnen. Folgende Beispieleingaben sind aktuell implementiert und führen ebenfalls zu einem Aufruf des Themas Medizin.
 
 |||
 |--- |--- |
