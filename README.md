@@ -7,7 +7,8 @@
 3. [CI / CD Pipeline](#ci--cd-pipeline)
 4. [Probleme mit Timeout-Error](#probleme-mit-timeout-error)
 5. [Rasa Befehle](#rasa-befehle)
-6. [Ausblick](#ausblick)
+6. [User Manual](#user-manual)
+7. [Ausblick](#ausblick)
 
 ## Anaconda Installation
 
@@ -187,6 +188,10 @@ Um lokal den [Rasa Action Server](https://rasa.com/docs/action-server/) zu aktiv
 # Im Projektverzeichnis
 (env)> rasa run actions
 ```
+
+## User Manual
+
+Das User Manual ist nicht im README selbst enthalten und kann [hier](user-manual.md) aufgerufen werden.
 
 ## Ausblick
 Aktuell kommt es noch zu einigen Fehlern bei der Benutzung der Shortcuts. Das heißt, bei der Verkürzung der Dialoge durch die direkte Eingabe von relevanten Informationen landet man manchmal in falschen Pfaden. Dies liegt an der Komplexität und Ähnlichkeit der einzelnen Themenbereiche. 
