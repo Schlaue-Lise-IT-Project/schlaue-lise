@@ -189,7 +189,7 @@ Chatbot: Alles klar. Diese Artikel:
 
 ## Schlafen
 
-Im Anwendungfall `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzten und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
+Im Anwendungfall `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzen und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
 
 Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönliche Daten von der Anwendung abgefragt. Die persönlichen Daten sind das Alter, das Geschlecht, die Frage nach einem Haustier und Drogenabhängigkeit. Danach wird nach der Art der Unterkunft gefragt. Diese teilen sich grundsätzlich in zwei Kategorien ein, nämlich in (kurzfristige) Notunterkunft und längerfristige Unterkunft.
 
@@ -405,5 +405,5 @@ Damit die URL nach jeder Story ausgegeben wird, muss ans Ende jeder Story folgen
 Hier kann es zu Timeout Errors kommen, wenn der Computer zu langsam ist. In der [README.md](README#probleme-mit-timeout-error) ist beschrieben, wie dieser behoben werden kann.
 
 ## Visualisierung aller Rasa Stories
-Zur Allgemeinen Übersicht sind im [graph.html](graph.html) sämtliche Stories mit ihren Endpunkte graphisch dargestellt. 
+Zur allgemeinen Übersicht sind im [graph.html](graph.html) sämtliche Stories mit ihren Endpunkte graphisch dargestellt. 
 
