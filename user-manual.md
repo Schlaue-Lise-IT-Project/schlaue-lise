@@ -312,7 +312,7 @@ Nach einer solchen Eingabe erfolgt anschließend die Nachfrage nach dem Versiche
 
 ### Mögliche Eingaben um direkt eine Notfallsituation anzugeben
 
-Auch gibt es die Möglichkeit über direkte Informationseingabe eines Notfallstatus dem Chatbot das Interesse am Thema Medizin mitzuteilen. Hierzu sind folgende Beispieleingaben aktuell implementiert.
+Auch gibt es die Möglichkeit, über direkte Informationseingabe eines Notfallstatus, dem Chatbot das Interesse am Thema Medizin mitzuteilen. Hierzu sind folgende Beispieleingaben aktuell implementiert.
 
 |||
 |--- |--- |
