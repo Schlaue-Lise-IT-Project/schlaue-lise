@@ -194,9 +194,9 @@ Um lokal den [Rasa Action Server](https://rasa.com/docs/action-server/) zu aktiv
 Das User Manual ist nicht im README selbst enthalten und kann [hier](user-manual.md) aufgerufen werden.
 
 ## Ausblick
-Aktuell kommt es noch zu einigen Fehlern bei der Benutzung der Shortcuts. Das heißt, bei der Verkürzung der Dialoge durch die direkte Eingabe von relevanten Informationen landet man manchmal in falschen Pfaden. Dies liegt an der Komplexität und Ähnlichkeit der einzelnen Themenbereiche. 
+Bei der Nutzung der Shortcuts - also der Verkürzung der Dialoge durch direkte Eingabe von relevanten Informationen - kann es in seltenen Fällen vorkommen, dass der Bot falsche Annahmen trifft. Solche Fehler können im CDD immer wieder vorkommen und werden mit mehr Daten (mehr NLU Beispielen) und entsprechenden Annotationen dieser Daten behoben.
 
-Um das zu lösen muss der Chatbot in Zukunft mit echten Nutzer:innen weiterentwickelt werden, die realitätsnahe Beispieleingaben tätigen und diese in das Lernverhalten des Chatbots mit aufgenommen werden können. Hierzu bietet sich Rasa X an.
+Um das in Zukunft zu lösen muss der Chatbot mit echten Nutzer:innen weiterentwickelt werden, die realitätsnahe Beispieleingaben tätigen und diese in das Lernverhalten des Chatbots mit aufgenommen werden können. Hierzu bietet sich Rasa X an.
 
 Weiter mögliche nächste Schritte für die Fortführung der Entwicklung des Chatbots sind:
 - Der Bot startet die Konversation, aktuell beginngt eine Unterhaltung immer mit Eingabe des/der Anwender:in
