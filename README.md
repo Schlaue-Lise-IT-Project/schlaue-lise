@@ -7,6 +7,7 @@
 3. [CI / CD Pipeline](#ci--cd-pipeline)
 4. [Probleme mit Timeout-Error](#probleme-mit-timeout-error)
 5. [Rasa Befehle](#rasa-befehle)
+6. [Ausblick](#ausblick)
 
 ## Anaconda Installation
 
@@ -186,4 +187,14 @@ Um lokal den [Rasa Action Server](https://rasa.com/docs/action-server/) zu aktiv
 # Im Projektverzeichnis
 (env)> rasa run actions
 ```
+
+## Ausblick
+Aktuell kommt es noch zu einigen Fehlern bei der Benutzung der Shortcuts. Das heißt, bei der Verkürzung der Dialoge durch die direkte Eingabe von relevanten Informationen landet man manchmal in falschen Pfaden. Dies liegt an der Komplexität und Ähnlichkeit der einzelnen Themenbereiche. 
+
+Um das zu lösen muss der Chatbot in Zukunft mit echten Nutzer:innen weiterentwickelt werden, die realitätsnahe Beispieleingaben tätigen und diese in das Lernverhalten des Chatbots mit aufgenommen werden können. Hierzu bietet sich Rasa X an.
+
+Weiter mögliche nächste Schritte für die Fortführung der Entwicklung des Chatbots sind:
+- Der Bot startet die Konversation, aktuell beginngt eine Unterhaltung immer mit Eingabe des/der Anwender:in
+- Implementierung einer Spracheingabe, aktuell ist nur das eintippen von Text umgesetzt
+- Entwicklung von Teststories und Einbindung in die CI
 
