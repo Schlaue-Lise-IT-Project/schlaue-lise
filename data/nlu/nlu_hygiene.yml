@@ -3,20 +3,20 @@ nlu:
 - intent: hygiene_suche
   examples: |
     - Ich brauche Hygieneartikel
-    - Wo bekomme ich Hygieneartikel her?
-    - Barauche ein Hygieneprodukt.
-    - Wo gibt es Körperpflegeartikel?
-    - Ich benötige ein Körperpflegeprodukt.
-    - Welche Einrichtung verteilt Hygienebedarf?
-    - ich brauche Hygieneartikel
-    - ich bebötige Hygieneartikel
-    - brauche Hygieneartikel
-    - Wo gibts hygieneartikel?
-    - Außerdem brauche ich noch Hygieneartikel
-    - ich brauch hygieneartikel
-    - Ich benötige Hygieneartikel
     - ich brauche hygieneartikel
+    - ich brauch hygieneartikel
+    - ich brauche Hygieneartikel
+    - Ich benötige ein Körperpflegeprodukt.
+    - Ich benötige Hygieneartikel
+    - ich bebötige Hygieneartikel
+    - Wo bekomme ich Hygieneartikel her?
     - Wo bekomme ich Hygieneartikel?
+    - Barauche ein Hygieneprodukt.
+    - brauche Hygieneartikel
+    - Wo gibt es Körperpflegeartikel?
+    - Wo gibts hygieneartikel?
+    - Welche Einrichtung verteilt Hygienebedarf?
+    - Außerdem brauche ich noch Hygieneartikel
 - intent: hygiene_specific
   examples: |
     - Ich brauche [Binden](hygieneartikel)

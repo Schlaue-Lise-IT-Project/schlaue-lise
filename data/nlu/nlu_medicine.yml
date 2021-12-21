@@ -68,10 +68,18 @@ nlu:
     - es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
     - Es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"}
     - Es ist ein [Notfall]{"entity": "emergency", "value": "True"} und ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
+    - Es ist [kein Notfall]{"entity": "emergency", "value": "False"} und ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
+    - Es ist [kein Notfall]{"entity": "emergency", "value": "False"} und ich ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"}
+    - es ist [kein Notfall]{"entity": "emergency", "value": "False"} und ich ich bin [versichert]{"entity": "insurancestatus", "value": "True"}
+    - es ist [kein Notfall]{"entity": "emergency", "value": "False"} und ich ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"}
     - ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
     - ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
     - Ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
     - Ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [Notfall]{"entity": "emergency", "value": "True"}
+    - ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und es ist ein [kein Notfall]{"entity": "emergency", "value": "False"}
+    - ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [kein Notfall]{"entity": "emergency", "value": "False"}
+    - Ich bin [nicht versichert]{"entity": "insurancestatus", "value": "False"} und es ist ein [kein Notfall]{"entity": "emergency", "value": "False"}
+    - Ich bin [versichert]{"entity": "insurancestatus", "value": "True"} und es ist ein [kein Notfall]{"entity": "emergency", "value": "False"}
     - [Notarzt]{"entity": "emergency", "value": "True"}
     - ich brauche einen Arzt und bin [versichert]{"entity": "insurancestatus", "value": "True"}
     - Ich brauche einen Arzt und bin [versichert]{"entity": "insurancestatus", "value": "True"}
