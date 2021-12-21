@@ -7,6 +7,7 @@
 4. [Schlafen](#schlafen)
 5. [Medizin](#medizin)
 6. [URL, die am Ende erzeugt wird](#url-die-am-ende-erzeugt-wird)
+7. [Visualisierung aller Rasa Stories](#visualisierung-aller-rasa-stories)
 
 ## Überblick
 Die "SCHLAUE-LISE" ist eine mit dem [Rasa Framework](https://rasa.com/) entwickelte Chatbot-Anwendung. Mit Rasa ist es möglich personalisierte, automatisierte Interaktionen mit Anwender:innen in einem beliebig großen Umfang zu erstellen. Rasa stellt die Infrastruktur und die Werkzeuge bereit, die für die Entwicklung eines Machine-Learning-basierten Assistenten erforderlich sind.
@@ -188,11 +189,11 @@ Chatbot: Alles klar. Diese Artikel:
 
 ## Schlafen
 
-Im Anwendungfall `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzten und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
+Im Anwendungfall `Schlafen` gibt es eine Vielzahl an Möglichkeiten, die der oder die Anwender:in wählen kann. Diese Vielzahl ergibt sich aus den in Deutschland gültigen Gesetzen und Vorschriften, denen die verschiedenen Einrichtungen bzw. Unterkünfte unterliegen. Da die unterkunftsuchende Person diese möglicherweise nicht kennt, wurde dieser Pfad so gestaltet, dass eine passende Unterkunft angeboten bzw. angezeigt wird.
 
 Um die Eingabe so einfach wie möglich zu gestalten, werden zunächst persönliche Daten von der Anwendung abgefragt. Die persönlichen Daten sind das Alter, das Geschlecht, die Frage nach einem Haustier und Drogenabhängigkeit. Danach wird nach der Art der Unterkunft gefragt. Diese teilen sich grundsätzlich in zwei Kategorien ein, nämlich in (kurzfristige) Notunterkunft und längerfristige Unterkunft.
 
-Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterkunftsmöglichkeiten angezeigt.
+Nach erfolgreicher Eingabe dieser Informationen werden eine oder mehrere Unterkunftsmöglichkeiten angezeigt. Eine vollständige Übersicht der möglichen Endpunkte kann unter [Visualisierung aller Rasa Stories](#visualisierung-aller-rasa-stories) angesehen werden.
 
 ### Mögliche Eingaben um allgemeine das Thema Schlafen aufzurufen:
 
@@ -402,3 +403,7 @@ Wenn man diese URL antippt, soll man dann auf die Seite mit den jeweiligen Infos
 Damit die URL nach jeder Story ausgegeben wird, muss ans Ende jeder Story folgende Action hinzugefügt werden:
 `action: action_answer_url`.
 Hier kann es zu Timeout Errors kommen, wenn der Computer zu langsam ist. In der [README.md](README#probleme-mit-timeout-error) ist beschrieben, wie dieser behoben werden kann.
+
+## Visualisierung aller Rasa Stories
+Zur allgemeinen Übersicht sind im [graph.html](graph.html) sämtliche Stories mit ihren Endpunkte graphisch dargestellt. 
+
